@@ -1,13 +1,12 @@
 {
     "name": "unal/unal-skin-default",
-    "type": "typo3-cms-extension",
-    "description": "Plantilla institucional predeterminada para los sitios web de la Universidad Nacional de Colombia.",
     "version": "1.0.0",
+    "type": "typo3-cms-extension",
+    "description": "Plantilla institucional predeterminada para los sitios web de la Universidad Nacional de Colombia",
     "keywords": [
         "TYPO3",
         "extension",
         "UNAL",
-        "base",
         "plantilla"
     ],
     "homepage": "https://unal.edu.co",
@@ -20,19 +19,16 @@
         {
             "name": "Oficina de Medios Digitales",
             "role": "Developer",
-            "homepage": "https://unal.edu.co",
             "email": "mediosdigitales@unal.edu.co"
         },
         {
-            "name": "Martha Lucía Chaves Muñoz",
+            "name": "Martha Luc\u00eda Chaves Mu\u00f1oz",
             "role": "Product Manager",
-            "homepage": "https://unal.edu.co",
             "email": "mlchavezm@unal.edu.co"
         },
         {
-            "name": "Giovanni Romero Pérez",
+            "name": "Giovanni Romero P\u00e9rez",
             "role": "Developer",
-            "homepage": "https://unal.edu.co",
             "email": "gromerop@unal.edu.co"
         }
     ],
@@ -40,8 +36,7 @@
         "GPL-2.0-or-later"
     ],
     "require": {
-        "typo3/cms-core": "^7.6 || ^8.5 || ^9.5 || ^10.4 || ^11.5",
-        "php": ">= 5.6 < 8.3"
+        "typo3/cms-core": "^12.4 || ^13.4"
     },
     "conflict": {
     },
