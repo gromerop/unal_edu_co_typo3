@@ -1,0 +1,20 @@
+plugin.tx_unalsocialmediadirectory {
+	view {
+		# cat=plugin.tx_unalsocialmediadirectory/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:unal_social_media_directory/Resources/Private/Templates/
+		# cat=plugin.tx_unalsocialmediadirectory/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:unal_social_media_directory/Resources/Private/Partials/
+		# cat=plugin.tx_unalsocialmediadirectory/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:unal_social_media_directory/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_unalsocialmediadirectory//a; type=string; label=Default storage PID
+		storagePid =
+	}
+	settings{
+		# cat=plugin.tx_unalsocialmediadirectory/settings; type=int+; label=Default account always visible
+		defaultAccount = 
+		# cat=plugin.tx_unalsocialmediadirectory/settings; type=int+; label=create account Pid
+		createPid = 
+	}
+}

@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{title} && {content.title}">
+    <div class="{title.customClass}">
+        <f:if condition="{content.url}">
+            <f:then>
+                <f:link.external title="{content.title->f:format.stripTags()}" uri="{content.url}" target="_blank"><f:format.html>{content.title}</f:format.html></f:link.external>
+            </f:then>
+            <f:else>
+                <f:format.html>{content.title}</f:format.html>
+            </f:else>
+        </f:if>
+    </div>
+</f:if>
+
+</html>

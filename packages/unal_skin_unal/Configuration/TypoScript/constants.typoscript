@@ -1,0 +1,148 @@
+#####################################
+#### UNAL_SKIN_DEFAULT CONSTANTS ####
+#####################################
+tx_unalskinunal {
+	filepaths{
+		pri  = EXT:unal_skin_unal/Resources/Private
+		css  = EXT:unal_skin_unal/Resources/Public/css
+		js   = EXT:unal_skin_unal/Resources/Public/js
+		img  = EXT:unal_skin_unal/Resources/Public/images
+	}
+}
+
+tx_unalskindefault {
+	filepaths {
+		pri  = EXT:unal_skin_default/Resources/Private
+		css  = EXT:unal_skin_default/Resources/Public/css
+		js   = EXT:unal_skin_default/Resources/Public/js
+		img  = EXT:unal_skin_default/Resources/Public/images
+	}
+	parameters {
+		profiles {
+			aspirantes = //aspirantes.unal.edu.co/
+			estudiantes = //estudiantes.unal.edu.co/
+			egresados = http://egresados.unal.edu.co
+			docentes = //docentes.unal.edu.co/
+			administrativos = //administrativos.unal.edu.co/
+		}
+		socialLinks {
+			facebook = https://www.facebook.com/UNALOficial
+			twitter = https://twitter.com/UNALOficial
+            instagram = https://www.instagram.com/unaloficial/?hl=es-la
+			youtube = https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg
+		}
+		showCampusMenu = 0
+		titleComplement =
+		mainMenuUid = 5
+		serviceMenuUid = 61
+		sitemapLinkUid = 76
+		faqLinkUid = 77
+		contactLinkUid = 79
+		glosaryLinkUid = 80
+		aboutLinkUid = 81
+      	onlineattLinkUid = 78
+      	notinboxLinkUid = 65
+		contact {
+			address = Carrera 45 # 26-85
+			building = Edif. Uriel Gutiérrez
+			city = Bogotá D.C.,  Colombia
+			phone = (+57 601) 316 5000
+			emailAccount = conmutador_bog
+		}
+		aboutLinkUri = unal.edu.co/acerca-de-este-sitio-web.html
+	}
+}
+# Idioma predeterminado: Español
+tx_unalskindefault.parameters {
+	breadcrumbPosition=Está en:
+	currentLang = ESP
+	
+	#languageCodes = 0,1,2,3
+	#languageId = Español || English || Wayuunaiki || Nasa yuwe 
+        languageCodes = 0,2,3
+        languageId = Español [ESP] || Wayuunaiki [GUC] || Nasa yuwe [PBB]
+}
+
+	
+
+[globalVar = GP:L = 1]
+	tx_unalskindefault.parameters.breadcrumbPosition=You are in:
+	tx_unalskindefault.parameters.currentLang = en
+[end]
+[globalVar = GP:L = 2]
+	tx_unalskindefault.parameters.breadcrumbPosition=Você está em:
+	tx_unalskindefault.parameters.currentLang = Wayuunaiki
+[end]
+[globalVar = GP:L = 3]
+	tx_unalskindefault.parameters.breadcrumbPosition=Vous êtes dans:
+	tx_unalskindefault.parameters.currentLang = Nasa yuwe
+[end]
+[globalVar = GP:L = 4]
+	tx_unalskindefault.parameters.breadcrumbPosition=Sie sind in:
+	tx_unalskindefault.parameters.currentLang = de
+[end]
+[globalVar = GP:L = 5]
+	tx_unalskindefault.parameters.breadcrumbPosition=Sei in:
+	tx_unalskindefault.parameters.currentLang = it
+[end]
+breadcrumbPosition=Está en:
+currentLang = ES
+
+
+
+######################
+#### DEPENDENCIES ####
+######################
+// <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+
+
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+// styles {
+//     templates {
+//         layoutRootPath = EXT:unal_skin_unal/Resources/Private/Layouts/ContentElements/
+//         partialRootPath = EXT:unal_skin_unal/Resources/Private/Partials/ContentElements/
+//         templateRootPath = EXT:unal_skin_unal/Resources/Private/Templates/ContentElements/
+//     }
+// }
+
+
+############
+### PAGE ###
+############
+// page {
+//      fluidtemplate {
+//         layoutRootPath = EXT:unal_skin_unal/Resources/Private/Layouts/Page/
+//         partialRootPath = EXT:unal_skin_unal/Resources/Private/Partials/Page/
+//         templateRootPath = EXT:unal_skin_unal/Resources/Private/Templates/Page/
+//     }
+//     meta {
+//         description =
+//         author =
+//         keywords =
+//         viewport = width=device-width, initial-scale=1
+//         robots = index,follow
+//         apple-mobile-web-app-capable = no
+//         compatible = IE=edge
+//     }
+//     tracking {
+//         google {
+//             trackingID =
+//             anonymizeIp = 1
+//         }
+//     }
+// }
+
+
+##############
+### CONFIG ###
+##############
+// config {
+//     no_cache = 0
+//     removeDefaultJS = 0
+//     admPanel = 1
+//     prefixLocalAnchors = all
+//     headerComment = build by sitepackagebuilder.com
+//     sendCacheHeaders = 1
+// }

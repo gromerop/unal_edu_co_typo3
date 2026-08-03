@@ -1,0 +1,13 @@
+{namespace unid=Unal\UnalSocialMedia\ViewHelpers}
+<div class="socialItems">
+<f:for each="{accounts}" as="cuenta">
+  {cuenta.nombreCuenta}
+          <f:link.external target="_blank" uri="{cuenta.url}" title="{cuenta.nombreCuenta} - {cuenta.medios.nombre}" class="socialItem socialItem-{cuenta.medios.uid}">
+          <f:if condition="{cuenta.medios.icono}">
+            <f:then>
+              <f:image image="{cuenta.medios.icono}" />
+            </f:then>
+          </f:if>  
+          </f:link.external>
+        </f:for>
+</div>

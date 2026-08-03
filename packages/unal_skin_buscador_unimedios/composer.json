@@ -1,0 +1,68 @@
+{
+    "name": "unal/unal-skin-buscador-unimedios",
+    "type": "typo3-cms-extension",
+    "description": "Extensión creada para manipular los datos del Buscador de Unimedios que estan en Elasticsearch.",
+    "version": "1.0.0",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "UNAL",
+        "buscador",
+        "Unimedios",
+        "elasticsearch"
+    ],
+    "homepage": "https://unal.edu.co",
+    "support": {
+        "source": "",
+        "issues": "",
+        "docs": ""
+    },
+    "authors": [
+        {
+            "name": "Oficina de Medios Digitales",
+            "role": "Developer",
+            "homepage": "https://unal.edu.co",
+            "email": "mediosdigitales@unal.edu.co"
+        },
+        {
+            "name": "Martha Lucía Chaves Muñoz",
+            "role": "Product Manager",
+            "homepage": "https://unal.edu.co",
+            "email": "mlchavezm@unal.edu.co"
+        }
+    ],
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "typo3/cms-core": "^10.4 || ^11.5",
+        "php": ">= 7.4 < 8.3"
+    },
+    "conflict": {
+    },
+    "suggest": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "UNAL\\UnalSkinBuscadorUnimedios\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UNAL\\UnalSkinBuscadorUnimedios\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+    },
+    "config": {
+    },
+    "scripts": {
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "unal_skin_buscador_unimedios"
+        }
+    }
+}

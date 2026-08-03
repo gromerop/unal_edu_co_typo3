@@ -1,0 +1,21 @@
+
+config.tx_extbase {
+  persistence {
+    classes {
+
+      GeorgRinger\News\Domain\Model\News {
+        subclasses {
+          Tx_UnalNews_UnalNews = UNAL\UnalNews\Domain\Model\UnalNews
+          
+        }
+      }
+      UNAL\UnalNews\Domain\Model\UnalNews {
+        mapping {
+          tableName = tx_news_domain_model_news
+          recordType = Tx_UnalNews_UnalNews
+        }
+      }
+
+    }
+  }
+}

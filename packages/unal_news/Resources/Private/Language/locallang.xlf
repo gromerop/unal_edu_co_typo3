@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-16T22:12:10Z" product-name="unal_news">
+		<header/>
+		<body>
+			<trans-unit id="tx_unalnews_domain_model_unalnews">
+				<source>Unal News</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_unalnews.identificator">
+				<source>Identificator</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_unalnews.visitor_counter">
+				<source>Visitor Counter</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_visitcounter">
+				<source>Visit Counter</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_visitcounter.quantity">
+				<source>Quantity</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_visitcounter.fecha_registro">
+				<source>Fecha Registro</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

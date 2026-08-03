@@ -1,0 +1,4 @@
+#
+# BACKENDLAYOUTS
+#
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:unal_skin_unal/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts" extensions="tsconfig">

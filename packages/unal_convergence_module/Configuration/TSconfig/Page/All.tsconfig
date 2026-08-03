@@ -1,0 +1,4 @@
+#
+# PageTS for UNAL Convergence Module
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_convergence_module/Configuration/TsConfig/Page/Mod/Wizard/newContentElement.tsconfig">

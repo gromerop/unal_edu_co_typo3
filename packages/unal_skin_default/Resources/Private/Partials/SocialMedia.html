@@ -1,0 +1,126 @@
+<f:if condition="{unalsd_showSocialMediaLinks} == 1">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<style>
+#hideshow{
+    text-align:center;
+    position: fixed;
+    right: 2px;
+    top: 295px;
+    z-index: 16;
+    padding: 3px;
+    display: block;
+    color: white;
+    font-size: 25px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #999999;
+}
+.social-media{
+    text-align:center;
+    position: fixed;
+    right: 1px;
+    top: 330px;
+    z-index: 15;
+    width: 34px;
+    padding: 3px;
+    list-style: none;
+}
+.social-media i{
+  vertical-align: middle;
+}
+
+.social-media li {
+margin-top:8px;
+}
+
+.social-media li a {
+display: block;
+background: #999999;
+color: #efefef;
+border-radius: 15px;
+text-decoration: none;
+width: 30px;  
+line-height: 30px;
+font-size: 19px;
+}
+
+.fa-instagram, .fa-youtube, .fa-telegram-plane, .fa-tiktok{
+  margin-top: -1px;
+}
+
+.fa-telegram-plane{
+  margin-left: -3px;
+}
+
+.social-media a.tw:hover {
+  background: #3b5998;
+}
+
+.social-media a.fb:hover {
+  background: #3b5998;
+}
+
+.social-media a.yt:hover {
+  background: red;
+}
+
+.social-media a.tg:hover {
+  background: #3b5998;
+}
+
+.social-media a.tt:hover {
+  background: linear-gradient(90deg, rgba(255,0,74,1) 0%, rgba(0,238,255,1) 100%);
+}
+
+.social-media a.ig:hover {
+  background: linear-gradient(45deg, #fd1d1d, #e1306c, #c13584, #833ab4, #5851db, #405de6);
+}
+
+</style>
+
+<a id="hideshow" href="#">
+  <i class="fas fa-angle-double-right"></i>
+  
+</a>
+<ul id="social-media-menu" class="social-media">
+    <f:if condition="{unalsm_facebook}">
+        <li><a target="_blank" href="{unalsm_facebook}" class="fb" title="Facebook"><i class="icon-facebook"></i></a></li>
+    </f:if>
+    <f:if condition="{unalsm_twitter}">
+        <li><a target="_blank" href="{unalsm_twitter}" class="tw" title="Twitter"><i class="icon-twitter"></i></a></li>
+    </f:if>
+    <f:if condition="{unalsm_youtube}">
+        <li><a target="_blank" href="{unalsm_youtube}" class="yt" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+    </f:if>
+    <f:if condition="{unalsm_instagram}">
+        <li><a target="_blank" href="{unalsm_instagram}" class="ig" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+    </f:if>
+    <f:if condition="{unalsm_telegram}">
+        <li><a target="_blank" href="{unalsm_telegram}" class="tg" title="Telegram"><i class="fab fa-telegram-plane"></i></a></li>
+    </f:if>
+    <f:if condition="{unalsm_tiktok}">
+        <li><a target="_blank" href="{unalsm_tiktok}" class="tt" title="TikTok"><i class="fab fa-tiktok"></i></a></li>
+    </f:if>
+</ul>
+
+  <script>
+    if (localStorage.getItem('socialmedia') == 'fa-angle-double-right') {
+      $('#social-media-menu').css('display','block');
+      $('#hideshow').children('i').addClass('fa-angle-double-right');
+      $('#hideshow').children('i').removeClass('fa-angle-double-left');
+    }else if(localStorage.getItem('socialmedia') == 'fa-angle-double-left'){
+      $('#social-media-menu').css('display','none');
+      $('#hideshow').children('i').addClass('fa-angle-double-left');
+      $('#hideshow').children('i').removeClass('fa-angle-double-right');
+    }
+    
+    $(document).ready(function(){
+      $('#hideshow').click(function() {        
+           $('#social-media-menu').toggle('show');
+           $(this).children('i').toggleClass('fa-angle-double-left fa-angle-double-right');
+           localStorage.setItem('socialmedia', $(this).children('i').attr('class').split(' ')[1]);
+           return false;
+          });
+
+  });
+  </script>
+</f:if>

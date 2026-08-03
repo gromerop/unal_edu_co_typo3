@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="es" datatype="plaintext" original="messages" date="2018-04-23T10:22:00Z" product-name="unal_skin_default">
+		<header/>
+		<body>
+			<trans-unit id="tx_unal_skin_default_legalregime">
+				<source>Legal regime</source>
+				<target>Régimen Legal</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_humantalent">
+				<source>Human talent</source>
+				<target>Talento humano</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_booking">
+				<source>Booking</source>
+				<target>Contratación</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_jobofferings">
+				<source>Job offerings</source>
+				<target>Ofertas de empleo</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_accountability">
+				<source>Accountability</source>
+				<target>Rendición de cuentas</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_teachingcontest">
+				<source>Teaching contest</source>
+				<target>Concurso docente</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_virtualpayment">
+				<source>Virtual payment</source>
+				<target>Pago virtual</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_internalcontrolling">
+				<source>Internal controlling</source>
+				<target>Control interno</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_quality">
+				<source>Quality</source>
+				<target>Calidad</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_notificationsmailbox">
+				<source>Notification's mailbox</source>
+				<target>Buzón de notificaciones</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_institutionalemail">
+				<source>Institutional E-mail</source>
+				<target>Correo institucional</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_sitemap">
+				<source>Sitemap</source>
+				<target>Mapa del sitio</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_socialnetworks">
+				<source>Social networks</source>
+				<target>Redes sociales</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_faq">
+				<source>FAQ</source>
+				<target>Preguntas frecuentes</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_claimsandsuggestions">
+				<source>Claims and suggestions</source>
+				<target>Quejas y reclamos</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_onlineattentionservices">
+				<source>Online attention services</source>
+				<target>Servicios en línea</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_survey">
+				<source>Survey</source>
+				<target>Encuesta</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_contact">
+				<source>Contact</source>
+				<target>Contáctenos</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_statistics">
+				<source>Statistics</source>
+				<target>Estadísticas</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_glossary">
+				<source>Glossary</source>
+				<target>Glosario</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_webpagecontact">
+				<source>Web page contact</source>
+				<target>Contacto página web</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_somerightsreserved">
+				<source>Some rights reserved</source>
+				<target>Algunos derechos reservados</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_webmastercontact">
+				<source>Contact the webmaster</source>
+				<target>Comuníquese con el webmaster</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_aboutthiswebsite">
+				<source>About this website</source>
+				<target>Acerca de este sitio web</target>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_lastupdate">
+				<source>Last update</source>
+				<target>Actualización</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

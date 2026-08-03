@@ -1,0 +1,50 @@
+<f:layout name="DefaultUnal" />
+<f:section name="Main">
+
+<main class="detalle">
+    
+    <f:switch expression="{data.layout}">
+        <f:case value="4">
+            <div class="row">
+                <div class="col-12 col-md-6 detail_two_left">
+                    <h1>{data.title}</h1>
+                    
+                    {detail_two_left->f:format.raw()}
+                </div>
+                <div class="col-12 col-md-6 detail_two_right">
+                    <f:cObject typoscriptObjectPath="lib.breadcrumb"></f:cObject>
+                    {detail_two_right->f:format.raw()}
+                </div>
+            </div>
+        </f:case>
+        <f:case value="5">
+            <div class="row">
+                <div class="col-12 col-md-6 detail_two_left-5">
+                    <f:cObject typoscriptObjectPath="lib.breadcrumb"></f:cObject>
+                    {detail_two_right->f:format.raw()}
+                </div>
+                <div class="col-12 col-md-6 detail_two_right-5">
+                    <h1>{data.title}</h1>
+                    
+                    {detail_two_left->f:format.raw()}
+                    
+                </div>
+            </div>
+        </f:case>
+        <f:defaultCase>
+            <div class="row">
+                <div class="col-12 col-md-6 detail_two_left">
+                    <h1>{data.title}</h1>
+                    
+                    {detail_two_left->f:format.raw()}
+                </div>
+                <div class="col-12 col-md-6 detail_two_right">
+                    <f:cObject typoscriptObjectPath="lib.breadcrumb"></f:cObject>
+                    {detail_two_right->f:format.raw()}
+                </div>
+            </div>
+        </f:defaultCase>
+    </f:switch>
+</main>
+
+</f:section>

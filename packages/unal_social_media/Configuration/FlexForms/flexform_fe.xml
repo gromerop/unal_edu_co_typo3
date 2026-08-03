@@ -1,0 +1,52 @@
+<T3DataStructure>
+    <meta>
+   		<langDisable>1</langDisable>
+   	</meta>
+    <sheets>
+        <main>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:unal_social_media/Resources/Private/Language/locallang_db.xlf:flexform.whatToShow</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>LLL:EXT:unal_social_media/Resources/Private/Language/locallang_db.xlf:flexform.whatToShow</label>
+							<config>
+								<type>select</type>
+                				<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"/>
+										<numIndex index="1"/>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Busqueda</numIndex>
+										<numIndex index="1">Medio->search;Medios->list;Eid->facultades</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Dependencias</numIndex>
+										<numIndex index="1">Dependencia->list</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">Crear Cuentas</numIndex>
+										<numIndex index="1">Dependencia->new;Dependencia->create;-Dependencia->confirm</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">Perfil Predeterminado</numIndex>
+										<numIndex index="1">Dependencia->default</numIndex>
+									</numIndex>
+								</items>
+								<minitems>0</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+							<onChange>reload</onChange>
+						</TCEforms>
+					</switchableControllerActions>
+                </el>
+            </ROOT>
+        </main>
+    </sheets>
+</T3DataStructure>

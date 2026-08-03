@@ -1,0 +1,8 @@
+#############
+#### RTE ####
+#############
+RTE {
+    default {
+        preset = unal_skin_unal
+    }
+}

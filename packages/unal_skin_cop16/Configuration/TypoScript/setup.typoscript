@@ -1,0 +1,32 @@
+######################
+#### DEPENDENCIES ####
+######################
+
+##############
+#### PAGE ####
+##############
+# Se crea y se configura el sitio
+page = PAGE
+page {
+    includeCSS {
+        cop16_frontend = EXT:unal_skin_cop16/Resources/Public/css/frontend.css
+    }
+
+    includeJS {
+        cop16_frontend = EXT:unal_skin_cop16/Resources/Public/js/cop16-frontend.js
+    }
+}
+
+plugin.tx_news {
+	view {
+		templateRootPaths {
+			2 = EXT:unal_skin_cop16/Resources/Private/ext/news/Templates/
+		}
+		partialRootPaths {
+			2 = EXT:unal_skin_cop16/Resources/Private/ext/news/Partials/
+		}
+		layoutRootPaths {
+			2 = EXT:unal_skin_cop16/Resources/Private/ext/news/Layouts/
+		}
+	}
+}

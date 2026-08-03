@@ -1,0 +1,323 @@
+######################
+#### DEPENDENCIES ####
+######################
+// <INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript">
+
+
+################
+#### HELPER ####
+################
+
+
+##############
+#### PAGE ####
+##############
+# Se crea y se configura el sitio
+page {
+    includeCSS {
+        frontend           = {$tx_unalskinunal.filepaths.css}/frontend.css
+        docentes           = {$tx_unalskinunal.filepaths.css}/docentes.css
+        provisional        = {$tx_unalskinunal.filepaths.css}/provisional.css
+        redessociales      = {$tx_unalskinunal.filepaths.css}/redessociales.css
+        flickity           = {$tx_unalskinunal.filepaths.css}/flickity.min.css
+  		flickity.external  = 1
+        leaflet            = https://unpkg.com/leaflet@1.7.1/dist/leaflet.css
+        map                = {$tx_unalskinunal.filepaths.css}/map.css
+        #plyr               = https://cdn.plyr.io/3.6.8/plyr.css
+        plyr               = {$tx_unalskinunal.filepaths.css}/plyr.css
+        slick              = https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css
+        convergenciaedu     = {$tx_unalskinunal.filepaths.css}/convergenciaedu.css
+
+    }
+
+    includeJS {
+        map-jquery        = //code.jquery.com/jquery-1.8.0.min.js
+        map               = {$tx_unalskinunal.filepaths.js}/map.js
+        leaflet           = https://unpkg.com/leaflet@1.7.1/dist/leaflet.js
+        plyr              = https://cdn.plyr.io/3.6.8/plyr.js
+        #plyr              = {$tx_unalskinunal.filepaths.js}/plyr.js
+        frontend          = {$tx_unalskinunal.filepaths.js}/frontend.min.js
+        flickity          = {$tx_unalskinunal.filepaths.js}/flickity.pkgd.min.js
+        slick             = https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js
+        bs-select         = https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js
+
+        
+    }
+
+    includeJSFooter {
+
+    }
+    
+}
+
+[page["pid"] == 454]
+    page.includeCSS.error = {$tx_unalskinunal.filepaths.css}/error.css
+[END]
+
+page = PAGE
+page.10 {
+    templateRootPaths {
+        10 = {$tx_unalskinunal.filepaths.pri}/Templates/Page/
+        // 1 = {$page.fluidtemplate.templateRootPath}
+    }
+    partialRootPaths {
+        10 = {$tx_unalskinunal.filepaths.pri}/Partials/Page/
+        // 1 = {$page.fluidtemplate.partialRootPath}
+    }
+    layoutRootPaths {
+        10 = {$tx_unalskinunal.filepaths.pri}/Layouts/Page/
+        // 1 = {$page.fluidtemplate.layoutRootPath}
+    }
+
+    variables {
+        home_destacado < styles.content.get
+        home_destacado.select.where = colPos = 11
+        home_content < styles.content.get
+        home_content.select.where = colPos = 12
+        home_other < styles.content.get
+        home_other.select.where = colPos = 13
+
+        detail_one_left < styles.content.get
+        detail_one_left.select.where = colPos = 21
+        detail_one_up < styles.content.get
+        detail_one_up.select.where = colPos = 22
+        detail_one_down < styles.content.get
+        detail_one_down.select.where = colPos = 23
+
+        detail_two_left < styles.content.get
+        detail_two_left.select.where = colPos = 31
+        detail_two_right < styles.content.get
+        detail_two_right.select.where = colPos = 32
+        
+
+        detail_three_up < styles.content.get
+        detail_three_up.select.where = colPos = 41
+        detail_three_left < styles.content.get
+        detail_three_left.select.where = colPos = 42
+        detail_three_right < styles.content.get
+        detail_three_right.select.where = colPos = 43
+
+        detail_four_up < styles.content.get
+        detail_four_up.select.where = colPos = 51
+        detail_four_down < styles.content.get
+        detail_four_down.select.where = colPos = 52
+
+        detail_five_content < styles.content.get
+        detail_five_content.select.where = colPos = 61
+        
+        error_col1 < styles.content.get
+        error_col1.select.where = colPos = 101
+        error_col2 < styles.content.get
+        error_col2.select.where = colPos = 102
+    }
+
+    file.stdWrap.cObject = CASE
+    file.stdWrap.cObject {
+        key.data = levelfield:-1, backend_layout_next_level, slide
+        key.override.field = backend_layout
+
+        # Ubicación de las plantillas, dependiendo del UID del backend layout
+        1 = TEXT
+        1.value = {$tx_unalskinunal.filepaths.pri}/Templates/Page/Default.html
+        2 = TEXT
+        2.value = {$tx_unalskinunal.filepaths.pri}/Templates/Page/Detalle1.html
+        3 = TEXT
+        3.value = {$tx_unalskinunal.filepaths.pri}/Templates/Page/Detalle2.html
+        4 = TEXT
+        4.value = {$tx_unalskinunal.filepaths.pri}/Templates/Page/Detalle3.html
+        5 = TEXT
+        5.value = {$tx_unalskinunal.filepaths.pri}/Templates/Page/Detalle4.html
+        6 = TEXT
+        6.value = {$tx_unalskinunal.filepaths.pri}/Templates/Page/Detalle5.html
+        pagets__error = TEXT
+        pagets__error.value = {$tx_unalskinunal.filepaths.pri}/Templates/Page/Error.html
+
+    }
+
+}
+
+
+################
+#### CONFIG ####
+################
+config {
+    absRefPrefix = auto
+    no_cache = {$config.no_cache}
+    uniqueLinkVars = 1
+    pageTitleFirst = 1
+    linkVars = L
+    prefixLocalAnchors = {$config.prefixLocalAnchors}
+    renderCharset = utf-8
+    metaCharset = utf-8
+    doctype = html5
+    removeDefaultJS = {$config.removeDefaultJS}
+    inlineStyle2TempFile = 1
+    admPanel = {$config.admPanel}
+    debug = 0
+    cache_period = 86400
+    sendCacheHeaders = {$config.sendCacheHeaders}
+    intTarget =
+    extTarget =
+    disablePrefixComment = 1
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+    headerComment = {$config.headerComment}
+
+    // Disable Image Upscaling
+    noScaleUp = 1
+
+    // Compression and Concatenation of CSS and JS Files
+    compressJs = 0
+    compressCss = 0
+    concatenateJs = 0
+    concatenateCss = 0
+}
+
+
+lib.contentElement {
+    templateRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/modals/Bootstrap4/Templates/
+        200 =  EXT:ce_counter/Resources/Private/Templates/
+    }
+    partialRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/modals/Bootstrap4/Partials/
+    }
+    layoutRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/modals/Bootstrap4/Layouts/
+    }
+}
+
+plugin.tx_news {
+	view {
+		templateRootPaths {
+            1 = EXT:unal_skin_unal/Resources/Private/ext/news/Templates/
+        }
+        partialRootPaths {
+            1 = EXT:unal_skin_unal/Resources/Private/ext/news/Partials/
+        }
+        layoutRootPaths {
+            1 = EXT:unal_skin_unal/Resources/Private/ext/news/Layouts/
+        }
+	}
+}
+
+tt_content.b13-2cols-with-header-container < lib.contentElement
+tt_content.b13-2cols-with-header-container {
+    templateName = 2ColsWithHeader
+    templateRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/container/Templates
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.b13-3cols < lib.contentElement
+tt_content.b13-3cols {
+    templateName = 3cols
+    templateRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/container/Templates
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.b13-4cols < lib.contentElement
+tt_content.b13-4cols {
+    templateName = 4cols
+    templateRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/container/Templates
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.b13-5cols < lib.contentElement
+tt_content.b13-5cols {
+    templateName = 5cols
+    templateRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/container/Templates
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.b13-6cols < lib.contentElement
+tt_content.b13-6cols {
+    templateName = 6cols
+    templateRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/container/Templates
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+tt_content.b13-7cols < lib.contentElement
+tt_content.b13-7cols {
+    templateName = 7cols
+    templateRootPaths {
+        10 = EXT:unal_skin_unal/Resources/Private/ext/container/Templates
+    }
+    dataProcessing {
+        100 = B13\Container\DataProcessing\ContainerProcessor
+    }
+}
+
+
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+    templateRootPaths {
+        300 = EXT:unal_skin_unal/Resources/Private/ext/fluid_styled_content/Templates/
+    }
+    partialRootPaths {
+        300 = EXT:unal_skin_unal/Resources/Private/ext/fluid_styled_content/Partials/
+    }
+    layoutRootPaths {
+        300 = EXT:unal_skin_unal/Resources/Private/ext/fluid_styled_content/Layouts/
+    }
+}
+
+plugin.tx_unalconvergencemodule {
+    
+    view {
+        templateRootPaths {
+            0 = EXT:unal_skin_unal/Resources/Private/ext/convergence/Templates/
+        }
+
+        partialRootPaths {
+            0 = EXT:unal_skin_unal/Resources/Private/ext/convergence/Partials/
+        }
+
+        layoutRootPaths {
+            0 = EXT:unal_skin_unal/Resources/Private/ext/convergence/Layouts/
+        }
+
+	}
+}
+
+plugin.tx_powermail {
+
+
+  view {
+    # cat=powermail_main/file; type=string; label= Path to template root (FE)
+    templateRootPaths {
+        0 = EXT:unal_skin_unal/Resources/Private/ext/powermail/Templates/
+    } 
+
+    # cat=powermail_main/file; type=string; label= Path to template partials (FE)
+    partialRootPaths  {
+        0 = EXT:unal_skin_unal/Resources/Private/ext/powermail/Partials/
+    }
+
+    # cat=powermail_main/file; type=string; label= Path to template layouts (FE)
+    layoutRootPaths {
+        0 = EXT:unal_skin_unal/Resources/Private/ext/powermail/Layouts/
+    } 
+  }
+
+}

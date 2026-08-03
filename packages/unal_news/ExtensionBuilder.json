@@ -1,0 +1,230 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    368,
+                    19
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "listRest",
+                        "searchRest",
+                        "showRest",
+                        "mostViewed"
+                    ]
+                },
+                "name": "UnalNews",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Entidad que extiende de la clase News de tx_news",
+                    "mapToTable": "tx_news_domain_model_news",
+                    "parentClass": "\\GeorgRinger\\News\\Domain\\Model\\News",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "1247850816151"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Corresponde a la identificaci\u00f3n de la nota publicada brindada por la Oficina propietaria del contenido.",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "identificator",
+                            "propertyType": "String",
+                            "uid": "713266320493"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": true,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "Es el registro de visitas a cada una de las noticias",
+                            "relationName": "visitorCounter",
+                            "relationType": "zeroToMany",
+                            "relationWire": "[wired]",
+                            "renderType": "inline",
+                            "uid": "994507888998"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    74,
+                    171
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": true,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "selectorReport",
+                        "generateReport"
+                    ]
+                },
+                "name": "VisitCounter",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": false,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "778856787979"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Cantidad de visitas realizadas a la nota",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "quantity",
+                            "propertyType": "Integer",
+                            "uid": "895931931218"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Es el d\u00eda con el total de visitas a una noticia",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "fechaRegistro",
+                            "propertyType": "Date",
+                            "uid": "762457152251"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "VisitCounter => selectorReport, generateReport"
+                },
+                "description": "Se encarga de generar estad\u00edsticas de visita por las noticias registradas.",
+                "key": "unalnewsreporter",
+                "mainModule": "web",
+                "name": "Reporte de Estad\u00edsticas de UN News",
+                "tabLabel": "Reporte UN News"
+            }
+        ],
+        "description": "Esta extensi\u00f3n agrega algunos par\u00e1metros a la propia extensi\u00f3n de news para las parametrizaciones adicional de la Universidad Nacional de Colombia",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 9.5.0-9.5.99\nnews => 7.3.1-7.3.99",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "9.5.0-9.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "unal_news",
+        "name": "UNAL News extension",
+        "originalExtensionKey": "unal_news",
+        "originalVendorName": "UNAL",
+        "persons": [
+            {
+                "company": "Universidad Nacional de Colombia",
+                "email": "mediosdigitales@unal.edu.co",
+                "name": "Oficina de Medios DIgitales - Unimedios",
+                "role": "Product Manager"
+            },
+            {
+                "company": "Universidad Nacional de Colombia",
+                "email": "mlchavezm@unal.edu.co",
+                "name": "Martha Luc\u00eda Chaves Mu\u00f1oz",
+                "role": "Product Manager"
+            },
+            {
+                "company": "Universidad Nacional de Colombia",
+                "email": "chduenasba@unal.edu.co",
+                "name": "C\u00e9sar Hansy Due\u00f1as Barrag\u00e1n",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "UnalNews => listRest, searchRest, showRest,  mostViewed",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "description": "A trav\u00e9s de este plugin se pueden generar las vistas a trav\u00e9s de un API Rest de las noticias.",
+                "key": "vistasrest",
+                "name": "UNAL News vistas rest"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "VisitCounter => edit, update",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "description": "Agrega una visita al contador estad\u00edstico.",
+                "key": "visitorcounter",
+                "name": "Adicionar visita"
+            }
+        ],
+        "vendorName": "UNAL"
+    },
+    "wires": [
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_0",
+                "uid": "994507888998"
+            },
+            "tgt": {
+                "moduleId": 1,
+                "terminal": "SOURCES",
+                "uid": "778856787979"
+            }
+        }
+    ],
+    "log": {
+        "last_modified": "2020-02-16 10:12",
+        "extension_builder_version": "9.10.2",
+        "be_user": "C\u00e9sar Due\u00f1as (3)"
+    }
+}

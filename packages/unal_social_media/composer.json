@@ -1,0 +1,68 @@
+{
+    "name": "unal/unal-social-media",
+    "type": "typo3-cms-extension",
+    "description": "Directorio de redes sociales.",
+    "version": "1.0.0",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "UNAL",
+        "redes",
+        "sociales",
+        "directorio"
+    ],
+    "homepage": "https://unal.edu.co",
+    "support": {
+        "source": "",
+        "issues": "",
+        "docs": ""
+    },
+    "authors": [
+        {
+            "name": "Oficina de Medios Digitales",
+            "role": "Developer",
+            "homepage": "https://unal.edu.co",
+            "email": "mediosdigitales@unal.edu.co"
+        },
+        {
+            "name": "Martha Lucía Chaves Muñoz",
+            "role": "Product Manager",
+            "homepage": "https://unal.edu.co",
+            "email": "mlchavezm@unal.edu.co"
+        }
+    ],
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "typo3/cms-core": "^7.6 || ^8.5 || ^9.5 || ^10.4 || ^11.5",
+        "php": ">= 5.6 < 8.3"
+    },
+    "conflict": {
+    },
+    "suggest": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Unal\\UnalSocialMedia\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Unal\\UnalSocialMedia\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+    },
+    "config": {
+    },
+    "scripts": {
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "unal_social_media"
+        }
+    }
+}

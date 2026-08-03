@@ -1,0 +1,48 @@
+#mapid {
+    width: auto ;
+    
+}
+#c346, #c764{
+    display: none;
+}
+.leaflet-tooltip {
+    position: absolute;
+    padding: 6px; 
+    background-color:#195f6b !important; 
+    border: 1px solid rgb(61, 61, 61); 
+    border-radius: 3px;
+    color: #fff !important;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 40%); 
+}
+
+.leaflet-popup-content b:first-child{
+    font-size: 30px;
+    text-decoration: underline;
+}
+.leaflet-popup-content b{
+    color: #5427B8;
+}
+.leaflet-popup-content{
+    font-family: "Ancizar sans",Tahoma,Geneva,sans-serif;
+
+}
+
+.leaflet-bar a, .leaflet-bar a:hover {
+    background-color: white !important;
+    border-bottom: 1px solid #19593a !important;
+    color: #19593a !important;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border: 2px solid rgb(25 89 58) !important;
+}
+
+.leaflet-popup-close-button {
+    color: teal !important;
+}

@@ -1,0 +1,37 @@
+<label for="nombre">
+	<f:translate key="tx_unalsocialmediadirectory_domain_model_dependencia.nombre" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textfield property="nombre" /><br />
+
+<label for="descripcion">
+	<f:translate key="tx_unalsocialmediadirectory_domain_model_dependencia.descripcion" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textarea property="descripcion" rows="5" cols="40"/><br />
+
+<label for="sede">
+	<f:translate key="tx_unalsocialmediadirectory_domain_model_dependencia.sede" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.select property="sede" options="{sedes}" optionValueField="uid" optionLabelField="nombre"/><br />
+
+
+<label for="facultad">
+	<f:translate key="tx_unalsocialmediadirectory_domain_model_dependencia.facultad" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.select property="facultad" options="{0:'--Seleccione la sede--'}"/><br />
+
+
+
+<div class="cuentas-ctn">
+<h2>Cuentas oficiales</h2>
+<label for="cuentas">
+	<f:translate key="tx_unalsocialmediadirectory_domain_model_dependencia.cuentas" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.select property="facultad" options="{0:'--Seleccione la sede--'}"/><br />
+
+
+</div>
+
+<div class="otrascuentas-ctn">
+<h2>Otras cuentas</h2>
+
+</div>

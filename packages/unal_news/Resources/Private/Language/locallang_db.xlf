@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-16T22:12:10Z" product-name="unal_news">
+		<header/>
+		<body>
+			<trans-unit id="tx_unalnews_domain_model_unalnews">
+				<source>Unal News</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_unalnews.identificator">
+				<source>Identificator</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_unalnews.visitor_counter">
+				<source>Visitor Counter</source>
+			</trans-unit>
+			<trans-unit id="tx_news_domain_model_news.tx_extbase_type.Tx_UnalNews_UnalNews">
+				<source>UNAL News extension UnalNews</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_visitcounter">
+				<source>Visit Counter</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_visitcounter.quantity">
+				<source>Quantity</source>
+			</trans-unit>
+			<trans-unit id="tx_unalnews_domain_model_visitcounter.fecha_registro">
+				<source>Fecha Registro</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_news_vistasrest.name">
+				<source>UNAL News vistas rest</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_news_vistasrest.description">
+				<source>A través de este plugin se pueden generar las vistas a través de un API Rest de las noticias.</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_news_visitorcounter.name">
+				<source>Adicionar visita</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_news_visitorcounter.description">
+				<source>Agrega una visita al contador estadístico.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

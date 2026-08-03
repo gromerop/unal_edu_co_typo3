@@ -1,0 +1,72 @@
+{
+    "name": "unal/unal-skin-clacso2025",
+    "type": "typo3-cms-extension",
+    "description": "Plantilla para el micrositio de la UNAL para la X Conferencia Latinoamericana y Caribeña de Ciencias Sociales - 2025",
+    "version": "1.0.0",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "UNAL",
+        "CLACSO",
+        "CLACSO2025",
+        "plantilla"
+    ],
+    "homepage": "https://unal.edu.co",
+    "support": {
+        "source": "",
+        "issues": "",
+        "docs": ""
+    },
+    "authors": [
+        {
+            "name": "Oficina de Medios Digitales",
+            "role": "Developer",
+            "homepage": "https://unal.edu.co",
+            "email": "mediosdigitales@unal.edu.co"
+        },
+        {
+            "name": "Martha Lucía Chaves Muñoz",
+            "role": "Product Manager",
+            "homepage": "https://unal.edu.co",
+            "email": "mlchavezm@unal.edu.co"
+        },
+        {
+            "name": "Giovanni Romero Pérez",
+            "role": "Developer",
+            "homepage": "https://unal.edu.co",
+            "email": "gromerop@unal.edu.co"
+        }
+    ],
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "typo3/cms-core": "^7.6 || ^8.5 || ^9.5 || ^10.4 || ^11.5",
+        "php": ">= 5.6 < 8.3"
+    },
+    "conflict": {
+    },
+    "suggest": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "replace": {
+    },
+    "config": {
+    },
+    "scripts": {
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "unal_skin_clacso2025"
+        }
+    }
+}

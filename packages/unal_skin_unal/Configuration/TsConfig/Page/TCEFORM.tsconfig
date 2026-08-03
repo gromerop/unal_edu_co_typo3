@@ -1,0 +1,29 @@
+#
+# TCEFORM
+#
+TCEFORM {
+    pages {
+        layout {
+            addItems {
+                4 = Image -> left
+                5 = Image -> right
+                6 = Profiles
+            }
+        }
+    }
+    tt_content {
+        layout {
+            addItems {
+                4 = Random image
+
+            }
+        }
+        tx_gridelements_backend_layout {
+            rowclass {
+                addItems {
+                    111 = test
+                }
+            }
+        }
+    }
+}

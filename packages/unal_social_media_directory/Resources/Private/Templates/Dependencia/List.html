@@ -1,0 +1,45 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:flashMessages />
+<div class="unsmd-item-list">
+<f:for each="{dependencias}" as="dependencia">
+  <div class="unsmd-item sede-{dependencia.sede.uid} facultad-{dependencia.facultad.uid}">
+    <h3>{dependencia.nombre}</h3>
+    <f:if condition="{dependencia.descripcion}">
+    <p>{dependencia.descripcion}</p></f:if>
+    <f:render partial="Common/networksList" arguments="{accounts:dependencia.cuentas}"></f:render>
+    <f:if condition="{dependencia.otrasCuentas}">
+      <f:render partial="Common/othersNetworksList" arguments="{accounts:dependencia.otrasCuentas, dep:dependencia.nombre}"></f:render>
+    </f:if>
+  </div>
+</f:for>
+</div>
+<style>
+.applyFilters .unsmd-item{display:none}
+.applyFilters .no-hidden{display:block}
+.tx-unal-social-media-directory .otherSocialItems{display:none;text-align:left;margin:10px 10px 0}
+.tx-unal-social-media-directory .otherSocialItems-tgl{cursor:pointer}
+.tx-unal-social-media-directory .otherSocialItems span{line-height:32px}
+.tx-unal-social-media-directory .otherSocialItems .socialItem{width:100%}
+.tx-unal-social-media-directory .otherSocialItems .socialItem img{vertical-align: top}
+</style>
+<script>
+jQuery(document).ready(function($){
+  $('.otherSocialItems-tgl').click(function(){
+    $(this).next().toggle()
+  })
+})
+</script>
+</f:section>

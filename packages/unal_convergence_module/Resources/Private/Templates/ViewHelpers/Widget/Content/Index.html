@@ -1,0 +1,7 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{template} && {content}">
+    <f:for each="{template}" as="row" iteration="iterator">
+        <f:render partial="ViewHelpers/Widget/Row" arguments="{row: row, content:content}" />
+    </f:for>
+</f:if>

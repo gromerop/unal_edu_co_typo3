@@ -1,0 +1,174 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <f:layout name="General" />
+    <!--
+            =====================
+                    unal_skin_unal
+                    Templates/News/List.html
+    -->
+
+    <f:section name="content">
+        <!--TYPO3SEARCH_end-->
+        <f:if condition="{news}">
+            <f:then>
+                <div class="news-list-view" id="news-container-{contentObjectData.uid}">
+                    <f:if condition="{settings.hidePagination}">
+                        <f:then>
+                            <f:switch expression="{settings.templateLayout}">
+                                <f:case value="1">
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/BackgroundHome" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="101">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/AgenciaItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="102">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/PeriodicoItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="103">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/RadioItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="104">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/TelevisionItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="105">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/OrgulloItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="201">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/COP16NewsItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="202">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:defaultCase>
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:defaultCase>
+                            </f:switch>
+                        </f:then>
+                        <f:else>
+                            <f:switch expression="{settings.templateLayout}">
+                                <f:case value="1">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/BackgroundHome" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="2">
+                                    <div class="row">
+                                        <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                            <f:if condition="{newsItem.mediaPreviews.0.originalResource.type} != 4">
+                                                <div class="col-md-4">
+                                                    <f:render partial="List/ImageHistory" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                </div>
+                                            </f:if>
+                                        </f:for>
+                                    </div>
+                                </f:case>
+                                <f:case value="101">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/AgenciaItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="102">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/PeriodicoItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="103">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/RadioItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="104">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/TelevisionItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="105">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/OrgulloItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="201">
+                                    <div class="container cop16-historico">
+                                        <div class="row">
+                                            <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                    <f:render partial="List/COP16NewsItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                </div>
+                                            </f:for>
+                                        </div>
+                                    </div>
+                                </f:case>
+                                <f:case value="202">
+                                    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-header">
+                                                <f:image src="EXT:unal_skin_cop16/Resources/Public/images/txCOP16.svg" class="d-print-none img-fluid" alt="#UNAL en la COP16" additionalAttributes="{role:'img'}"/>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body"></div>
+                                            <div class="modal-footer"></div>
+                                        </div>
+                                    </div>
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/EventItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="203">
+                                    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-header">
+                                                <f:image src="EXT:unal_skin_cop16/Resources/Public/images/txCOP16.svg" class="d-print-none img-fluid" alt="#UNAL en la COP16" additionalAttributes="{role:'img'}"/>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body"></div>
+                                            <div class="modal-footer"></div>
+                                        </div>
+                                    </div>
+                                    <div class="container cop16-historico">
+                                        <div class="row">
+                                            <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                    <f:render partial="List/COP16EventHistItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                </div>
+                                            </f:for>
+                                        </div>
+                                    </div>
+                                </f:case>
+                                <f:defaultCase>
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:defaultCase>
+                            </f:switch>
+                        </f:else>
+                    </f:if>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="no-news-found">
+                    <f:translate key="list_nonewsfound" />
+                </div>
+            </f:else>
+        </f:if>
+        <!--TYPO3SEARCH_begin-->
+    </f:section>
+</html>

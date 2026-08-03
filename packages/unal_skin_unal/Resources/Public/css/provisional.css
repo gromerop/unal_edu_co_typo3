@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.agenciai {background: #fff !important;}
+.agenciai .logo {background: #ea753f !important;}
+.agenciai .texto .title a{color: #ea753f;} 
+.agenciad .texto .title a{color: #ea753f;} 
+#player iframe {margin-top: 84px;}
+header .firstMenu .language-dropdown li {margin: 5px 0;}
+
+.orgullo {background: #387ab4 !important;}
+.orgullo .logo {background: #1661a3 !important;}
+
+.podcast {background: #3f88c5 !important;}
+.podcast.logo {background: #296596 !important;}
+
+
+/*.periodico {background: rgb(109, 0, 36) !important;}*/
+.periodico .logo {background: #0000001e}
+
+/*ultimos cambios*/
+
+.tx-unal-convergence-module .imagenYlogo .title {font-size: 1.6em;}
+.tx-unal-convergence-module .imagenYlogo .row {padding: 15px 30px;}
+.tx-unal-convergence-module .multaTextaLogA .title {font-size: 1.6em;}
+.tx-unal-convergence-module .contFechaLogo .fechaLogo .col-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.tx-unal-convergence-module .contFechaLogo .fechaLogo .col-9 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+.tx-unal-convergence-module .contFechaLogo .fechaLogo {
+  background: #0000001e;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+/*.teaser p{height: 72px;  
+    
+    }*/
+
+@media(max-width: 1200px){
+    .tx-unal-convergence-module .imagenYlogo .title {font-size: 1.2em;}
+    .tx-unal-convergence-module .multaTextaLogA .title {font-size: 1.2em;}
+}
+
+.tx-unal-convergence-module{ font-family: 'Ubuntu', sans-serif !important;}
+.tx-unal-convergence-module .title {font-weight: bold;}
+
+.tx-unal-convergence-module .multaTextaLogA .row {padding: 40px;}
+.tx-unal-convergence-module .contFechaLogo .row {padding: 40px;}
+.tx-unal-convergence-module .multiTextdLogo .row .texto .teaser {padding: 00px 40px 40px 40px;}
+.tx-unal-convergence-module .multiTextdLogo .row .texto .titulo {padding: 40px 40px 0px 40px;}
+.tx-unal-convergence-module .imagenYlogo .row { padding: 40px;}
+
+.tx-unal-convergence-module .row .logo {padding: 15px !important;}
+.tx-unal-convergence-module .row .fechaLogo {padding: 15px !important;}
+
+@media(max-width: 1200px){
+  .tx-unal-convergence-module .imagenYlogo .title {font-size: 1.2em;}
+  .tx-unal-convergence-module .multaTextaLogA .title {font-size: 1.2em;}
+  .tx-unal-convergence-module .contFechaLogo .circular-texto .titulo a {font-size: 0.8em;
+    line-height: 1.2em;}
+  .tx-unal-convergence-module .multaTextaLogA .row {padding: 30px;}
+.tx-unal-convergence-module .contFechaLogo .row {padding: 30px;}
+}
+
+
+.tx-unal-convergence-module .agencia{ background-image: linear-gradient(
+    230deg,
+    hsl(19deg 80% 58%) 0%,
+    hsl(19deg 79% 60%) 46%,
+    hsl(19deg 78% 62%) 65%,
+    hsl(19deg 76% 64%) 77%,
+    hsl(19deg 75% 66%) 85%,
+    hsl(19deg 72% 67%) 90%,
+    hsl(19deg 69% 69%) 94%,
+    hsl(19deg 66% 71%) 97%,
+    hsl(19deg 61% 72%) 99%,
+    hsl(19deg 56% 74%) 100%
+  );}
+.tx-unal-convergence-module .radio {background-image: linear-gradient(
+    230deg,
+    hsl(229deg 62% 18%) 0%,
+    hsl(230deg 53% 21%) 46%,
+    hsl(231deg 47% 23%) 65%,
+    hsl(231deg 42% 26%) 77%,
+    hsl(230deg 39% 29%) 85%,
+    hsl(230deg 36% 32%) 90%,
+    hsl(230deg 33% 35%) 94%,
+    hsl(229deg 31% 38%) 97%,
+    hsl(229deg 30% 41%) 99%,
+    hsl(228deg 28% 44%) 100%
+  );}
+.tx-unal-convergence-module .periodico {
+    background-image: linear-gradient(
+  230deg,
+  hsl(340deg 100% 21%) 0%,
+  hsl(340deg 100% 23%) 46%,
+  hsl(340deg 100% 25%) 65%,
+  hsl(340deg 100% 27%) 77%,
+  hsl(340deg 100% 29%) 85%,
+  hsl(340deg 100% 31%) 90%,
+  hsl(340deg 100% 33%) 94%,
+  hsl(340deg 100% 36%) 97%,
+  hsl(340deg 100% 38%) 99%,
+  hsl(340deg 100% 40%) 100%
+);}
+
+
+
+
+

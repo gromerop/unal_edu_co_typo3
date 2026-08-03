@@ -1,0 +1,52 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <!--
+            =====================
+                    unal_skin_unal
+                    Partials/List/AgenciaItem.html
+    -->
+    <div class="article article-agencia articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} card" itemscope="itemscope" itemtype="http://schema.org/Article">
+        <n:excludeDisplayedNews newsItem="{newsItem}"/>
+
+        <f:if condition="{newsItem.mediaPreviews}">
+            <!-- media preview element -->
+            <f:then>
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                    <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+                        <f:if condition="{mediaElement.originalResource.type} == 2">
+                            <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" class="miniatura" />
+                        </f:if>
+                        <f:if condition="{mediaElement.originalResource.type} == 4">
+                            <f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+                        </f:if>
+                        <f:if condition="{mediaElement.originalResource.type} == 5">
+                        <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                        </f:if>
+                    </f:alias>
+                </n:link>
+            </f:then>
+            <f:else>
+                <f:if condition="{settings.displayDummyIfNoMedia}">
+                    <div class="news-img-wrap">
+                        <span class="no-media-element">
+                            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                            <f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                            </n:link>
+                        </span>
+                    </div>
+                </f:if>
+            </f:else>
+        </f:if>
+
+        <!-- title -->
+        <div class="header news-header">
+            <h3>
+                    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                        <span class="news-header-span" itemprop="headline">{newsItem.title}</span>
+                    </n:link>
+            </h3>
+        </div>
+        <div class="mt-auto text-end"><a href="https://agenciadenoticias.unal.edu.co" target="_blank"><img class="unal-media-link-img d-print-none img-fluid" alt="Agencia UNAL" src="/typo3conf/ext/unal_skin_unal/Resources/Public/Images/logo-agencia-unal.svg" role="img"></a></div>
+    </div>
+</html>

@@ -1,0 +1,125 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <f:layout name="General" />
+    <!--
+            =====================
+                    unal_skin_unal
+                    Templates/News/List.html
+    -->
+
+    <f:section name="content">
+        <!--TYPO3SEARCH_end-->
+        <f:if condition="{news}">
+            <f:then>
+                <div class="news-list-view" id="news-container-{contentObjectData.uid}">
+                    <f:if condition="{settings.hidePagination}">
+                        <f:then>
+                            <f:switch expression="{settings.templateLayout}">
+                                <f:case value="1">
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/BackgroundHome" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="3">
+                                    <f:render partial="List/SliderView" arguments="{news: news,settings:settings,iterator:iterator}" />
+                                </f:case>
+                                <f:case value="101">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/AgenciaItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="102">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/PeriodicoItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="103">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/RadioItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="104">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/TelevisionItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="105">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/OrgulloItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:defaultCase>
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:defaultCase>
+                            </f:switch>
+                        </f:then>
+                        <f:else>
+                            <f:switch expression="{settings.templateLayout}">
+                                <f:case value="1">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/BackgroundHome" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="2">
+                                    <div class="row">
+                                        <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                            <f:if condition="{newsItem.mediaPreviews.0.originalResource.type} != 4">
+                                                <div class="col-md-4">
+                                                    <f:render partial="List/ImageHistory" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                                </div>
+                                            </f:if>
+                                        </f:for>
+                                    </div>
+                                </f:case>
+                                <f:case value="3">
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/SliderView" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="101">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/AgenciaItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="102">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/PeriodicoItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="103">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/RadioItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="104">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/TelevisionItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:case value="105">
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/OrgulloItem" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:case>
+                                <f:defaultCase>
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                                </f:defaultCase>
+                            </f:switch>
+                        </f:else>
+                    </f:if>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="no-news-found">
+                    <f:translate key="list_nonewsfound" />
+                </div>
+            </f:else>
+        </f:if>
+        <!--TYPO3SEARCH_begin-->
+    </f:section>
+</html>

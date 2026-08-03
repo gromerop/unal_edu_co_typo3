@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+   <head>
+      <!--Favicon-->
+      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+      <!-- meta tags -->
+      <meta charset="utf-8">
+      <meta name="revisit-after" content="1 hour">
+      <meta name="distribution" content="all">
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=yes">
+      <meta name="expires" content="1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="all">
+      <meta http-equiv="cache-control" content="no-cache" />
+      <!-- CSS -->
+      
+      <title>Universidad Nacional de Colombia</title>
+   </head>
+   <body>
+      <!-- Panel de accesibilidad -->
+      <div class="tx-unal-accesibilidad d-print-none">
+         <!-- defaultpanel -->
+         <div
+            id="panel-accesibilidad"
+            style="display:none"
+            class="panel-content container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="row">
+                     <div class="col-md-3 ">
+                        <h4>Tamaño letra</h4>
+                        <button
+                           class="boton-panel"
+                           id="letra-disminuir"
+                           onclick="cambiarTamanioLetra('-')"
+                           type="submit"
+                           name="Disminuir letra"
+                           value="">A<sup>-</sup>
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="letra-aumentar"
+                           onclick="cambiarTamanioLetra('+')"
+                           type="submit"
+                           name="Aumentar Letra"
+                           value="">
+                        A<sup>+</sup>
+                        </button>
+                        <input
+                           disabled="1"
+                           class="letras-porcentaje"
+                           id="letter-percent"
+                           type="text"
+                           name="Porcentaje de letra"
+                           value="100%">
+                     </div>
+                     <div class="col-md-3 ">
+                        <h4>Cambiar Contrastes</h4>
+                        <button
+                           class="boton-panel"
+                           id="contraste-1"
+                           onclick="cambiarContrastes(1)"
+                           type="submit"
+                           name="Cambiar contraste 1"
+                           value="">1
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="contraste-2"
+                           onclick="cambiarContrastes(2)"
+                           type="submit"
+                           name="Cambiar contraste 2"
+                           value="">2
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="contrate-3"
+                           onclick="cambiarContrastes(3)"
+                           type="submit"
+                           name="Cambiar contraste 3"
+                           value="">3
+                        </button>
+                     </div>
+                     <div class="col-md-3 ">
+                        <h4>Invertir colores</h4>
+                        <button
+                           class="boton-panel"
+                           id="inversor"
+                           onclick="invertirColores()"
+                           type="submit"
+                           name="Invertir colores"
+                           value="">Aplicar
+                        </button>
+                     </div>
+                     <div class="col-md-3">
+                        <h4>Restablecer ajustes</h4>
+                        <button
+                           class="boton-panel"
+                           id="defaul-config"
+                           onclick="defaultConfig()"
+                           type="submit"
+                           name="Restablecer ajustes"
+                           value="">
+                        Aplicar
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="pestania-accesibilidad" class="">Panel de Accesibilidad</div>
+      </div>
+      
+      <div id="main" class="hsidebar">
+         <div class="openbtn" id="openbtnId" onclick="toggleNav() "></div>
+      </div>
+      <main class="detalle">
+         <div class="breadcrumb-class d-print-none">Está en:<a href="index.html" target="_self" title="Inicio">Inicio</a>/<span>Item menu ejemplo</span></div>
+         &nbsp;
+      </main>
+      
+   </body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2021-04-05T10:12:52Z" product-name="unal_skin_buscador_unimedios">
+		<header/>
+		<body>
+			<trans-unit id="extmng.detailNewsPageUid" xml:space="preserve">
+				<source>Detail pageUid of news.:Default value is 1</source>
+			</trans-unit>
+			<trans-unit id="extmng.elasticDomain" xml:space="preserve">
+				<source>Elasticsearch Domain.:Without slash at the end of the domain. (e.g.: http://168.176.236.22)</source>
+			</trans-unit>
+			<trans-unit id="extmng.elasticPort" xml:space="preserve">
+				<source>Elasticsearch Port</source>
+			</trans-unit>
+			<trans-unit id="extmng.elasticUser" xml:space="preserve">
+				<source>Elasticsearch User</source>
+			</trans-unit>
+			<trans-unit id="extmng.elasticPassword" xml:space="preserve">
+				<source>Elasticsearch Password</source>
+			</trans-unit>
+			
+			<trans-unit id="extmng.newIndex" xml:space="preserve">
+				<source>Elasticsearch 'New' Index. (*):*Obligatory field. (e.g.: agencia_unal)</source>
+			</trans-unit>
+			<trans-unit id="extmng.imageIndex" xml:space="preserve">
+				<source>Elasticsearch 'Image' Index.:Default value is: image_unal</source>
+			</trans-unit>
+			<trans-unit id="extmng.videoIndex" xml:space="preserve">
+				<source>Elasticsearch 'Video' Index.:Default value is: video_unal</source>
+			</trans-unit>
+			<trans-unit id="extmng.audioIndex" xml:space="preserve">
+				<source>Elasticsearch 'Audio' Index.:Default value is: audio_unal</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

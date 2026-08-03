@@ -1,0 +1,49 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for SolicitudDependencia</h1>
+
+<f:flashMessages />
+
+<table  class="tx_unalbase" >
+	<tr>
+		<th><f:translate key="tx_unalbase_domain_model_solicituddependencia.solicitante" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_solicituddependencia.nombre_dependencia" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_solicituddependencia.id_superior" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_solicituddependencia.justificacion" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_solicituddependencia.archivo" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_solicituddependencia.fecha_respuesta" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_solicituddependencia.id_dependencia_creada" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{solicitudDependencias}" as="solicitudDependencia">
+		<tr>
+			<td><f:link.action action="show" arguments="{solicitudDependencia : solicitudDependencia}"> {solicitudDependencia.solicitante}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{solicitudDependencia : solicitudDependencia}"> {solicitudDependencia.nombreDependencia}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{solicitudDependencia : solicitudDependencia}"> {solicitudDependencia.idSuperior}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{solicitudDependencia : solicitudDependencia}"> {solicitudDependencia.justificacion}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{solicitudDependencia : solicitudDependencia}"> {solicitudDependencia.archivo.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{solicitudDependencia : solicitudDependencia}"> {solicitudDependencia.fechaRespuesta -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{solicitudDependencia : solicitudDependencia}"> {solicitudDependencia.idDependenciaCreada}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{solicitudDependencia : solicitudDependencia}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{solicitudDependencia : solicitudDependencia}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New SolicitudDependencia</f:link.action>
+</f:section>

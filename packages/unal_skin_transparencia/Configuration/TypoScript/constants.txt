@@ -1,0 +1,41 @@
+tx_unalskindefaultbs3 {
+	filepaths {
+		pri = EXT:unal_skin_default/Resources/Private
+		css  = EXT:unal_skin_default/Resources/Public/css
+		js   = EXT:unal_skin_default/Resources/Public/js
+		img  = EXT:unal_skin_default/Resources/Public/images
+	}
+	parameters {
+		profiles {
+			aspirantes = http://aspirantes.unal.edu.co
+			estudiantes = http://estudiantes.unal.edu.co
+			egresados = http://egresados.unal.edu.co
+			docentes = http://docentes.unal.edu.co
+			administrativos = http://administrativos.unal.edu.co
+		}
+		socialLinks {
+			facebook = https://www.facebook.com/UNColombia
+			twitter = https://twitter.com/UNColombia
+			rss = http://agenciadenoticias.unal.edu.co/nc/sus/type/rss2.html
+			youtube = https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg
+		}
+		titleComplement =
+		mainMenuUid = 59
+		serviceMenuUid = 61
+		sitemapLinkUid = 1
+		faqLinkUid = 1
+		contactLinkUid = 1
+		contact {
+			address = Carrera 45 # 26-85
+			building = Edif. Uriel Gutiérrez
+			city = Bogotá D.C.,  Colombia
+			phone = (+57 1) 316 5000
+			emailAccount = mediosdigitales
+		}
+		aboutLinkUri = unal.edu.co/acerca-de-este-sitio-web.html
+	}
+}
+
+breadcrumbPosition=Está en:
+currentLang = ES
+

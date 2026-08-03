@@ -1,0 +1,48 @@
+#####################################
+#### UNAL_SKIN_COP16 CONSTANTS   ####
+#####################################
+tx_unalskincop16 {
+	filepaths{
+		pri  = EXT:unal_skin_cop16/Resources/Private
+		css  = EXT:unal_skin_cop16/Resources/Public/css
+		js   = EXT:unal_skin_cop16/Resources/Public/js
+		img  = EXT:unal_skin_cop16/Resources/Public/images
+	}
+}
+
+tx_unalskindefault {
+	parameters {
+		profiles {
+			aspirantes = //aspirantes.unal.edu.co/
+			estudiantes = //estudiantes.unal.edu.co/
+			egresados = http://egresados.unal.edu.co
+			docentes = //docentes.unal.edu.co/
+			administrativos = //administrativos.unal.edu.co/
+		}
+		socialLinks {
+			facebook = https://www.facebook.com/UNALOficial
+			twitter = https://twitter.com/UNALOficial
+           		instagram = https://www.instagram.com/unaloficial/?hl=es-la
+			youtube = https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg
+		}
+		showCampusMenu = 0
+		titleComplement =
+		mainMenuUid = 5
+		serviceMenuUid = 61
+		sitemapLinkUid = 76
+		faqLinkUid = 77
+		contactLinkUid = 79
+		glosaryLinkUid = 80
+		aboutLinkUid = 81
+	      	onlineattLinkUid = 78
+	      	notinboxLinkUid = 65
+		contact {
+			address = Carrera 45 # 26-85
+			building = Edif. Uriel Gutiérrez
+			city = Bogotá D.C.,  Colombia
+			phone = (+57 601) 316 5000
+			emailAccount = conmutador_bog
+		}
+		aboutLinkUri = unal.edu.co/acerca-de-este-sitio-web.html
+	}
+}

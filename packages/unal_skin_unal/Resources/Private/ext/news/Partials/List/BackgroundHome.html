@@ -1,0 +1,105 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:usu="http://typo3.org/ns/UNAL/UnalSkinunal/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+    <!--
+            =====================
+            Partials/List/BackgroundHome.html
+    -->
+    <f:switch expression="{newsItem.categories.0.slug}">
+        <f:case value="background-home">
+            <f:if condition="{newsItem.internalurl}">
+                <f:then>
+                    <div class="plyr__video-embed player" playsinline controls  id="player">
+                        <iframe 
+                            src="{newsItem.internalurl}"
+                            allowfullscreen
+                            allowtransparency
+                            allow="autoplay"
+                            ></iframe>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+                        <f:switch expression="{usu:fileExtension(file: '{mediaElement.originalResource.publicUrl}')}">
+                            <f:case value="mp4">
+                                <f:alias map="{videoPoster: newsItem.mediaPreviews.1}">
+                                    <div class="news-video-wrap">
+                                        <video class="player" id="video-player" playsinline controls muted autoplay loop data-poster="{videoPoster.originalResource.publicUrl}">
+                                            <source src="{mediaElement.originalResource.publicUrl}" type="video/mp4" />					  
+                                        </video>
+                                        <div class="background-text">
+                                            <h2><f:format.raw>{newsItem.title}</f:format.raw></h2>
+                                            <f:format.raw>{newsItem.bodytext}</f:format.raw>
+                                        </div>
+                                        <script>
+                                            var player = new Plyr('#video-player');
+                                        </script>
+                                    </div>
+                                </f:alias>
+                            </f:case>
+                            <f:case value="mp3">
+                                <div class="news-audio-wrap">
+                                    <audio class="player" controls>
+                                        <source src="{newsItem.mediaPreviews.0.originalResource.publicUrl}" type="audio/mp3" />
+                                    </audio>
+                                </div>
+                            </f:case>
+                            <f:defaultCase>
+                                <div class="news-img-wrap">
+                                    <!-- TYPE: {newsItem.type} -->
+                                    <f:variable name="category_type" value="{newsItem.categories -> v:iterator.extract(key: 'slug')}" />
+                                    <f:if condition="{newsItem.type} == 2">
+                                        <f:then>
+                                            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                                                <f:if condition="{v:iterator.indexOf(haystack: category_type, needle: 'sin-titulo' , considerKeys: 'TRUE')} < 0">
+                                                    <f:then>
+                                                        <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                                                        <div class="background-text">
+                                                            <h2><f:format.raw>{newsItem.title}</f:format.raw></h2>
+                                                            <f:format.raw>{newsItem.bodytext}</f:format.raw>
+                                                        </div>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                                                    </f:else>
+                                                </f:if>
+                                            </n:link>
+                                        </f:then>
+                                        <f:else>
+                                            <f:if condition="{v:iterator.indexOf(haystack: category_type, needle: 'sin-titulo' , considerKeys: 'TRUE')} < 0">
+                                                <f:then>
+                                                    <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                                                    <div class="background-text">
+                                                        <h2><f:format.raw>{newsItem.title}</f:format.raw></h2>
+                                                        <f:format.raw>{newsItem.bodytext}</f:format.raw>
+                                                    </div>
+                                                </f:then>
+                                                <f:else>
+                                                    <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                                                </f:else>
+                                            </f:if>
+                                        </f:else>
+                                    </f:if>
+                                </div>
+                            </f:defaultCase>
+                        </f:switch>
+                    </f:alias>
+                </f:else>
+            </f:if>
+        </f:case>
+        <f:case value="Banner">
+            <div class="bg-banner">
+                <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+                    <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+                </f:alias>
+            </div>
+        </f:case>
+        <f:defaultCase>
+            <f:for each="{news}" as="newsItem" iteration="iterator">
+                <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+            </f:for>
+        </f:defaultCase>
+    </f:switch>
+</html>

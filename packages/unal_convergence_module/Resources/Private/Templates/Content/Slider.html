@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<!--
+	=====================
+		Templates/Content/Slider.html
+-->
+<f:section name="content">
+
+	<f:be.pageRenderer 
+		includeJsFiles="{0:'{f:uri.resource(path: \'JavaScript/Src/main.js?1234567\')}'}" 
+
+	></f:be.pageRenderer>
+ <div class="slider-content-cvng" data-arrows="{settings.slider.arrows}" data-dots="{settings.slider.dots}" data-slidestoshow="{settings.slider.slidesToShow}" data-slidestoscroll="{settings.slider.slidesToScroll}">
+	<f:if condition="{results}">
+		<f:for each="{results}" as="content" iteration="iterator">
+		
+			<div class="slider-item">
+
+				<div class="cover">
+					<f:if condition="{content.type}">
+						<div class="logo-{content.type}">
+							<img src="//168.176.236.22/buscador/typo3conf/ext/unal_skin_buscador/Resources/Public/images/{content.type}_blanco.svg" alt="{content.type->f:format.stripTags()}">
+						</div>
+					</f:if>
+					<f:if condition="{content.url}">
+						<f:then>
+							<f:link.external uri="{content.url}" title="{content.title->f:format.stripTags()}" target="_blank">
+								<img src="{content.imagen}" alt="{content.title->f:format.stripTags()}" title="{content.title->f:format.stripTags()}">
+							</f:link.external>
+						</f:then>
+						<f:else>
+							<img src="{content.imagen}" alt="{content.title->f:format.stripTags()}" title="{content.title->f:format.stripTags()}">
+						</f:else>
+					</f:if>
+
+					<div class="wraper">
+						<f:if condition="{content.url}">
+							<f:then>
+								<f:link.external uri="{content.url}" title="{content.title->f:format.stripTags()}" target="_blank">
+									<h3>{content.title}</h3>
+								</f:link.external>
+							</f:then>
+							<f:else>						
+								<h3>{content.title}</h3> 
+							</f:else>
+						</f:if>
+						<div class="content">
+							<f:if condition="{content.date.current}">
+								<f:then><span class="fecha"><f:format.date format="%B %d de %Y">{content.date.current}</f:format.date></span></f:then>
+								<f:else><span class="fecha"><f:format.date format="%B %d de %Y">{content.date}</f:format.date></span></f:else>
+							</f:if>
+							<f:if condition="{content.campus}">
+								<f:then><span class="sede"> | {content.campus}</span></f:then>
+								<f:else>
+									<f:if condition="{content.categories.sede.0.name}">
+										<span class="sede"> | {content.categories.sede.0.name}</span>
+									</f:if>
+								</f:else>
+							</f:if>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</f:for>
+	</f:if>
+</div>
+
+</f:section>
+
+</html>

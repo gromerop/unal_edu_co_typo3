@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-04-23T10:22:00Z" product-name="unal_skin_default">
+		<header/>
+		<body>
+			<trans-unit id="tx_unal_skin_default_legalregime">
+				<source>Legal regime</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_humantalent">
+				<source>Human talent</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_booking">
+				<source>Booking</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_jobofferings">
+				<source>Job offerings</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_accountability">
+				<source>Accountability</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_teachingcontest">
+				<source>Teaching contest</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_virtualpayment">
+				<source>Virtual payment</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_internalcontrolling">
+				<source>Internal controlling</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_quality">
+				<source>Quality</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_notificationsmailbox">
+				<source>Notification's mailbox</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_institutionalemail">
+				<source>Institutional E-mail</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_sitemap">
+				<source>Sitemap</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_socialnetworks">
+				<source>Social networks</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_faq">
+				<source>FAQ</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_claimsandsuggestions">
+				<source>Claims and suggestions</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_onlineattentionservices">
+				<source>Online attention services</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_survey">
+				<source>Survey</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_contact">
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_statistics">
+				<source>Statistics</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_glossary">
+				<source>Glossary</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_webpagecontact">
+				<source>Web page contact</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_somerightsreserved">
+				<source>Some rights reserved</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_webmastercontact">
+				<source>Contact the webmaster</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_aboutthiswebsite">
+				<source>About this website</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_skin_default_lastupdate">
+				<source>Last update</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

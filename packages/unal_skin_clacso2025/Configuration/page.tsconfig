@@ -1,0 +1,5 @@
+# Page TSConfig
+tx_news.templateLayouts {
+        301 = CLACSO 2025 - Listado de noticias
+        302 = CLACSO 2025 - Listado de eventos
+}

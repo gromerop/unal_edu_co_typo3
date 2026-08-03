@@ -1,0 +1,32 @@
+######################
+#### DEPENDENCIES ####
+######################
+
+##############
+#### PAGE ####
+##############
+# Se crea y se configura el sitio
+page = PAGE
+page {
+    includeCSS {
+        clacso2025_frontend = EXT:unal_skin_clacso2025/Resources/Public/css/frontend.css
+    }
+
+    includeJS {
+        #clacso2025_frontend = EXT:unal_skin_clacso2025/Resources/Public/js/clacso2025-frontend.js
+    }
+}
+
+plugin.tx_news {
+	view {
+		templateRootPaths {
+			2 = EXT:unal_skin_clacso2025/Resources/Private/ext/news/Templates/
+		}
+		partialRootPaths {
+			2 = EXT:unal_skin_clacso2025/Resources/Private/ext/news/Partials/
+		}
+		layoutRootPaths {
+			2 = EXT:unal_skin_clacso2025/Resources/Private/ext/news/Layouts/
+		}
+	}
+}

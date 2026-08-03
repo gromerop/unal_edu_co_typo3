@@ -1,0 +1,8 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Menu/services.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Menu/main.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Menu/breadcrumb.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Page/system.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Page/page.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Page/config.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Language/config.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Page/template.ts">

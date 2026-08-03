@@ -1,0 +1,131 @@
+<f:comment>
+	<div id="servicesUnimediosResponsiveContent" class="btn-group d-block d-sm-none d-md-none d-lg-none d-print-none">
+		<div class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown" id="unimediosOpenMenuServicios" data-target="#servicesUnimedios">Unimedios
+			<span class="caret"></span>
+		</div>
+	</div>
+</f:comment>
+
+<!-- <div id="servicesUnimedios">
+	<div class="indicator d-none d-md-block"></div>
+	<ul class="dropdown-menu d-none d-md-block" id="serviciosUnimedios">
+		<f:if condition="{unalum_agencia_title} && {unalum_agencia_url}">
+			<li><a href="{unalum_agencia_url}" target="_blank" title="{unalum_agencia_title}">
+					<f:if condition="{unalum_agencia_image}">
+						<img src="{unalum_agencia_image}" alt="{unalum_agencia_title}">
+					</f:if>
+						{unalum_agencia_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_periodico_title} && {unalum_periodico_url}">
+			<li><a href="{unalum_periodico_url}" target="_blank" title="{unalum_periodico_title}">
+				<f:if condition="{unalum_periodico_image}">
+					<img src="{unalum_periodico_image}" alt="{unalum_periodico_title}">
+				</f:if>
+						{unalum_periodico_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_television_title} && {unalum_television_url}">
+			<li><a href="{unalum_television_url}" target="_blank" title="{unalum_television_title}">
+				<f:if condition="{unalum_television_image}">
+					<img src="{unalum_television_image}" alt="{unalum_television_title}">
+				</f:if>
+						{unalum_television_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_radio_title} && {unalum_radio_url}">
+			<li><a href="{unalum_radio_url}" target="_blank" title="{unalum_radio_title}">
+				<f:if condition="{unalum_radio_image}">
+					<img src="{unalum_radio_image}" alt="{unalum_radio_title}">
+				</f:if>
+						{unalum_radio_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_podcast_title} && {unalum_podcast_url}">
+			<li><a href="{unalum_podcast_url}" target="_blank" title="{unalum_podcast_title}">
+				<f:if condition="{unalum_podcast_image}">
+					<img src="{unalum_podcast_image}" alt="{unalum_podcast_title}">
+				</f:if>
+						{unalum_podcast_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_circular_title} && {unalum_circular_url}">
+			<li><a href="{unalum_circular_url}" target="_blank" title="{unalum_circular_title}">
+				<f:if condition="{unalum_circular_image}">
+					<img src="{unalum_circular_image}" alt="{unalum_circular_title}">
+				</f:if>
+						{unalum_circular_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_orgullo_title} && {unalum_orgullo_url}">
+			<li><a href="{unalum_orgullo_url}" target="_blank" title="{unalum_orgullo_title}">
+				<f:if condition="{unalum_orgullo_image}">
+					<img src="{unalum_orgullo_image}" alt="{unalum_orgullo_title}">
+				</f:if>
+						{unalum_orgullo_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_metacampus_title} && {unalum_metacampus_url}">
+			<li><a href="{unalum_metacampus_url}" target="_blank" title="{unalum_metacampus_title}">
+				<f:if condition="{unalum_metacampus_image}">
+					<img src="{unalum_metacampus_image}" alt="{unalum_metacampus_title}">
+				</f:if>
+						{unalum_metacampus_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_debates_title} && {unalum_debates_url}">
+			<li><a href="{unalum_debates_url}" target="_blank" title="{unalum_debates_title}">
+				<f:if condition="{unalum_debates_image}">
+					<img src="{unalum_debates_image}" alt="{unalum_debates_title}">
+				</f:if>
+						{unalum_debates_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_tienda_title} && {unalum_tienda_url}">
+			<li><a href="{unalum_tienda_url}" target="_blank" title="{unalum_tienda_title}">
+				<f:if condition="{unalum_tienda_image}">
+					<img src="{unalum_tienda_image}" alt="{unalum_tienda_title}">
+				</f:if>
+						{unalum_tienda_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_identidad_title} && {unalum_identidad_url}">
+			<li><a href="{unalum_identidad_url}" target="_blank" title="{unalum_identidad_title}">
+				<f:if condition="{unalum_identidad_image}">
+					<img src="{unalum_identidad_image}" alt="{unalum_identidad_title}">
+				</f:if>
+						{unalum_identidad_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_solicitudes_title} && {unalum_solicitudes_url}">
+			<li><a href="{unalum_solicitudes_url}" target="_blank" title="{unalum_solicitudes_title}">
+				<f:if condition="{unalum_solicitudes_image}">
+					<img src="{unalum_solicitudes_image}" alt="{unalum_solicitudes_title}">
+				</f:if>
+						{unalum_solicitudes_title}
+				</a>
+			</li>
+		</f:if>
+		<f:if condition="{unalum_unimedios_title} && {unalum_unimedios_url}">
+			<li><a href="{unalum_unimedios_url}" target="_blank" title="{unalum_unimedios_title}">
+				<f:if condition="{unalum_unimedios_image}">
+					<img src="{unalum_unimedios_image}" alt="{unalum_unimedios_title}">
+				</f:if>
+						{unalum_unimedios_title}
+				</a>
+			</li>
+		</f:if>
+
+	</ul>
+</div> -->

@@ -1,0 +1,57 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Dependencia</h1>
+
+<f:flashMessages />
+
+<table  class="tx_unalbase" >
+	<tr>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.nombre" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.id_superior" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.email" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.ocultar_en_papeleria" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.direccion" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.edificio_piso" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.ciudad" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.telefono" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.codigo" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.acto_admin" /></th>
+		<th><f:translate key="tx_unalbase_domain_model_dependencia.excepcion" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{dependencias}" as="dependencia">
+		<tr>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.nombre}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.idSuperior}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.ocultarEnPapeleria}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.direccion}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.edificioPiso}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.ciudad}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.telefono}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.codigo}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.actoAdmin}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{dependencia : dependencia}"> {dependencia.excepcion}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{dependencia : dependencia}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{dependencia : dependencia}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Dependencia</f:link.action>
+</f:section>

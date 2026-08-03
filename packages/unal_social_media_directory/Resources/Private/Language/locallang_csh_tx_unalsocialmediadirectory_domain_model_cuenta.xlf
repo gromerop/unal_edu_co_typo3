@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-20T03:07:41Z" product-name="unal_social_media_directory">
+		<header/>
+		<body>
+
+			<trans-unit id="nombre_cuenta.description">
+				<source>nombreCuenta</source>
+			</trans-unit>
+			<trans-unit id="tipo.description">
+				<source>tipo</source>
+			</trans-unit>
+			<trans-unit id="url.description">
+				<source>url</source>
+			</trans-unit>
+			<trans-unit id="medios.description">
+				<source>medios</source>
+			</trans-unit>
+			<trans-unit id="responsable.description">
+				<source>responsable</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

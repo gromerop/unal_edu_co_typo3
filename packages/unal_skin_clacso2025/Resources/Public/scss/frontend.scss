@@ -1,0 +1,177 @@
+body {
+    background-color: #fff;
+    .breadcrumb-class {display: none;}
+    
+    figure {
+        margin: 0;
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    #c3807 {
+        color: #343399;
+        font-size: 1.4em;
+        line-height: 1em;
+        padding: 1em 2em;
+        text-align: center;
+        border-bottom: 1px solid #A30D78;
+        
+        p {margin:0;}
+    }
+    
+    #c3819 {
+        width: 60%;
+        margin: 1em auto;
+        p {
+            text-align: right;
+            a {
+                color: #FD9409;
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    body #c3819 p a {  }
+    
+    main.detalle {
+        h2 {
+            width: 60%;
+            margin: 1em auto;
+            color: #a20b76;
+            font-weight: bold;
+        }
+        
+        .frame-type-news_pi1 {
+            width: 60%;
+            margin: 0 auto;
+            .clacso2025-events {
+                .news-img-wrap {
+                    float: none;
+                    margin: 0;
+                    a {
+                        float: none;
+                        margin: 0;
+                        img {
+                            float: none;
+                            margin: 0;
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+                h3 {
+                    color: #a20b76;
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight: bold; 
+                    padding-top: 2%;
+                    padding-bottom: 3%;
+                    a {
+                        color: #343399;
+                        text-decoration: none;
+                        &:hover {
+                            color: #a20b76;
+                        }
+                    }
+                }
+                .teaser-text {
+                    font-size: 1em;
+                    line-height: 1em;
+                    color: #1D263B;
+                    line-height: 1.2em;
+                    .news-list-date {
+                        font-weight: bold;
+                    }
+                    .news-list-author {
+                        font-style: italic;
+                    }
+                }
+            }
+            .clacso2025-news {
+                justify-content: left;
+                .article {
+                    .clacso-newsitem-img {
+                        float: none;
+                        margin: 0;
+                        .img-wrap {
+                            a {
+                                float: none;
+                                margin: 0;
+                                img {
+                                    float: none;
+                                    margin: 0;
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                    h3 {
+                        line-height: 1em;
+                        color: #a20b76;
+                        text-decoration: none;
+                        font-size: 20px;
+                        font-weight: bold;
+                        padding-top: 2%;
+                        a {
+                            color: #343399;
+                            text-decoration: none; 
+                            span {
+                                p {
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            }
+                            &:hover {
+                                color: #a20b76;
+                            }
+                        }
+                    }
+                    .footer {
+                        border: none;
+                        font-size: 0.9em;
+                        line-height: 1em;
+                        color: #000;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+
+    
+
+.article img {width: 100%; height: auto;}
+.clacso2025-events .news-img-wrap {float: none !important; margin: 0 !important;}
+.clacso2025-events .news-img-wrap a {float: none !important;}
+.clacso2025-events .news-img-wrap a img {float: none !important;}
+
+
+
+
+main.detalle { background-color: #fff; }
+main.detalle .frame-type-news_pi1 { background-color: #e6e2df7d;  width: 60%;  margin: 1% auto 2%; border-radius: 10px; }
+main.detalle .frame-type-header { margin: 0 auto;  font-size: 1em;  color: #ff940a;  text-transform: uppercase;  font-weight: bolder; }
+.news .clacso-newsitem-info h3 { font-size: 1.2em; }
+.news .clacso-newsitem-info h3 a { color: #a20b76; }
+.news .clacso-newsitem-info h3 a:hover { color: #000; }
+.news .article { padding-bottom: 10px; margin: 2% 0 1% 0 }
+.news .article h3 { font-size: 1.2em; }
+.news .article .news-img-wrap a { padding: 2px;  background: #35349a; }
+.news .article .news-img-wrap img { width: 100%; height: 245px; position: inherit; }
+.news .footer { border-top: 1px solid #fa9008; }
+.news .footer p { line-height: 1em;  color: #ff9209;  font-size: 0.9em; }
+.article.cop16-event.articletype-0 { width: 31%;  background-color: #e6e2df;  margin: 1% 1%; padding-top: 1%; }
+.article.cop16-event.articletype-0 .header { margin: 20px 0; }
+.article.cop16-event.articletype-0 .teaser-text .news-list-date { color: #ff9209;  font-weight: bold; }
+.article.cop16-event.articletype-0 .teaser-text .news-list-date::before {  content: " ";  display: inline-block;  width: 19px;  height: 19px;  float: left;background: url(https://unal.edu.co/archivos/user_upload/docs/ESAP-UNAL/gps.png); }
+.article.cop16-event.articletype-0 .teaser-text .news-list-author { font-style: italic;  font-weight: bold; }
+
+*/
+

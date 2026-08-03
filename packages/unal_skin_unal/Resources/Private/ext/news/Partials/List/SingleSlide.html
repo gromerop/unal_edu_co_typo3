@@ -1,0 +1,74 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" data-namespace-typo3-fluid="true">
+<!-- === Partials/List/Item.html === -->
+<div class="carousel-cell">
+    <n:excludeDisplayedNews newsItem="{newsItem}" />    
+    <f:if condition="{newsItem.mediaPreviews}">
+        <!-- media preview element -->
+        <f:then>
+            <div class="news-img-wrap">
+                <f:if condition="{newsItem.type} == 2">
+                    <f:then>
+                        <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                            <f:render section="NewsContentWithMediaPreviews" arguments="{newsItem: newsItem}" />
+                        </n:link>
+                    </f:then>
+                    <f:else>
+                        <f:render section="NewsContentWithMediaPreviews" arguments="{newsItem: newsItem}" />
+                    </f:else>
+                </f:if>
+                        
+            </div>
+        </f:then>
+        <f:else>
+            <f:if condition="{settings.displayDummyIfNoMedia}">
+                <div class="news-img-wrap">
+                    <f:if condition="{newsItem.type} == 2">
+                        <f:then>
+                            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                                <f:render section="NewsContentWithoutMediaPreviews" />
+                            </n:link>
+                        </f:then>
+                        <f:else>
+                            <f:render section="NewsContentWithoutMediaPreviews" />
+                        </f:else>
+                    </f:if>
+                </div>
+            </f:if>
+        </f:else>
+    </f:if>
+</div>
+
+<f:section name="NewsContentWithMediaPreviews">
+    <f:alias map="{mediaElement: newsItem.falMedia.0}">
+        <f:if condition="{mediaElement.originalResource.type} == 2">
+            <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}"
+                alt="{mediaElement.originalResource.alternative}"
+                maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}"
+                maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" />
+        </f:if>
+        <f:if condition="{mediaElement.originalResource.type} == 3">
+		    <f:render partial="Detail/MediaAudio" arguments="{mediaElement: mediaElement, settings:settings}"/>
+	    </f:if>
+        <f:if condition="{mediaElement.originalResource.type} == 4">
+            <f:render partial="Detail/MediaVideo" arguments="{newsItem: newsItem, settings:settings}" />
+        </f:if>
+        <f:if condition="{mediaElement.originalResource.type} == 5">
+            <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}"
+                alt="{mediaElement.originalResource.alternative}"
+                maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}"
+                maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" />
+        </f:if>
+    </f:alias>
+</f:section>
+
+
+<f:section name="NewsContentWithoutMediaPreviews">
+    <span class="no-media-element">
+        <f:image src="{settings.list.media.dummyImage}" title="" alt=""
+            maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}"
+            maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}" />
+    </span>
+</f:section>
+
+</html>

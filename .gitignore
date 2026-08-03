@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Variables y credenciales
+.env
+.env.*
+!.env.example
+auth.json
+
+# Dependencias generadas
+/vendor/
+**/node_modules/
+
+# TYPO3: datos y archivos generados
+/var/
+/public/fileadmin/
+/public/typo3temp/
+/public/uploads/
+/public/_assets/
+/public/typo3/
+
+# Configuración local de TYPO3
+/config/system/settings.php
+/config/system/additional.php
+/typo3conf/LocalConfiguration.php
+/typo3conf/AdditionalConfiguration.php
+
+# Editores e IDE
+.idea/
+.vscode/
+**/nbproject/private/
+
+# Temporales
+*.log
+*.tmp
+
+/packages/unal_news/public/typo3/

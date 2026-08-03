@@ -1,0 +1,93 @@
+main.detalle {
+    margin: -35px 0 0 0;
+    background-image: url(../images/error-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+main.detalle:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 120px;
+    left: 0px;
+    background-color: rgba(104, 127, 41, 0.84);
+}
+.error-wrapper {
+    margin: calc(50vh - 15%) auto;
+    max-width: 640px;
+}
+
+.error-card-container .card {
+    -webkit-box-shadow: 0px 4px 21px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px 4px 21px 0px rgba(0,0,0,0.49);
+    box-shadow: 0px 4px 21px 0px rgba(0,0,0,0.49);
+}
+
+.error-card-container .img-container img {
+    width: 100%;
+    height: auto;
+}
+
+.error-card-container .card .card-body .error-title .info {
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.error-card-container .card .card-body .error-title .info .error-number {
+    font-weight: bold;
+    font-style: normal;
+    color: #687F29;
+}
+
+.error-card-container .card .card-body .error-title h1 {
+    font-weight: bold;
+    font-size: 28px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #87A436;
+}
+
+.error-card-container .card .card-body .error-detail-1 {
+    font-size: 16px;
+    line-height: 1em;
+    padding-top: 20px;
+}
+
+.error-card-container .card .card-body .error-detail-1 .sorry {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.error-card-container .card .card-body .error-detail-1 .detail {
+    line-height: 1.5em;
+}
+
+.error-card-container .card .card-body .error-detail-1 .suggestions .suggestions-title {
+    font-weight: bold;
+    font-style: italic;
+    color: #687F29;
+}
+
+.error-card-container .card .card-body .error-detail-1 .suggestions ul li a {
+    font-weight: bold;
+    font-style: italic;
+    color: #687F29;
+}
+
+.error-card-container .card .card-footer {
+    border-top: none;
+    text-align: center;
+}
+
+
+.error-card-container .card .card-footer a.btn-primary {
+    border-radius: 2em;
+    border: none;
+    background-color: #87A436;
+    color: #000;
+    padding: 0.5em 2em;
+    font-weight: bold;
+}
+
+

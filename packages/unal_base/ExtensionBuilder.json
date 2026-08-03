@@ -1,0 +1,475 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    318,
+                    199
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+                        "getNivel",
+                        "listarArbol",
+                        "buscar",
+                        "buscarPorId"
+                    ]
+                },
+                "name": "Dependencia",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "244887047556"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Nombre de la dependencia",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "nombre",
+                            "propertyType": "String",
+                            "uid": "1072247040313"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "UID de la dependencia de nivel superior. 0 indica que la dependencia es de primer nivel.",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "idSuperior",
+                            "propertyType": "Integer",
+                            "uid": "189651957364"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "email",
+                            "propertyType": "String",
+                            "uid": "464664442930"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Si su valor es 1, el nombre deber\u00e1 ocultarse en la papeler\u00eda institucional.",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "ocultarEnPapeleria",
+                            "propertyType": "Boolean",
+                            "uid": "1283279060552"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "direccion",
+                            "propertyType": "String",
+                            "uid": "940999891658"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "edificioPiso",
+                            "propertyType": "String",
+                            "uid": "1259506034827"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "ciudad",
+                            "propertyType": "String",
+                            "uid": "533266945865"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "telefono",
+                            "propertyType": "String",
+                            "uid": "342526629611"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "C\u00f3digo asignado por la Oficina Nacional de Gesti\u00f3n y Patrimonio Documental, mediante la Resoluci\u00f3n 621 de 2016 de Rector\u00eda. ",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "codigo",
+                            "propertyType": "String",
+                            "uid": "423437718188"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Acto administrativo por el cual se cre\u00f3 la dependencia.",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "actoAdmin",
+                            "propertyType": "String",
+                            "uid": "90817752939"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Indica si un registro corresponde o no a una excepci\u00f3n (proyecto, programa, campa\u00f1a u otro registro que no corresponde a una dependencia como tal).",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "excepcion",
+                            "propertyType": "Boolean",
+                            "uid": "467191522821"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Indica si el nombre de la dependencia debe ponerse en el encabezado. Esto aplica s\u00f3lo si el nivel es mayor que 3.",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "ponerNombreEnEncabezado",
+                            "propertyType": "Boolean",
+                            "uid": "1149872233431"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "txtJerarquia",
+                            "propertyType": "Text",
+                            "uid": "90399340060"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Ocultar de los selectores sin afectar la disponibilidad de la dependencia en reportes.",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "ocultar",
+                            "propertyType": "Boolean",
+                            "uid": "638571844981"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    777,
+                    320
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Oficina",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "743056736817"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "nombre",
+                            "propertyType": "String",
+                            "uid": "361032929784"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "extension",
+                            "propertyType": "String",
+                            "uid": "388728832240"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "email",
+                            "propertyType": "String",
+                            "uid": "344921744807"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "dependencia",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "renderType": "selectSingle",
+                            "uid": "629649695462"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    319,
+                    458
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": false,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "responder"
+                    ]
+                },
+                "name": "SolicitudDependencia",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "867519222268"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "UID del usuario que hace la solicitud",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "solicitante",
+                            "propertyType": "Integer",
+                            "uid": "353657292927"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Nombre de la dependencia solicitada",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "nombreDependencia",
+                            "propertyType": "String",
+                            "uid": "203823468999"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "idSuperior",
+                            "propertyType": "Integer",
+                            "uid": "1276400695065"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": true,
+                            "propertyName": "justificacion",
+                            "propertyType": "RichText",
+                            "uid": "1040046890803"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "archivo",
+                            "propertyType": "File",
+                            "uid": "827800138002"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "fechaRespuesta",
+                            "propertyType": "NativeDateTime",
+                            "uid": "70706029016"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "idDependenciaCreada",
+                            "propertyType": "Integer",
+                            "uid": "350637953324"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "Extensi\u00f3n base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 7.6.0-7.6.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "es",
+            "state": "alpha",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": "0.0.1"
+        },
+        "extensionKey": "unal_base",
+        "name": "Extensi\u00f3n base - Universidad Nacional de Colombia",
+        "originalExtensionKey": "unal_base",
+        "originalVendorName": "UNAL",
+        "persons": [
+            {
+                "company": "Universidad Nacional de Colombia",
+                "email": "mediosdigitales@unal.edu.co",
+                "name": "Oficina de Medios Digitales - Unimedios",
+                "role": "Product Manager"
+            },
+            {
+                "company": "Universidad Nacional de Colombia",
+                "email": "gromerop@unal.edu.co",
+                "name": "Giovanni Romero P\u00e9rez",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Dependencia => listarArbol",
+                    "noncacheableActions": "Dependencia => listarArbol",
+                    "switchableActions": ""
+                },
+                "key": "arboldependencias",
+                "name": "\u00c1rbol de dependencias"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Dependencia => buscar",
+                    "noncacheableActions": "Dependencia => buscar",
+                    "switchableActions": ""
+                },
+                "key": "busquedadependencias",
+                "name": "B\u00fasqueda de dependencias"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "SolicitudDependencia => new, create",
+                    "noncacheableActions": "SolicitudDependencia => new, create",
+                    "switchableActions": ""
+                },
+                "key": "solicituddependencias",
+                "name": "Solicitud de dependencias"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Dependencia => buscarPorId",
+                    "noncacheableActions": "Dependencia => buscarPorId",
+                    "switchableActions": ""
+                },
+                "key": "busquedadependenciasporid",
+                "name": "B\u00fasqueda de dependencias por Id"
+            }
+        ],
+        "vendorName": "UNAL"
+    },
+    "wires": [
+        {
+            "src": {
+                "moduleId": 1,
+                "terminal": "relationWire_0",
+                "uid": "629649695462"
+            },
+            "tgt": {
+                "moduleId": 0,
+                "terminal": "SOURCES",
+                "uid": "244887047556"
+            }
+        }
+    ],
+    "log": {
+        "last_modified": "2019-07-18 04:16",
+        "extension_builder_version": "7.6.17",
+        "be_user": " (3)"
+    }
+}

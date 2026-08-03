@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:unal_social_media/Resources/Private/Language/locallang_csh" date="2021-09-09T13:11:13Z" product-name="unal_social_media">
+		<header/>
+		<body>
+			<trans-unit id="nombre.description" resname="nombre.description">
+				<source>nombre</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

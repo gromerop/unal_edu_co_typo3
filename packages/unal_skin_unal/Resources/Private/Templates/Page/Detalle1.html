@@ -1,0 +1,26 @@
+<f:layout name="DefaultUnal" />
+<f:section name="Main">
+
+<main class="detalle">
+   <div class="container"> 
+    <div class="row">
+        <div class="col-12 col-md-6 detail_one_left">
+            
+                <h1>{data.title}</h1>
+                {detail_one_left->f:format.raw()}
+            
+        </div>
+        <div class="col-12 col-md-6">
+            <f:cObject typoscriptObjectPath="lib.breadcrumb"></f:cObject>
+            <div class="col-12 detail_one_up">
+                {detail_one_up->f:format.raw()}
+            </div>
+            <div class="col-12 detail_one_down">
+                {detail_one_down->f:format.raw()}
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+</f:section>

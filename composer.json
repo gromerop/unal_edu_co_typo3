@@ -1,0 +1,75 @@
+{
+	"name": "typo3/cms-base-distribution",
+	"description" : "TYPO3 CMS Base Distribution",
+	"license": "GPL-2.0-or-later",
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		},
+		"platform": {
+			"php": "7.4.1"
+		},
+		"sort-packages": true
+	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "./packages/*/"
+		}
+	],
+	"require": {
+		"b13/container": "^3.1",
+		"cundd/rest": "^5.1",
+		"fluidtypo3/vhs": "^7.1",
+		"friendsoftypo3/extension-builder": "^11.0",
+		"georgringer/news": "^11.4",
+		"georgringer/numbered-pagination": "^2.1",
+		"gridelementsteam/gridelements": "^11.1",
+		"helhum/typo3-console": "^7.0.2",
+		"in2code/powermail": "^10.9",
+		"laxap/bootstrap-grids": "^3.0",
+		"netresearch/rte-ckeditor-image": "^11.0",
+		"typo3/cms-backend": "^11.5.0",
+		"typo3/cms-belog": "^11.5.0",
+		"typo3/cms-beuser": "^11.5.0",
+		"typo3/cms-core": "^11.5.0",
+		"typo3/cms-dashboard": "^11.5.0",
+		"typo3/cms-extbase": "^11.5.0",
+		"typo3/cms-extensionmanager": "^11.5.0",
+		"typo3/cms-felogin": "^11.5.0",
+		"typo3/cms-filelist": "^11.5.0",
+		"typo3/cms-fluid": "^11.5.0",
+		"typo3/cms-fluid-styled-content": "^11.5.0",
+		"typo3/cms-form": "^11.5.0",
+		"typo3/cms-frontend": "^11.5.0",
+		"typo3/cms-impexp": "^11.5.0",
+		"typo3/cms-info": "^11.5.0",
+		"typo3/cms-install": "^11.5.0",
+		"typo3/cms-recordlist": "^11.5.0",
+		"typo3/cms-rte-ckeditor": "^11.5.0",
+		"typo3/cms-seo": "^11.5.0",
+		"typo3/cms-setup": "^11.5.0",
+		"typo3/cms-sys-note": "^11.5.0",
+		"typo3/cms-t3editor": "^11.5.0",
+		"typo3/cms-tstemplate": "^11.5.0",
+		"typo3/cms-viewpage": "^11.5.0",
+		"unal/unal-base": "^1.0",
+		"unal/unal-news": "^1.0",
+		"unal/unal-skin-buscador-unimedios": "^1.0",
+		"unal/unal-skin-clacso2025": "^1.0",
+		"unal/unal-skin-cop16": "^1.0",
+		"unal/unal-skin-default": "^1.0",
+		"unal/unal-skin-transparencia": "^1.0",
+		"unal/unal-skin-unal": "^1.0",
+		"unal/unal-social-media": "^1.0"
+	},
+	"scripts":{
+		"typo3-cms-scripts": [
+			"typo3cms install:fixfolderstructure"
+		],
+		"post-autoload-dump": [
+			"@typo3-cms-scripts"
+		]
+	}
+}

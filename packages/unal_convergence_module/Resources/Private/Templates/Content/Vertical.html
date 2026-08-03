@@ -1,0 +1,61 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<!--
+	=====================
+		Templates/Content/Vertical.html
+-->
+<f:section name="content">
+	<f:if condition="{results}">
+		<div class="vertical-content">
+		<f:for each="{results}" as="content" iteration="iterator">
+			<div class="news-card ">
+				<div class="cover">
+					<f:if condition="{content.url}">
+						<f:then>
+							<f:link.external uri="{content.url}" title="{content.title->f:format.stripTags()}" target="_blank">
+								<img src="{content.imagen}" alt="{content.title->f:format.stripTags()}" title="{content.title->f:format.stripTags()}">
+							</f:link.external>
+						</f:then>
+						<f:else>
+							<img src="{content.imagen}" alt="{content.title->f:format.stripTags()}" title="{content.title->f:format.stripTags()}">
+						</f:else>
+					</f:if>
+				</div>
+				<div class="wraper">
+	
+					<f:if condition="{content.url}">
+						<f:then>
+							<f:link.external uri="{content.url}" title="{content.title->f:format.stripTags()}" target="_blank">
+								<h3>{content.title}</h3>
+							</f:link.external>
+						</f:then>
+						<f:else>						
+							<h3>{content.title}</h3> 
+						</f:else>
+					</f:if>
+					<div class="content">
+						<f:if condition="{content.teaser}">
+							<f:then>
+									{content.teaser}
+							</f:then>
+							<f:else>
+								<f:if condition="{content.description}">
+									<f:format.html>
+										{content.description}
+									</f:format.html>
+								</f:if>
+							</f:else>
+						</f:if>
+					</div>
+				</div>
+					
+			</div>
+		</f:for>
+		</div>
+	</f:if>
+
+
+</f:section>
+
+</html>

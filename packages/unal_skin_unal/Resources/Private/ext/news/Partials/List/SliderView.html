@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <!-- Slider main container -->
+    <div class="main-carousel" data-flickity='{"resize": true, "cellAlign": "left", "lazyLoad": true, "wrapAround": true, "autoPlay": true, "autoPlay": 6500}'>
+        <!-- Slides -->
+        <f:for each="{news}" as="newsItem" iteration="iterator">
+            <f:render partial="List/SingleSlide" arguments="{newsItem: newsItem,settings:settings,iterator:iterator.cycle}" />
+        </f:for>
+    </div>
+
+    <f:for each="{news}" as="newsItem" iteration="iterator">
+        <f:alias map="{mediaElement: newsItem.falMedia.0}">
+            <f:if condition="{mediaElement.originalResource.type} == 4">
+                <div id="modal-video-{newsItem.uid}" class="modal modal-slider fade">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <video id="player-{newsItem.uid}" playsinline controls data-poster="{newsItem.falMedia.1.originalResource.publicUrl}" class="player">
+                                    <source src="{newsItem.falMedia.0.originalResource.publicUrl}" type="{newsItem.falMedia.0.originalResource.originalfile.mimeType}" />
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", (event) => {
+                        var player = new Plyr('#player-<f:format.raw>{newsItem.uid}</f:format.raw>');
+                        var videoModal = document.getElementById('modal-video-<f:format.raw>{newsItem.uid}</f:format.raw>');
+                        videoModal.addEventListener('hidden.bs.modal', function () {
+                            player.stop();
+                        });
+                    });
+                </script>
+            </f:if>
+        </f:alias>
+    </f:for>
+</html>

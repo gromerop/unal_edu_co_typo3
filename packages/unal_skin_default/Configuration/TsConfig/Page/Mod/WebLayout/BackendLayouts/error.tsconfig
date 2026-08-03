@@ -1,0 +1,71 @@
+#
+# BACKENDLAYOUT: DEFAULT
+#
+mod {
+    web_layout {
+        BackendLayouts {
+            error {
+                title = LLL:EXT:unal_skin_default/Resources/Private/Language/locallang_be.xlf:backend_layout.error
+                config {
+                    backend_layout {
+                        colCount = 2
+                        rowCount = 6
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Título
+                                        colPos = 101
+                                        rowspan = 2
+                                    }
+                                    2 {
+                                        name = Detalle 2
+                                        colPos = 104
+                                        rowspan = 3
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                }
+                            }
+                            3 {
+                                columns {
+                                    1 {
+                                        name = Título
+                                        colPos = 102
+                                        rowspan = 2
+                                    }
+                                }
+                            }
+                            4 {
+                                columns {
+                                    1 {}
+                                    2 {
+                                        name = Sugerencias
+                                        colPos = 105
+                                        rowspan = 3
+                                    }
+                                }
+                            }
+                            5 {
+                                columns {
+                                    1 {
+                                        name = Detalle 1
+                                        colPos = 103
+                                        rowspan = 2
+                                    }
+                                }
+                            }
+                            6 {
+                                columns {
+                                }
+                            }
+                      }
+                    }
+                }
+                icon = EXT:unal_skin_default/Resources/Public/images/BackendLayouts/error.svg
+            }
+        }
+    }
+}

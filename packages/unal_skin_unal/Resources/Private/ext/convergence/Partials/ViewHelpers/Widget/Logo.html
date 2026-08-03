@@ -1,0 +1,7 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{logo} && {content.type}">
+    <img src="//buscamedios.unal.edu.co/typo3conf/ext/unal_skin_buscador/Resources/Public/images/{content.type}_blanco.svg" alt="{content.type->f:format.stripTags()}" class="{logo.customClass}" role="img">
+</f:if>
+
+</html>

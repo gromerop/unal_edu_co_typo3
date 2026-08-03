@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-16T22:12:10Z" product-name="unal_news">
+		<header/>
+		<body>
+			<trans-unit id="identificator.description">
+				<source>Corresponde a la identificación de la nota publicada brindada por la Oficina propietaria del contenido.</source>
+			</trans-unit>
+			<trans-unit id="visitor_counter.description">
+				<source>Es el registro de visitas a cada una de las noticias</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

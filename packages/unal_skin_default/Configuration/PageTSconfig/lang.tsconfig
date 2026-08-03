@@ -1,0 +1,4 @@
+mod.SHARED {
+	defaultLanguageFlag = co
+	defaultLanguageLabel = Español
+}

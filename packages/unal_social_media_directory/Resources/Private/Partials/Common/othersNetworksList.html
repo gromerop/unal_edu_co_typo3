@@ -1,0 +1,11 @@
+<div class="otherSocialItems-tgl">Otras cuentas de {dep}</div>
+<div class="otherSocialItems socialItems">
+<f:for each="{accounts}" as="cuenta">
+  <div>
+          <f:link.external target="_blank" uri="{cuenta.url}" title="{cuenta.nombreCuenta} - {cuenta.medios.nombre}" class="socialItem socialItem-{cuenta.medios.uid}">
+            <f:image src="/uploads/tx_unalsocialmediadirectory/{cuenta.medios.icono}" alt="" maxWidth="32"/>
+            <span>{cuenta.nombreCuenta}</span>
+          </f:link.external>
+  </div>
+        </f:for>
+</div>

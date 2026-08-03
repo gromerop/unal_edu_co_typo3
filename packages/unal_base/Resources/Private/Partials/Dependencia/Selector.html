@@ -1,0 +1,148 @@
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+	<script type="text/javascript">
+		$(function () {
+			$("#dependencies").autocomplete({
+				source: function (request, response) {
+					$.ajax({
+						url: "<f:format.raw>{f:uri.page(pageType:'121')}</f:format.raw>",
+						dataType: "json",
+						data: {
+							tx_unalbase_busquedadependencias: {
+								action: 'buscar',
+								controller: 'Dependencia',
+								q: request.term,
+								incluirExcepciones: <f:format.raw>{incluirExcepciones}</f:format.raw>
+							}
+						},
+						success: function(data, textStatus, jqXHR) {
+	//						console.log(data);
+							if (data && data.length > 0) {
+								$('#alertaDep_{property}').hide();
+								var items = data;
+								response(items);
+								$("#dependencies").trigger( "depFound");
+							} else {
+								$('#alertaDep_{property}').show();
+								$("#dependencies").autocomplete("close");
+								$("#dependencies").trigger( "depNotFound");
+							}
+						},
+						error: function(jqXHR, textStatus, errorThrown){
+							console.log( textStatus);
+						}
+					});
+				},
+				minLength: 3,
+				select: function( event, ui ) {
+					var value = ui.item.value;
+					var label = ui.item.label;
+
+					$('input[name$="[{property}]"]').val(value);
+					$('#alertaDependencias').hide();
+
+					$("div#seleccionDep_{property}").empty();
+					var itemTitleDesc = label.split("[");
+					var itemTitle = "";
+					var itemDesc = "";
+					var desc = "";
+					if ($.isArray(itemTitleDesc)) {
+						itemTitle = itemTitleDesc[0];
+						if (itemTitleDesc.length > 1) {
+							itemDesc = itemTitleDesc[1];
+							itemDesc = itemDesc.replace("]", "");
+							desc = '<br/><span><small>' + itemDesc + '</small></span>';
+						}
+						var itemContent = '<span><strong>' + itemTitle + '</strong></span>' + desc;
+						$("div#seleccionDep_{property}").append(itemContent);
+					} else {
+						$("div#seleccionDep_{property}").append(label);
+					}
+					$("div#seleccionDep_{property}").show();
+					$("button#cambiarDep_{property}").show();
+					$("input#dependencies").hide();
+					$("#dependencies").val("");
+				},
+				change: function(event, ui) {
+					$('#alertaDependencias').hide();
+				}
+			});
+			$("button#cambiarDep_{property}").click(function() {
+				$("#dependencies").val('');
+				$("div#seleccionDep_{property}").empty();
+				$("div#seleccionDep_{property}").hide();
+				$("input#dependencies").show();
+				$("button#cambiarDep_{property}").hide();
+				$("#alertaDep_{property}").hide();
+				$('input[name$="[{property}]"]').val('0');
+			});
+			// Si se carga el formulario con un valor en el campo oculto, se obtienen los datos de la dependencia
+			if ($("#selectorDepValue_{property}").val() !== '0') {
+				var idDependencia = $("#selectorDepValue_{property}").val();
+				$.ajax({
+					url: "<f:format.raw>{f:uri.page(pageType:'122')}</f:format.raw>",
+					dataType: "json",
+					data: {
+						tx_unalbase_busquedadependenciasporid: {
+							action: 'buscarPorId',
+							controller: 'Dependencia',
+							q: idDependencia
+						}
+					},
+					success: function(data, textStatus, jqXHR) {
+						if (data && data.length > 0) {
+							var label = data[0].label;
+
+							$("div#seleccionDep_{property}").empty();
+							var itemTitleDesc = label.split("[");
+							var itemTitle = "";
+							var itemDesc = "";
+							var desc = "";
+							if ($.isArray(itemTitleDesc)) {
+								itemTitle = itemTitleDesc[0];
+								if (itemTitleDesc.length > 1) {
+									itemDesc = itemTitleDesc[1];
+									itemDesc = itemDesc.replace("]", "");
+									desc = '<br/><span><small>' + itemDesc + '</small></span>';
+								}
+								var itemContent = '<span><strong>' + itemTitle + '</strong></span>' + desc;
+								$("div#seleccionDep_{property}").append(itemContent);
+							} else {
+								$("div#seleccionDep_{property}").append(label);
+							}
+							$("div#seleccionDep_{property}").show();
+							$("button#cambiarDep_{property}").show();
+							$("input#dependencies").hide();
+							$("#dependencies").val("");
+						}
+					},
+					error: function(jqXHR, textStatus, errorThrown){
+						console.log( textStatus);
+					}
+				});
+			}
+		});
+	</script>
+	<f:form.textfield
+	property="dependencies" 
+    id="dependencies"
+    class="form-control" />
+	<div id="seleccionDep_{property}" class="seleccionDep"></div>
+	<button type="button" id="cambiarDep_{property}" style='display: none;'><f:translate key="tx_unal_su1_domain_model_formulario.cambiar_dependencia" /></button>
+	<div id="alertaDep_{property}" style='display: none;'>
+		<h4>No se encontraron dependencias</h4>
+		<f:if condition="{partialName}">
+			<f:render partial="{partialName}" />
+		</f:if>
+	</div>
+	<f:if condition="{useName}">
+		<f:then>
+			<f:form.hidden name="{property}" id="selectorDepValue_{property}" value="{value}" />
+		</f:then>
+		<f:else>
+			<f:form.hidden property="{property}" id="selectorDepValue_{property}" value="{value}" />
+		</f:else>
+	</f:if>
+	
+</html>

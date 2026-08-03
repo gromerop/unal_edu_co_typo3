@@ -1,0 +1,12 @@
+{namespace unal=UNAL\UnalBase\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+<h1>Listado de dependencias</h1>
+
+<f:flashMessages />
+
+<f:for each="{arbol}" as="nodo">
+	{nodo.dependencia.uid}_____<f:if condition="{nodo.dependencia.ocultar}"><f:then>1</f:then><f:else>0</f:else></f:if>_____{nodo.dependencia.codigo}_____{nodo.dependencia.actoAdmin}_____{unal:tabulaciones(n: nodo.numeroEspacios)}{nodo.dependencia.nombre}<br>
+</f:for>
+</f:section>

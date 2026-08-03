@@ -1,0 +1,95 @@
+<f:switch expression="{data.header}">
+    <f:case value="Redes">
+        <div class="redes row row-cols-1 row-cols-md-7">
+            <f:for each="{children_201}" as="element">
+                <div class="col redes-col1">
+                    {element.renderedContent -> f:format.raw()}
+                </div>
+            </f:for>
+            <f:for each="{children_202}" as="element">
+                <div class="col redes-col2">
+                    {element.renderedContent -> f:format.raw()}
+                </div>
+            </f:for>
+            <f:for each="{children_203}" as="element">
+                <div class="col redes-col3">
+                    {element.renderedContent -> f:format.raw()}
+                </div>
+            </f:for>
+            <f:for each="{children_204}" as="element">
+                <div class="col redes-col4">
+                    {element.renderedContent -> f:format.raw()}
+                </div>
+            </f:for>
+            <f:for each="{children_205}" as="element">
+                <div class="col redes-col5">
+                    {element.renderedContent -> f:format.raw()}
+                </div>
+            </f:for>
+            <f:for each="{children_206}" as="element">
+                <div class="col redes-col6">
+                    {element.renderedContent -> f:format.raw()}
+                </div>
+            </f:for>
+            <f:for each="{children_207}" as="element">
+                <div class="col redes-col7">
+                    {element.renderedContent -> f:format.raw()}
+                </div>
+            </f:for>
+            
+        </div>	
+    </f:case>
+    <f:defaultCase>
+        <div class="row">
+            <div class="col">
+                <f:for each="{children_201}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </div>
+            <div class="col">
+                <f:for each="{children_202}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </div>
+            <div class="col">
+                <f:for each="{children_203}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </div>
+            <div class="col">
+                <f:for each="{children_204}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </div>
+            <div class="col">
+                <f:for each="{children_205}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </div>
+            <div class="col">
+                <f:for each="{children_206}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </div>
+            <div class="col">
+                <f:for each="{children_207}" as="record">
+                    <f:format.raw>
+                        {record.renderedContent}
+                    </f:format.raw>
+                </f:for>
+            </div>
+        </div>
+    </f:defaultCase>
+</f:switch>

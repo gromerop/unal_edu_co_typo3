@@ -1,0 +1,180 @@
+.info-home .prods a,
+.navigation .site-url {
+	color: #e03f34
+}
+
+.csc-header h1 {
+	color: #333;
+	font-size: 1.4em;
+	padding-bottom: 10px
+}
+
+.csc-header a {
+	color: #333;
+	text-decoration: none;
+	font-family: ancizar_sans_bold, Tahoma, Geneva, sans-serif !important;
+	font-weight: normal
+}
+
+.csc-default h1 {
+	color: #333;
+	font-size: 1em;
+	padding-bottom: 10px
+}
+
+.csc-default a {
+	color: #333;
+	text-decoration: none
+}
+
+.csc-frame-rulerBefore {
+	height: 175px;
+	border-bottom: 1px solid #4b4b4b
+}
+
+#c72.csc-default {
+	width: 50%;
+	padding: 12px;
+	float: left;
+	height: 158px;
+	border-right: 1px solid #4b4b4b
+}
+
+#c74.csc-default {
+	width: 50%;
+	padding: 12px;
+	float: left;
+	height: 158px
+}
+
+#c76.csc-default {
+	width: 50%;
+	padding: 12px;
+	float: left;
+	height: 158px;
+	border-top: 1px solid #4b4b4b;
+	border-right: 1px solid #4b4b4b
+}
+
+#c77.csc-default {
+	width: 50%;
+	padding: 12px;
+	float: left;
+	height: 158px;
+	border-top: 1px solid #4b4b4b
+}
+
+.plus2 {
+	background-image: url(../images/plusFuncionarios.png);
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	clear: both;
+	position: relative;
+	margin: 10px;
+	left: 116px;
+	display: block
+}
+
+.plus3 {
+	background-image: url(../images/plusFuncionarios.png);
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	clear: both;
+	position: relative;
+	margin: 10px;
+	left: 284px;
+	display: block
+}
+
+.bodytext {
+	height: 70px
+}
+
+.btn-default .caret {
+	border-top-color: #e03f34
+}
+
+.dropdown-toggle::after {color:#e03f34 }
+.main_menu .site-url a, #unalTop .navigation .site-url a {color:#e03f34}
+#services .indicator {background-color: #e03f34;}
+
+html.lang_0 #services .indicator {
+	background-color: #e03f34
+}
+
+html #services .indicator {
+	height: 126px
+}
+
+html.lang_2 #services .indicator {
+	background-image: url(../images/otherServicesEN.png)
+}
+
+html #services .indicator:hover {
+	background-position: 0 -127px
+}
+
+html #services .indicator.active {
+	background-position: -34px 0
+}
+
+html #services .indicator.active:hover {
+	background-position: -34px -127px
+}
+
+#c70 {
+	width: 340px;
+	margin: 0 0 0 0;
+	height: 208px
+}
+
+#c70 div.header {
+	background: #e03f34 !important;
+	display: block;
+	width: 100%;
+	height: 40px;
+	color: #333;
+	text-indent: 10px
+}
+
+#c70 ul.links_administrativos {
+	margin-top: 10px;
+	margin-left: 30px;
+	float: left;
+	clear: both
+}
+
+#c70 ul.links_administrativos li {
+	list-style-type: circle;
+	list-style-image: url(../images/bullet_administrativos.png);
+	padding: 3px 0
+}
+
+#c70 ul.links_administrativos li a {
+	color: #333;
+	font-family: "Ancizar Sans", Tahoma, Geneva, sans-serif !important;
+	font-size: 15px
+}
+
+#c70 h2 {
+	font-size: 20px;
+	color: #333;
+	padding: 0 0 0 15px;
+	margin: 10px 0 0 0;
+	width: 100%;
+	clear: both;
+	float: left
+}
+
+.image-container .header .plus {
+	background: url(../images/backBtnPlus.png) top no-repeat #e03f34
+}
+
+.image-container .header .plus:hover {
+	background: url(../images/backBtnPlus.png) top no-repeat #5e1a16
+}
+
+
+/*# sourceMappingURL=administrativos.css.map */

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:unal_social_media/Resources/Private/Language/locallang_csh" date="2021-09-09T13:11:13Z" product-name="unal_social_media">
+		<header/>
+		<body>
+			<trans-unit id="nombre.description" resname="nombre.description">
+				<source>nombre</source>
+			</trans-unit>
+			<trans-unit id="facultad.description" resname="facultad.description">
+				<source>facultad</source>
+			</trans-unit>
+			<trans-unit id="cuentas.description" resname="cuentas.description">
+				<source>cuentas</source>
+			</trans-unit>
+			<trans-unit id="sede.description" resname="sede.description">
+				<source>sede</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

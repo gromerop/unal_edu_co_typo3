@@ -1,0 +1,216 @@
+tx_unalskindefault {
+	filepaths {
+		pri  = EXT:unal_skin_default/Resources/Private
+		css  = EXT:unal_skin_default/Resources/Public/css
+		js   = EXT:unal_skin_default/Resources/Public/js
+		img  = EXT:unal_skin_default/Resources/Public/images
+		pub  = EXT:unal_skin_default/Resources/Public
+	}
+	parameters {
+		url = https://unal.edu.co
+		profiles {
+			aspirantes = http://aspirantes.unal.edu.co
+			estudiantes = http://estudiantes.unal.edu.co
+			egresados = http://egresados.unal.edu.co
+			docentes = http://docentes.unal.edu.co
+			administrativos = http://administrativos.unal.edu.co
+		}
+		showFinder = 1
+		showCampusMenu = 1
+		socialLinks {
+			facebook = https://www.facebook.com/UNALOficial
+			twitter = https://twitter.com/UNALOficial
+			rss = http://agenciadenoticias.unal.edu.co/nc/sus/type/rss2.html
+			youtube = https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg
+			instagram = https://www.instagram.com/unaloficial
+		}
+		titleComplement = 
+		mainMenuUid = 3
+		serviceMenuUid = 1
+		sitemapLinkUid = 1
+		faqLinkUid = 1
+		contactLinkUid = 1
+		surveyLinkUid = 446
+		glosaryLinkUid = 1
+		notinboxLinkUid = 65
+		onlineattLinkUid = 78
+		showSearchLocal = 0
+		contact {
+			address = Carrera 45 # 26-85
+			building = Edif. Uriel Gutiérrez
+			city = Bogotá D.C.,  Colombia
+			phone = (+57) 601 3165000
+			emailAccount = conmutador_bog
+		}
+		aboutLinkUid = 1
+		showSocialMediaLinks = 0
+		socialMediaLinks {
+			facebook =
+			instagram =
+			twitter =
+			youtube =
+			tiktok =
+			telegram =
+		}
+		link{
+			copyright = http://unal.edu.co/archivos/user_upload/docs/legal.pdf
+		}
+
+		unimedios {
+			agencia {
+				image = 
+				title = Agencia UNAL
+				url   = http://agenciadenoticias.unal.edu.co/
+			}
+			periodico {
+				image = 
+				title = Periódico UNAL
+				url   = http://periodico.unal.edu.co/
+			}
+			television {
+				image = 
+				title = Televisión UNAL
+				url   = http://television.unal.edu.co/
+			}
+			radio {
+				image = 
+				title = Radio UNAL
+				url   = http://radio.unal.edu.co/
+			}
+			podcast {
+				image = 
+				title = Radio Podcast UNAL
+				url   = http://podcast.unradio.unal.edu.co/
+			}
+			circular {
+				image = 
+				title = Circular UNAL
+				url   = http://circular.unal.edu.co/
+			}
+			orgullo {
+				image = 
+				title = Orgullo UNAL
+				url   = http://orgullo.unal.edu.co/
+			}
+			metacampus {
+				image = 
+				title = 
+				url   = 
+			}
+			debates {
+				image = 
+				title = Debates UNAL
+				url   = http://www.debates.unal.edu.co/
+			}
+			tienda {
+				image = 
+				title = Tienda UNAL
+				url   = http://tiendauniversitaria.unal.edu.co/
+			}
+			identidad {
+				image = 
+				title = Identidad UNAL
+				url   = http://identidad.unal.edu.co/
+			}
+			solicitudes {
+				image = 
+				title = Solicitudes Unimedios
+				url   = http://solicitudesunimedios.unal.edu.co/
+			}
+			unimedios {
+				image = 
+				title = Unimedios
+				url   = http://unimedios.unal.edu.co/
+			}
+		}
+
+		servicios {
+			correo {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServEmail.png
+				title = Correo institucional
+				url   = https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login
+			}
+			dninfoa {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServSia.png
+				title = DINARA - SIA
+				url   = https://dninfoa.unal.edu.co/
+			}
+			serviciosInvestigacion {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServInvestigacion.png
+				title = Servicios para la investigación
+				url   = https://investigacion.unal.edu.co/laboratorios/servicios
+			}
+			convocatorias {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServCall.png
+				title = Convocatorias
+				url   = https://personal.unal.edu.co/
+			}
+			identidad {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServIdentidad.png
+				title = Identidad UNAL
+				url   = https://identidad.unal.edu.co/guia-de-identidad-visual/
+			}
+			portalContratacion {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServEngagement.png
+				title = Portal de contratación
+				url   = https://portaladquisiciones.unal.edu.co/
+			}
+			bibliotecas {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServLibrary.png
+				title = Bibliotecas
+				url   = https://bibliotecas.unal.edu.co/
+			}
+			registro {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServRegistry.png
+				title = Registro y matrícula
+				url   = https://registro.bogota.unal.edu.co
+			}
+			bienestar {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServBienestar.png
+				title = Bienestar
+				url   = https://bienestar.unal.edu.co/
+			}
+			patrimonio {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServRegistry.png
+				title = Patrimonio Cultural
+				url   = https://patrimoniocultural.bogota.unal.edu.co
+			}
+			museos {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServMuseums.png
+				title = Museos
+				url   = https://circular.unal.edu.co/museos-lista
+			}
+			editorial {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServPress.png
+				title = Editorial
+				url   = https://editorial.unal.edu.co/editorial-unal
+			}
+			regimen {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServLegalRules.png
+				title = Régimen Legal
+				url   = https://legal.unal.edu.co/
+			}
+			portalNinos {
+				islocal = 1
+				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServicesKidsPortal.png
+				title = Portal para niños
+				url   = https://unal.edu.co/portal-para-ninos
+			}
+		}
+	}
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_default/Configuration/TypoScript/Language/constants.ts">

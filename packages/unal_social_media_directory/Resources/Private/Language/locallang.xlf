@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-02-20T03:07:41Z" product-name="unal_social_media_directory">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_sede">
+				<source>Sede</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_sede.nombre">
+				<source>nombre</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_facultad">
+				<source>Facultad</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_facultad.nombre">
+				<source>nombre</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_facultad.sede">
+				<source>sede</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_medio">
+				<source>Medio</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_medio.nombre">
+				<source>nombre</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_medio.icono">
+				<source>icono</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_responsable">
+				<source>Responsable</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_responsable.nombre">
+				<source>nombre</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_responsable.apellidos">
+				<source>apellidos</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_responsable.telefono">
+				<source>telefono</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_responsable.extension">
+				<source>extension</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_responsable.email">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_responsable.cargo">
+				<source>cargo</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_dependencia">
+				<source>Dependencia</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_dependencia.nombre">
+				<source>nombre</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_dependencia.facultad">
+				<source>facultad</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_dependencia.cuentas">
+				<source>cuentas</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_dependencia.sede">
+				<source>sede</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_cuenta">
+				<source>Cuenta</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_cuenta.nombre_cuenta">
+				<source>nombreCuenta</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_cuenta.tipo">
+				<source>tipo</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_cuenta.url">
+				<source>url</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_cuenta.medios">
+				<source>medios</source>
+			</trans-unit>
+			<trans-unit id="tx_unalsocialmediadirectory_domain_model_cuenta.responsable">
+				<source>responsable</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,28 @@
+#################################
+# News Record
+# cat=news record/enable/10; type=int; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.detailNewsPageUid
+detailNewsPageUid = 1
+
+#################################
+# ElasticSearch Configuration
+
+# cat=elasticsearch configuration/enable/10; type=string; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.elasticDomain
+elasticDomain = http://168.176.236.22
+# cat=elasticsearch configuration/enable/20; type=int+; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.elasticPort
+elasticPort = 9200
+# cat=elasticsearch configuration/enable/30; type=string; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.elasticUser
+elasticUser = buscador_user
+# cat=elasticsearch configuration/enable/40; type=string; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.elasticPassword
+elasticPassword = kF0WdT56UxDcPsTzw0G3
+
+#################################
+# ElasticSearch Indexes
+
+# cat=elasticsearch indexes/enable/10; type=string; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.newIndex
+newIndex = 
+# cat=elasticsearch indexes/enable/20; type=string; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.imageIndex
+imageIndex = image_unal
+# cat=elasticsearch indexes/enable/30; type=string; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.videoIndex
+videoIndex = video_unal
+# cat=elasticsearch indexes/enable/40; type=string; label=LLL:EXT:unal_skin_buscador_unimedios/Resources/Private/Language/locallang_be.xlf:extmng.audioIndex
+audioIndex = audio_unal

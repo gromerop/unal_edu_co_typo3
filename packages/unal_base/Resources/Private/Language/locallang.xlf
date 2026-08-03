@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="es" datatype="plaintext" original="messages" date="2019-07-18T16:16:25Z" product-name="unal_base">
+		<header/>
+		<body>
+			<trans-unit id="tx_unal_base_domain_model_arboldependencias">
+				<source>Árbol de dependencias</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_arboldependencias.description">
+				<source>Extensión base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_busquedadependencias">
+				<source>Búsqueda de dependencias</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_busquedadependencias.description">
+				<source>Extensión base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_solicituddependencias">
+				<source>Solicitud de dependencias</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_solicituddependencias.description">
+				<source>Extensión base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_busquedadependenciasporid">
+				<source>Búsqueda de dependencias por Id</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_busquedadependenciasporid.description">
+				<source>Extensión base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia">
+				<source>Dependencia</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.nombre">
+				<source>Nombre</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.id_superior">
+				<source>Dependencia inmediatamente superior</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.ocultar_en_papeleria">
+				<source>Ocultar En Papeleria</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.direccion">
+				<source>Direccion</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.edificio_piso">
+				<source>Edificio Piso</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.ciudad">
+				<source>Ciudad</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.telefono">
+				<source>Telefono</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.codigo">
+				<source>Codigo</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.acto_admin">
+				<source>Acto Admin</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.excepcion">
+				<source>Excepcion</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.poner_nombre_en_encabezado">
+				<source>Poner Nombre En Encabezado</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.txt_jerarquia">
+				<source>Txt Jerarquia</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_dependencia.ocultar">
+				<source>Ocultar</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_oficina">
+				<source>Oficina</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_oficina.nombre">
+				<source>Nombre</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_oficina.extension">
+				<source>Extensión</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_oficina.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_oficina.dependencia">
+				<source>Dependencia</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia">
+				<source>Solicitud de dependencia</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia.solicitante">
+				<source>Solicitante</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia.nombre_dependencia">
+				<source>Nombre de la dependencia</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia.id_superior">
+				<source>Dependencia inmediatamente superior</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia.justificacion">
+				<source>Justificación</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia.archivo">
+				<source>Archivo</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia.fecha_respuesta">
+				<source>Fecha Respuesta</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia.id_dependencia_creada">
+				<source>Id Dependencia Creada</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_arboldependencias">
+				<source>Árbol de dependencias</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_arboldependencias.description">
+				<source>Extensión base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_busquedadependencias">
+				<source>Búsqueda de dependencias</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_busquedadependencias.description">
+				<source>Extensión base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_solicituddependencias">
+				<source>Solicitud de dependencias</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_solicituddependencias.description">
+				<source>Extensión base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_busquedadependenciasporid">
+				<source>Búsqueda de dependencias por Id</source>
+			</trans-unit>
+			<trans-unit id="tx_unal_base_domain_model_busquedadependenciasporid.description">
+				<source>Extensión base para la  Universidad Nacional de Colombia. Estructura de dependencias y directorio.</source>
+			</trans-unit>
+			<trans-unit id="tx_unalbase_domain_model_solicituddependencia.respuesta">
+				<source>Respuesta</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

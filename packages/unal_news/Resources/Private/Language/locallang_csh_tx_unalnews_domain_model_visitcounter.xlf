@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-16T22:12:10Z" product-name="unal_news">
+		<header/>
+		<body>
+			<trans-unit id="quantity.description">
+				<source>Cantidad de visitas realizadas a la nota</source>
+			</trans-unit>
+			<trans-unit id="fecha_registro.description">
+				<source>Es el día con el total de visitas a una noticia</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,16 @@
+mod {
+    wizards.newContentElement.wizardItems.plugins {
+        elements {
+            content {
+                iconIdentifier = unal_convergence_module-plugin-content
+                title = LLL:EXT:unal_convergence_module/Resources/Private/Language/locallang_db.xlf:tx_unalconvergencemodule_content.name
+                description = LLL:EXT:unal_convergence_module/Resources/Private/Language/locallang_db.xlf:tx_unalconvergencemodule_content.description
+                tt_content_defValues {
+                    CType = list
+                    list_type = unalconvergencemodule_content
+                }
+            }
+        }
+        show = *
+    }
+}

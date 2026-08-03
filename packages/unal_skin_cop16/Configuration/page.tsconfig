@@ -1,0 +1,6 @@
+# Page TSConfig
+tx_news.templateLayouts {
+        201 = COP16 - Histórico
+        202 = COP16 - Popups Eventos
+        203 = COP16 - Histórico Eventos
+}

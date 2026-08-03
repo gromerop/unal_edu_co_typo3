@@ -1,0 +1,21 @@
+#
+# PageTS for Unal skin unal
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_unal/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_unal/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_unal/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_skin_unal/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
+
+# Page TSConfig
+RTE.default.preset = default
+
+tx_news.templateLayouts {
+        1 = Background home
+        2 = Histórico de imágenes
+        3 = Background slider
+        101 = Agencia
+        102 = Periódico
+        103 = Radio
+        104 = Televisión
+        105 = Orgullo
+}

@@ -1,0 +1,48 @@
+<f:layout name="DefaultUnal" />
+<f:section name="Main">
+
+<main class="detalle">
+
+    <f:switch expression="{data.slug}">
+        <f:case value="/convergencia-por-colombia">
+            <f:variable name="valCol1" value="col-md-8"/>
+            <f:variable name="valCol2" value="col-md-4"/>
+            <f:variable name="titleStyle" value=""/>
+        </f:case>
+        <f:case value="/al-dia-unal">
+            <f:variable name="valCol1" value="col-md-8"/>
+            <f:variable name="valCol2" value="col-md-4"/>
+            <f:variable name="titleStyle"><h1>{data.title}</h1></f:variable>
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="valCol1" value="col-md-6"/>
+            <f:variable name="valCol2" value="col-md-6"/>
+            <f:variable name="titleStyle"><h1>{data.title}</h1></f:variable>
+        </f:defaultCase>
+    </f:switch>
+
+    <div class="row interna">
+        <div class="col-12 up-detalle">
+            <div class="detail_three_up">
+                {titleStyle->f:format.raw()}
+                {detail_three_up->f:format.raw()}
+            </div>
+        </div>
+        <f:cObject typoscriptObjectPath="lib.breadcrumb"></f:cObject>
+        <div class="row detinterna">
+            <div class="col-12 {valCol1}">
+                
+                <div class="detail_three_left">
+                    {detail_three_left->f:format.raw()}
+                </div>
+            </div>
+            <div class="col-12 {valCol2}">
+                <div class="detail_three_right">
+                    {detail_three_right->f:format.raw()}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</f:section>

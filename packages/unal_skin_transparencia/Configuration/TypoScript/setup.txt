@@ -1,0 +1,18 @@
+page.includeCSS {
+	unal_transparencia = EXT:unal_skin_transparencia/Resources/Public/css/frontend.css
+	unal_transparencia.excludeFromConcatenation = 1
+}
+
+page.10 {
+	partialRootPaths.5 = EXT:unal_skin_transparencia/Resources/Private/Partials
+	variables {
+		contenido < styles.content.get
+		encabezado < styles.content.get
+		encabezado.select.where = colpos = 1
+	}
+	# Se asocian los archivos de plantillas con los BE layouts de Fluid.
+	file.stdWrap.cObject {
+		6 = TEXT
+		6.value = EXT:unal_skin_transparencia/Resources/Private/Templates/Transparencia.html
+	}
+}

@@ -1,0 +1,42 @@
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>New Cuenta</h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" arguments="{object:Cuenta}"/>
+
+<f:form action="create"  enctype="multipart/form-data"  name="newCuenta" object="{newCuenta}">
+<f:render partial="Cuenta/FormFields" />
+	<f:form.submit value="Create new" />
+</f:form>
+</f:section>nslate key="tx_unalsocialmediadirectory_domain_model_cuenta.url" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{cuentas}" as="cuenta">
+		<tr>
+			<td><f:link.action action="show" arguments="{cuenta : cuenta}"> {cuenta.nombreCuenta}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{cuenta : cuenta}"> {cuenta.tipo}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{cuenta : cuenta}"> {cuenta.url}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{cuenta : cuenta}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{cuenta : cuenta}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Cuenta</f:link.action>
+</f:section>

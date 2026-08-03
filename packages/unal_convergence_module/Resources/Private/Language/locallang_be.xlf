@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2021-04-05T10:12:52Z" product-name="unal_convergence_module">
+		<header/>
+		<body>
+			<trans-unit id="extmng.searchCategory" xml:space="preserve">
+				<source>Search category.:Default value is: Destacado</source>
+			</trans-unit>
+			<trans-unit id="extmng.elasticDomain" xml:space="preserve">
+				<source>Elasticsearch Domain.:Without slash at the end of the domain. (e.g.: http://168.176.236.22)</source>
+			</trans-unit>
+			<trans-unit id="extmng.elasticPort" xml:space="preserve">
+				<source>Elasticsearch Port</source>
+			</trans-unit>
+			<trans-unit id="extmng.elasticUser" xml:space="preserve">
+				<source>Elasticsearch User</source>
+			</trans-unit>
+			<trans-unit id="extmng.elasticPassword" xml:space="preserve">
+				<source>Elasticsearch Password</source>
+			</trans-unit>
+			
+			<trans-unit id="extmng.includeIndex" xml:space="preserve">
+				<source>Elasticsearch 'Include' index or list of indexes (separated by comma).:Default value is: *_unal (use all indexes ending with '_unal')</source>
+			</trans-unit>
+			<trans-unit id="extmng.excludeIndex" xml:space="preserve">
+				<source>Elasticsearch 'Exclude' index or list of indexes (separated by comma).:Default value is: image_unal,video_unal,audio_unal</source>
+			</trans-unit>
+			
+			<trans-unit id="extmng.sizeNews" xml:space="preserve">
+				<source>Size by News.:Default value is: 5</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

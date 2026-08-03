@@ -1,0 +1,16 @@
+.convergenciaeducacion { margin-top: 25px; background: #0B1135;
+}
+.convergenciaeducacion .video .frame { margin-top: 50px;
+}
+.convergenciaeducacion .video .video-embed { text-align: right;
+}
+.convergenciaeducacion .invitacion {
+    
+}
+@media (max-width: 1090px) { .convergenciaeducacion .video .video-embed { text-align: center;
+    }
+    .convergenciaeducacion .invitacion { text-align: center;
+    }
+    .convergenciaeducacion .invitacion img { width: 100%; height: auto;
+    }
+}

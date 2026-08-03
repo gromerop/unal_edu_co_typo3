@@ -1,0 +1,63 @@
+# ==============================================
+# FE-Plugin configuration for EXT:tx_unalconvergencemodule
+# ==============================================
+plugin.tx_unalconvergencemodule {
+
+    // Disable chash from argument
+    //features{
+    //    requireCHashArgumentForActionArguments = 0
+    //}
+
+    settings{
+    }
+
+    view {
+        templateRootPaths {
+            0 = EXT:unal_convergence_module/Resources/Private/Templates/
+            1 = {$plugin.tx_unalconvergencemodule.view.templateRootPath}
+        }
+
+        partialRootPaths {
+            0 = EXT:unal_convergence_module/Resources/Private/Partials/
+            1 = {$plugin.tx_unalconvergencemodule.view.partialRootPath}
+        }
+
+        layoutRootPaths {
+            0 = EXT:unal_convergence_module/Resources/Private/Layouts/
+            1 = {$plugin.tx_unalconvergencemodule.view.layoutRootPath}
+        }
+
+        persistence {
+            storagePid = {$tx_unalconvergencemodule.persistence.storagePid}
+            #recursive = 1
+        }
+
+	}
+    
+}
+
+# ==============================================
+# BE-Module configuration for EXT:tx_unalconvergencemodule
+# ==============================================
+
+module.tx_unalconvergencemodule {
+    settings{
+    }
+    view {
+        templateRootPaths {
+            0 = EXT:unal_convergence_module/Resources/Private/Backend/Templates/
+            1 = {$module.tx_unalconvergencemodule.view.templateRootPath}
+        }
+
+        partialRootPaths {
+            0 = EXT:unal_convergence_module/Resources/Private/Backend/Partials/
+            1 = {$module.tx_unalconvergencemodule.view.partialRootPath}
+        }
+
+        layoutRootPaths {
+            0 = EXT:unal_convergence_module/Resources/Private/Backend/Layouts/
+            1 = {$module.tx_unalskinprogramasacad.view.layoutRootPath}
+        }
+
+	}
+}

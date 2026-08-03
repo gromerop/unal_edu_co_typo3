@@ -1,0 +1,134 @@
+.tx-unal-social-media * { outline:none !important; }
+.tx-unal-social-media .unsmd-item,
+.tx-unal-social-media .btn-group,
+.tx-unal-social-media .bootstrap-select {
+-o-border-radius:5px;
+-khtml-border-radius:5px;
+border-radius:5px;
+-ms-border-radius:5px;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+}
+.tx-unal-social-media .bootstrap-select .dropdown-toggle::after {color: #fff;}
+.tx-unal-social-media .btn-group,
+.tx-unal-social-media .bootstrap-select,
+.tx-unal-social-media .unsmd-item {
+-webkit-box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+-moz-box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+-o-box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+-ms-box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+-khtml-box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.tx-unal-social-media .btn-group,
+.tx-unal-social-media .bootstrap-select,
+.tx-unal-social-media div > ul a,
+.tx-unal-social-media ul a > span {
+transition:all 0.25s ease-in-out;
+-webkit-transition:all 0.25s ease-in-out;
+-ms-transition:all 0.25s ease-in-out;
+-o-transition:all 0.25s ease-in-out;
+-moz-transition:all 0.25s ease-in-out;
+-khtml-transition:all 0.25s ease-in-out;
+}
+.defaultAccountText {
+font-size:1.25em;
+}
+.tx-unal-social-media .unsmd-item {
+clear:both;
+
+padding:1em 1.75em;
+background-color:#e8e8e8;
+border:1px solid #f8f8f8;
+}
+.tx-unal-social-media .unsmd-item > h3 {
+font-family:Ancizar sans,Tahoma,Geneva,sans-serif !important;
+font-weight:bold !important;
+letter-spacing:0.025em;
+font-size:1.2em !important;
+border:0;
+margin:0 0 15px 0;
+padding:0;
+color: #14a898;
+}
+.tx-unal-social-media .btn-group,
+.tx-unal-social-media .bootstrap-select {
+width:100% !important;
+background-color:rgba(11,165,148,.8) !important;
+border:1px solid #0BA59485 !important;
+margin:0 0 1em !important;
+padding:0.125em !important;
+outline:0 !important;
+-webkit-appearance:none;
+-ms-appearance:none;
+-moz-appearance:none;
+-o-appearance:none;
+appearance:none;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+}
+.tx-unal-social-media div.dropdown-menu.open,
+.tx-unal-social-media div > ul,
+.tx-unal-social-media div > ul a,
+.tx-unal-social-media ul a > span,
+.tx-unal-social-media .btn-group:hover,
+.tx-unal-social-media .bootstrap-select:hover {
+background:#efefef !important;
+border-color:#fff !important;
+}
+.tx-unal-social-media .btn-default {
+background:transparent !important;
+border-color:transparent !important;
+}
+.tx-unal-social-media .btn-group > button,
+.tx-unal-social-media .bootstrap-select > button {
+color:#fff !important;
+font-size:1.125em !important;
+background-color: rgba(11,165,148,.8) ;
+}
+.tx-unal-social-media .btn-default:hover,
+.tx-unal-social-media .btn-default:hover > button {
+color:#000 !important;
+}
+.tx-unal-social-media .dropdown-menu li {
+border:0 !important;
+font-size:1em !important;
+line-height:1em !important;
+padding:0 !important;
+margin:0 !important;
+}
+.tx-unal-social-media .dropdown-menu li::before {display: none;}
+.tx-unal-social-media .dropdown-menu li .dropdown-item {
+    width: 300px;
+}
+.tx-unal-social-media div .dropdown-menu.open {
+}
+.tx-unal-social-media div > ul a,
+.tx-unal-social-media ul a > span {
+color:rgb(59, 59, 59) !important;
+}
+.tx-unal-social-media div > ul a:hover,
+.tx-unal-social-media div > ul a:hover > span {
+background-color:#fff !important;
+color:#000 !important;
+}
+.tx-unal-social-media .btn-group.open .dropdown-toggle,
+.tx-unal-social-media div.dropup:hover > button,
+.tx-unal-social-media div.dropup > button:hover {
+box-shadow:none;
+background:transparent;
+-webkit-appearance:none;
+-ms-appearance:none;
+-moz-appearance:none;
+-o-appearance:none;
+appearance:none;
+outline:none;
+}
+.tx-unal-social-media .btn-group.open:hover .dropdown-toggle,
+.tx-unal-social-media div.dropup:hover > button { color:#000 !important; }
+.tx-unal-social-media .socialItems .socialItem { margin:0 1em 0 0.25em !important; }
+button.btn-default {
+box-shadow:none !important; 
+outline:none !important;
+}

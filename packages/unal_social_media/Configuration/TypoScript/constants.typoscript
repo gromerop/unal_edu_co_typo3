@@ -1,0 +1,14 @@
+plugin.tx_unalsocialmedia_unsmd {
+    view {
+        # cat=plugin.tx_unalsocialmedia_unsmd/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:unal_social_media/Resources/Private/Templates/
+        # cat=plugin.tx_unalsocialmedia_unsmd/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:unal_social_media/Resources/Private/Partials/
+        # cat=plugin.tx_unalsocialmedia_unsmd/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:unal_social_media/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_unalsocialmedia_unsmd//a; type=string; label=Default storage PID
+        storagePid = 442
+    }
+}

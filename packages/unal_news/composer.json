@@ -1,0 +1,72 @@
+{
+    "name": "unal/unal-news",
+    "type": "typo3-cms-extension",
+    "description": "Esta extensi\u00f3n agrega algunos par\u00e1metros a la propia extensi\u00f3n de news para las parametrizaciones adicional de la Universidad Nacional de Colombia.",
+    "version": "1.0.0",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "UNAL",
+        "news"
+    ],
+    "homepage": "https://unal.edu.co",
+    "support": {
+        "source": "",
+        "issues": "",
+        "docs": ""
+    },
+    "authors": [
+        {
+            "name": "Oficina de Medios Digitales",
+            "role": "Developer",
+            "homepage": "https://unal.edu.co",
+            "email": "mediosdigitales@unal.edu.co"
+        },
+        {
+            "name": "Martha Lucía Chaves Muñoz",
+            "role": "Product Manager",
+            "homepage": "https://unal.edu.co",
+            "email": "mlchavezm@unal.edu.co"
+        },
+        {
+            "name": "C\u00e9sar Hansy Due\u00f1as Barrag\u00e1n",
+            "role": "Developer",
+            "homepage": "https://unal.edu.co",
+            "email": "chduenasba@unal.edu.co"
+        }
+    ],
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5 || ^10.4 || ^11.5",
+        "php": ">= 7.4 < 8.3"
+    },
+    "conflict": {
+    },
+    "suggest": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "UNAL\\UnalNews\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UNAL\\UnalNews\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+    },
+    "config": {
+    },
+    "scripts": {
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "unal_news"
+        }
+    }
+}

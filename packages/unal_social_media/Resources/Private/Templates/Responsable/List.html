@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Responsable:
+          List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <h1>Listing for Responsable</h1>
+
+    <f:flashMessages />
+
+    <table class="tx_unalsocialmedia">
+        <tr>
+            <th><f:translate key="tx_unalsocialmedia_domain_model_responsable.nombre" /></th>
+            <th><f:translate key="tx_unalsocialmedia_domain_model_responsable.apellidos" /></th>
+            <th><f:translate key="tx_unalsocialmedia_domain_model_responsable.telefono" /></th>
+            <th><f:translate key="tx_unalsocialmedia_domain_model_responsable.extension" /></th>
+            <th><f:translate key="tx_unalsocialmedia_domain_model_responsable.email" /></th>
+            <th><f:translate key="tx_unalsocialmedia_domain_model_responsable.cargo" /></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <f:for each="{responsables}" as="responsable">
+            <tr>
+                <td><f:link.action action="show" arguments="{responsable : responsable}">{responsable.nombre}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{responsable : responsable}">{responsable.apellidos}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{responsable : responsable}">{responsable.telefono}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{responsable : responsable}">{responsable.extension}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{responsable : responsable}">{responsable.email}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{responsable : responsable}">{responsable.cargo}</f:link.action></td>
+                <td><f:link.action action="edit" arguments="{responsable : responsable}">Edit</f:link.action></td>
+                <td><f:link.action action="delete" arguments="{responsable : responsable}">Delete</f:link.action></td>
+            </tr>
+        </f:for>
+    </table>
+
+    <f:link.action action="new">New Responsable</f:link.action>
+</f:section>
+</html>

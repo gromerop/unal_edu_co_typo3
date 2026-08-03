@@ -1,0 +1,108 @@
+<script type="text/javascript">
+	$(function () {
+		var urlDependencias = "<f:format.raw>{f:uri.page(pageType:'121')}</f:format.raw>";
+		$("#selectorDependencia").autocomplete({
+			source: function (request, response) {
+				$.ajax({
+					url: urlDependencias,
+					dataType: "json",
+					data: {
+						tx_unalbase_busquedadependencias: {
+							action: 'buscar',
+							controller: 'Dependencia',
+							q: request.term
+						}
+					},
+					success: function(data, textStatus, jqXHR) {
+						console.log(data);
+						if (data && data.length > 0) {
+							$('#alertaDependencias').hide();
+							var items = data;
+							response(items);
+						} else {
+							$('#alertaDependencias').show();
+							$("#selectorDependencia").autocomplete("close");
+						}
+					},
+					error: function(jqXHR, textStatus, errorThrown){
+						console.log( textStatus);
+					}
+				});
+			},
+			minLength: 3,
+			select: function( event, ui ) {
+				var value = ui.item.value;
+				var label = ui.item.label;
+
+				$('form[name="newSolicitudDependencia"] input[name="tx_unalbase_solicituddependencias[newSolicitudDependencia][idSuperior]"]').val(value);
+				$('#alertaDependencias').hide();
+				
+				$("div#seleccion").empty();
+				var itemTitleDesc = label.split("[");
+				var itemTitle = "";
+				var itemDesc = "";
+				var desc = "";
+				if ($.isArray(itemTitleDesc)) {
+					itemTitle = itemTitleDesc[0];
+					if (itemTitleDesc.length > 1) {
+						itemDesc = itemTitleDesc[1];
+						itemDesc = itemDesc.replace("]", "");
+						desc = '<br/><span><small>' + itemDesc + '</small></span>';
+					}
+					var itemContent = '<span><strong>' + itemTitle + '</strong></span>' + desc;
+					$("div#seleccion").append(itemContent);
+				} else {
+					$("div#seleccion").append(label);
+				}
+				$("div#seleccion").show();
+				$("button#cambiar").show();
+				$("div.selector_dep").hide();
+				$("#selectorDependencia").val("");
+			},
+			change: function(event, ui) {
+				$('#alertaDependencias').hide();
+			}
+		});
+		$("button#cambiar").click(function() {
+			$("#selectorDependencia").val('');
+			$("div#seleccion").empty();
+			$("div#seleccion").hide();
+			$("div.selector_dep").show();
+			$("button#cambiar").hide();
+		});
+	});
+</script>
+
+<f:form.hidden property="solicitante" value="{solicitante}" /><br />
+<label for="nombreDependencia">
+	<f:translate key="tx_unalbase_domain_model_solicituddependencia.nombre_dependencia" /> <span class="required">*</span>
+</label><br />
+	<f:form.textfield property="nombreDependencia" /><br />
+
+<label for="idSuperior">
+	<f:translate key="tx_unalbase_domain_model_solicituddependencia.id_superior" /> <span class="required">*</span>
+</label><br />
+<div class="selector_dep">
+	<input id="selectorDependencia">
+</div>
+<div id="seleccion">
+	
+</div>
+<button type="button" id="cambiar">Cambiar dependencia</button><br />
+<f:form.hidden property="idSuperior" />
+<div id="alertaDependencias">
+	<h3>No se encontraron dependencias</h3>
+	<ul>
+		<li>Puede intentar con otra entrada.</li>
+	</ul>
+</div>
+
+
+<label for="justificacion">
+	<f:translate key="tx_unalbase_domain_model_solicituddependencia.justificacion" /> <span class="required">(required)</span>
+</label><br />
+	<f:form.textarea property="justificacion" cols="40" rows="15" /><br />
+<label for="archivo">
+	<f:translate key="tx_unalbase_domain_model_solicituddependencia.archivo" />
+</label><br />
+	<span>File upload is not implemented!</span><br /><br />

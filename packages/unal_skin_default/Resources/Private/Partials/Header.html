@@ -1,0 +1,254 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+		data-namespace-typo3-fluid="true">
+		<header>
+			<div class="logo">
+			   <a href="https://unal.edu.co">
+				  <div class="svg">
+					 <f:image
+						src="EXT:unal_skin_default/Resources/Public/images/escudoUnal.svg"
+						class="d-print-none img-fluid"
+						alt="Escudo de la Universidad Nacional de Colombia"/>
+				  </div>
+			   </a>
+			   <div style="position: absolute; top :1px; width: 60px;" class="d-none d-print-block">
+				  <f:image
+					 src="EXT:unal_skin_default/Resources/Public/images/escudoUnal_black.png"
+					 class="d-none d-print-block"
+					 alt="Escudo de la Universidad Nacional de Colombia"
+					 />
+			   </div>
+			</div>
+			<div id="pestania-accesibilidad-mobile" class="d-block d-md-none"></div>
+			<div class="seal">
+			   <f:image
+				  class="d-print-none"
+				  alt="Escudo de la República de Colombia"
+				  src="EXT:unal_skin_default/Resources/Public/images/sealColombia.png"
+				  width="66"
+				  height="66"/>
+			   
+			</div>
+			<!--menú contextual-->
+			<div class="firstMenu ">
+			   <div class="content-fluid">
+				  <!--prueba navbar-->
+				  <!--fin de prueba navbar-->
+				  <nav class="navbar nav navbar-toggler navbar-expand-md navbar-dark">
+					 <!-- perfiles -->
+					 <button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarScroll"
+						aria-expanded="false"
+						aria-label="Toggle navigation">
+					 <span class="navbar-toggler-icon"></span>
+					 </button>
+					 <div class=" collapse navbar-collapse navbar-default"  >
+						<nav id="profiles">
+						   <ul class="me-auto nav justify-content-end">
+							  <li class="nav-item item_Aspirantes ">
+								 <a href="{unalsd_aspirantes}">Aspirantes</a>
+							  </li>
+							  <li class="nav-item item_Estudiantes">
+								 <a href="{unalsd_estudiantes}">Estudiantes</a>
+							  </li>
+							  <li class="nav-item item_Egresados">
+								 <a href="http://egresados.unal.edu.co">Egresados</a>
+							  </li>
+							  <li class="nav-item item_Docentes">
+								 <a href="{unalsd_docentes}">Docentes</a>
+							  </li>
+							  <li class="nav-item item_Administrativos">
+								 <a href="{unalsd_administrativos}">Administrativos</a>
+							  </li>
+						   </ul>
+						</nav>
+					 </div>
+					 <!-- redes sociales -->
+					 <ul class="socialLinks d-none d-md-block">
+						<li >
+						   <a
+							  href="{unalsd_facebook}"
+							  target="_blank"
+							  class="facebook"
+							  title="Página oficial en Facebook"></a>
+						</li>
+						<li>
+						   <a
+							  href="{unalsd_twitter}"
+							  target="_blank"
+							  class="twitter"
+							  title="Cuenta oficial en Twitter"></a>
+						</li>
+						<li>
+						   <a
+							  href="{unalsd_youtube}"
+							  target="_blank"
+							  class="youtube"
+							  title="Canal oficial de Youtube"></a>
+						</li>
+						<li>
+						   <a
+							  href="{unalsd_instagram}"
+							  target="_blank"
+							  class="instagram"
+							  title="Cuenta oficial en Instagram"></a>
+						</li>
+					 </ul>
+					 <!-- idioma -->
+					 <div class="btn-group d-print-none notranslate">
+						<button
+						   type="button"
+						   class="btn btn-secondary dropdown-toggle language-button"
+						   data-bs-toggle="dropdown"
+						   data-bs-display="static"
+						   aria-expanded="false">
+						   {unalsd_currentLang}
+						</button>
+						<ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-start language-dropdown">
+						   {unalsd_langMenu->f:format.raw()}
+                           <li><a href="https://unal-edu-co.translate.goog/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es">English [ENG]</a></li>
+                           <li><a href="https://unal-edu-co.translate.goog/?_x_tr_sl=es&_x_tr_tl=fr&_x_tr_hl=es">Français [FRA]</a></li>
+                           <li><a href="https://unal-edu-co.translate.goog/?_x_tr_sl=es&_x_tr_tl=pt&_x_tr_hl=es">Português [POR]</a></li>
+						</ul>
+					 </div>
+				  </nav>
+			   </div>
+			</div>
+			<!-- Menú inferior -->
+			<div id="bs-navbar" class="navigation ">
+			   <!-- Título del sitio -->
+			   <div class="container-fluid myb d-print-inline-block">
+				  <div class="site-url row d-print-none" id="subdominio">
+					 <span class="oi oi-map-marker"></span>
+					 <a href="//{unalsd_subdomain}">{unalsd_subdomain}</a>
+				  </div>
+				  <!-- Buscador-->
+				  <div class="buscador row" id="buscador">
+					  <f:if condition="{unalsd_subdomain_local} == 1">
+						<f:then>
+							<div
+								class="gcse-searchbox-only"
+								data-resultsurl="/resultados-de-la-busqueda/"
+								data-newwindow="true"></div>
+						</f:then>
+						<f:else>
+
+							<div
+								class="gcse-searchbox-only"
+								data-resultsurl="https://unal.edu.co/resultados-de-la-busqueda/"
+								data-newwindow="true"></div>
+						</f:else>
+					  </f:if>
+				</div>
+			   </div>
+			   <!-- Main menu -->
+			   <nav class="navbar navbar-expand-md navbar-dark menuPrincipal">
+				  <div class="container-fluid">
+					 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+						 <ul class="navbar-nav">
+						<f:if condition="{f:cObject(typoscriptObjectPath: 'tx_unalskindefault.parameters.mainMenuUid'} != 0">
+							<f:cObject typoscriptObjectPath="lib.mainMenu" />
+						</f:if>
+						</ul>
+					 </div>
+					 <f:if condition="{unalsd_showCampusMenu} == 1"> 
+						 <div class="collapse navbar-collapse menuSedes" id="navbarSupportedContent">
+							<ul class="navbar-nav">
+							   <li class="nav-item dropdown">
+								  <a
+									 class="nav-link dropdown-toggle"
+									 href="#"
+									 
+									 role="button"
+									 data-bs-toggle="dropdown"
+									 aria-expanded="false">
+								  Sedes
+								  </a>
+								  <ul class="dropdown-menu" id="sedes">
+									 <li>
+										<a class="dropdown-item" href="http://amazonia.unal.edu.co" target="_blank">Amazonia</a>
+										<span class="caret-right"></span>
+									 </li>
+									 <li>
+										<a class="dropdown-item" href="http://bogota.unal.edu.co" target="_blank">Bogotá</a>
+										<span class="caret-right"></span>
+									 </li>
+									 <li>
+										<a class="dropdown-item" href="http://caribe.unal.edu.co" target="_blank">Caribe</a>
+										<span class="caret-right"></span>
+									 </li>
+									 <li>
+										<a class="dropdown-item" href="http://delapaz.unal.edu.co" target="_blank">De La Paz</a>
+										<span class="caret-right"></span>
+									 </li>
+									 <li>
+										<a
+										   class="dropdown-item"
+										   href="http://www.manizales.unal.edu.co"
+										   target="_blank">Manizales</a>
+										<span class="caret-right"></span>
+									 </li>
+									 <li>
+										<a class="dropdown-item" href="http://medellin.unal.edu.co" target="_blank">Medellín</a>
+										<span class="caret-right"></span>
+									 </li>
+									 <li>
+										<a class="dropdown-item" href="http://orinoquia.unal.edu.co" target="_blank">Orinoquia</a>
+										<span class="caret-right"></span>
+									 </li>
+									 <li>
+										<a class="dropdown-item" href="http://www.palmira.unal.edu.co" target="_blank">Palmira</a>
+										<span class="caret-right"></span>
+									 </li>
+									 <li>
+										<a
+										   class="dropdown-item"
+										   href="http://tumaco-pacifico.unal.edu.co"
+										   target="_blank">Tumaco</a>
+										<span class="caret-right"></span>
+									 </li>
+								  </ul>
+							   </li>
+							</ul>
+							<div class="collapse navbar-collapse menuProfiles" id="navbarSupportedContent">
+							   <ul class="navbar-nav">
+								  <li class="nav-item dropdown">
+									 <a
+										class="nav-link dropdown-toggle"
+										href="#"
+										
+										role="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false">
+									 Perfiles
+									 </a>
+									 <ul class="dropdown-menu" >
+										<li class="nav-item item_Aspirantes ">
+										   <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
+										</li>
+										<li class="nav-item item_Estudiantes">
+										   <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
+										</li>
+										<li class="nav-item item_Egresados">
+										   <a href="http://egresados.unal.edu.co">Egresados</a>
+										</li>
+										<li class="nav-item item_Docentes">
+										   <a href="http://docentes.unal.edu.co">Docentes</a>
+										</li>
+										<li class="nav-item item_Administrativos">
+										   <a href="http://administrativos.unal.edu.co">Administrativos</a>
+										</li>
+									 </ul>
+								  </li>
+							   </ul>
+							</div>
+						 </div>
+					 </f:if>
+				  </div>
+			   </nav>
+			</div>
+		 </header>
+</html>
