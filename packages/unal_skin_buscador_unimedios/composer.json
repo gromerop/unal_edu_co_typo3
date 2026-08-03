@@ -1,8 +1,8 @@
 {
     "name": "unal/unal-skin-buscador-unimedios",
+    "version": "1.0",
     "type": "typo3-cms-extension",
     "description": "Extensión creada para manipular los datos del Buscador de Unimedios que estan en Elasticsearch.",
-    "version": "1.0.0",
     "keywords": [
         "TYPO3",
         "extension",
@@ -35,8 +35,7 @@
         "GPL-2.0-or-later"
     ],
     "require": {
-        "typo3/cms-core": "^10.4 || ^11.5",
-        "php": ">= 7.4 < 8.3"
+        "typo3/cms-core": "^12.4 || ^13.4"
     },
     "conflict": {
     },
