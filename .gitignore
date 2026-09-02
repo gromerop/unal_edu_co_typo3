@@ -19,12 +19,27 @@ auth.json
 /public/uploads/
 /public/_assets/
 /public/typo3/
+/public/index.php
+
+# Almacenamiento editorial del portal
+/public/archivos/*
+!/public/archivos/.htaccess
+
+# Archivos generados o locales de TYPO3 11
+/public/typo3conf/ext/
+/public/typo3conf/LocalConfiguration.php
+/public/typo3conf/AdditionalConfiguration.php
+/public/typo3conf/PackageStates.php
+/public/typo3conf/ENABLE_INSTALL_TOOL
+/public/typo3conf/.gitignore
 
 # Configuración local de TYPO3
+/public/typo3conf/LocalConfiguration.php
+/public/typo3conf/AdditionalConfiguration.php
+
+# Configuración local de TYPO3 12+
 /config/system/settings.php
 /config/system/additional.php
-/typo3conf/LocalConfiguration.php
-/typo3conf/AdditionalConfiguration.php
 
 # Editores e IDE
 .idea/
