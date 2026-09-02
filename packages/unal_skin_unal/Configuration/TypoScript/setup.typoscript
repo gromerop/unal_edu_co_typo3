@@ -50,7 +50,7 @@ page {
     
 }
 
-[page["pid"] == 454]
+[traverse(page, "pid") == 454]
     page.includeCSS.error = {$tx_unalskinunal.filepaths.css}/error.css
 [END]
 

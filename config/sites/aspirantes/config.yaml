@@ -1,0 +1,47 @@
+base: aspirantes.unal-typo3-ddev.ddev.site
+errorHandling:
+  -
+    errorCode: 403
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/403.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 404
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/404.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 500
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/500.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 503
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/503.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+disableStaticFileCache: true
+languages:
+  -
+    title: Español
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: es
+    locale: es_CO.UTF-8
+    iso-639-1: es
+    navigationTitle: Español
+    hreflang: es-CO
+    direction: ltr
+    flag: co
+    websiteTitle: ''
+rootPageId: 122
+websiteTitle: 'Aspirantes - Universidad Nacional de Colombia'
