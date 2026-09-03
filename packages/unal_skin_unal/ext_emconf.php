@@ -9,16 +9,14 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.2.0-10.4.99',
-            'fluid_styled_content' => '10.2.0-10.4.99',
-            'rte_ckeditor' => '10.2.0-10.4.99',
+            'typo3' => '12.4.0-13.4.99',
         ],
         'conflicts' => [
         ],
     ],
     'autoload' => [
         'psr-4' => [
-            'Unal\\UnalSkinUnal\\' => 'Classes',
+            'UNAL\\UnalSkinUnal\\' => 'Classes',
         ],
     ],
     'state' => 'stable',
@@ -27,6 +25,6 @@ $EM_CONF[$_EXTKEY] = [
     'clearCacheOnLoad' => 1,
     'author' => 'Andrea Daza',
     'author_email' => 'adazav@unal.edu.co',
-    'author_company' => 'UNAL',
+    'author_company' => 'Universidad Nacional de Colombia',
     'version' => '1.0.0',
 ];

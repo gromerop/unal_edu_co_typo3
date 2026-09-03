@@ -40,7 +40,7 @@
 </div>
 
 <f:section name="NewsContentWithMediaPreviews">
-    <f:alias map="{mediaElement: newsItem.falMedia.0}">
+    <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
         <f:if condition="{mediaElement.originalResource.type} == 2">
             <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}"
                 alt="{mediaElement.originalResource.alternative}"
