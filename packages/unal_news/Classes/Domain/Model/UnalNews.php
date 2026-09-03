@@ -181,7 +181,7 @@ class UnalNews extends \GeorgRinger\News\Domain\Model\News
      * @param $detailed
      * @param $tipo
      */
-    public function parsedArrayElastic($detailed = false, $tipo)
+    public function parsedArrayElastic($detailed, $tipo)
     {
         if ($tipo == "new") {
             $summary_data = array();
