@@ -1,5 +1,5 @@
 <?php
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 // Se modifica la configuración de la dependencia superior
 $GLOBALS['TCA']['tx_unalbase_domain_model_dependencia']['columns']['id_superior']['config'] = [
