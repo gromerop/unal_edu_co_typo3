@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Domain\Model;
+namespace UNAL\UnalSocialMedia\Domain\Model;
 
 
 /**
@@ -30,7 +30,7 @@ class Facultad extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * sede
      *
-     * @var \Unal\UnalSocialMedia\Domain\Model\Sede
+     * @var \UNAL\UnalSocialMedia\Domain\Model\Sede
      */
     protected $sede = null;
 
@@ -58,7 +58,7 @@ class Facultad extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the sede
      *
-     * @return \Unal\UnalSocialMedia\Domain\Model\Sede sede
+     * @return \UNAL\UnalSocialMedia\Domain\Model\Sede sede
      */
     public function getSede()
     {
@@ -68,10 +68,10 @@ class Facultad extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the sede
      *
-     * @param \Unal\UnalSocialMedia\Domain\Model\Sede $sede
+     * @param \UNAL\UnalSocialMedia\Domain\Model\Sede $sede
      * @return void
      */
-    public function setSede(\Unal\UnalSocialMedia\Domain\Model\Sede $sede)
+    public function setSede(\UNAL\UnalSocialMedia\Domain\Model\Sede $sede)
     {
         $this->sede = $sede;
     }

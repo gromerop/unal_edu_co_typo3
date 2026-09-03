@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Controller;
+namespace UNAL\UnalSocialMedia\Controller;
 
+use Psr\Http\Message\ResponseInterface;
+use UNAL\UnalSocialMedia\Domain\Repository\CuentaRepository;
 
 /**
  * This file is part of the "UNAL Social Media" Extension for TYPO3 CMS.
@@ -21,28 +23,23 @@ class CuentaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 {
 
     /**
-     * cuentaRepository
+     * Repositorio de cuentas
      *
-     * @var \UNAL\UnalSocialMedia\Domain\Repository\CuentaRepository
      */
-    protected $cuentaRepository = null;
-
-    /**
-     * @param \UNAL\UnalSocialMedia\Domain\Repository\CuentaRepository $cuentaRepository
-     */
-    public function injectCuentaRepository(\UNAL\UnalSocialMedia\Domain\Repository\CuentaRepository $cuentaRepository)
-    {
+    protected CuentaRepository $cuentaRepository;
+    
+    public function __construct(CuentaRepository $cuentaRepository) {
         $this->cuentaRepository = $cuentaRepository;
     }
 
     /**
-     * action list
+     * Listado de cuentas
      *
-     * @return string|object|null|void
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $cuentas = $this->cuentaRepository->findAll();
         $this->view->assign('cuentas', $cuentas);
+        return $this->htmlResponse();
     }
 }

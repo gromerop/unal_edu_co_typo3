@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Tests\Unit\Domain\Model;
+namespace UNAL\UnalSocialMedia\Tests\Unit\Domain\Model;
 
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
@@ -11,14 +11,14 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 class DependenciaTest extends UnitTestCase
 {
     /**
-     * @var \Unal\UnalSocialMedia\Domain\Model\Dependencia
+     * @var \UNAL\UnalSocialMedia\Domain\Model\Dependencia
      */
     protected $subject;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = new \Unal\UnalSocialMedia\Domain\Model\Dependencia();
+        $this->subject = new \UNAL\UnalSocialMedia\Domain\Model\Dependencia();
     }
 
     protected function tearDown()
@@ -67,7 +67,7 @@ class DependenciaTest extends UnitTestCase
      */
     public function setFacultadForFacultadSetsFacultad()
     {
-        $facultadFixture = new \Unal\UnalSocialMedia\Domain\Model\Facultad();
+        $facultadFixture = new \UNAL\UnalSocialMedia\Domain\Model\Facultad();
         $this->subject->setFacultad($facultadFixture);
 
         self::assertAttributeEquals(
@@ -94,7 +94,7 @@ class DependenciaTest extends UnitTestCase
      */
     public function setCuentasForObjectStorageContainingCuentaSetsCuentas()
     {
-        $cuenta = new \Unal\UnalSocialMedia\Domain\Model\Cuenta();
+        $cuenta = new \UNAL\UnalSocialMedia\Domain\Model\Cuenta();
         $objectStorageHoldingExactlyOneCuentas = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneCuentas->attach($cuenta);
         $this->subject->setCuentas($objectStorageHoldingExactlyOneCuentas);
@@ -111,7 +111,7 @@ class DependenciaTest extends UnitTestCase
      */
     public function addCuentaToObjectStorageHoldingCuentas()
     {
-        $cuenta = new \Unal\UnalSocialMedia\Domain\Model\Cuenta();
+        $cuenta = new \UNAL\UnalSocialMedia\Domain\Model\Cuenta();
         $cuentasObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -128,7 +128,7 @@ class DependenciaTest extends UnitTestCase
      */
     public function removeCuentaFromObjectStorageHoldingCuentas()
     {
-        $cuenta = new \Unal\UnalSocialMedia\Domain\Model\Cuenta();
+        $cuenta = new \UNAL\UnalSocialMedia\Domain\Model\Cuenta();
         $cuentasObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()
@@ -156,7 +156,7 @@ class DependenciaTest extends UnitTestCase
      */
     public function setSedeForSedeSetsSede()
     {
-        $sedeFixture = new \Unal\UnalSocialMedia\Domain\Model\Sede();
+        $sedeFixture = new \UNAL\UnalSocialMedia\Domain\Model\Sede();
         $this->subject->setSede($sedeFixture);
 
         self::assertAttributeEquals(

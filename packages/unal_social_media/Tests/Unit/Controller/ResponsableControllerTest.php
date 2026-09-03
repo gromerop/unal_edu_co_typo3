@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Tests\Unit\Controller;
+namespace UNAL\UnalSocialMedia\Tests\Unit\Controller;
 
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
@@ -11,14 +11,14 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 class ResponsableControllerTest extends UnitTestCase
 {
     /**
-     * @var \Unal\UnalSocialMedia\Controller\ResponsableController
+     * @var \UNAL\UnalSocialMedia\Controller\ResponsableController
      */
     protected $subject;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\Unal\UnalSocialMedia\Controller\ResponsableController::class)
+        $this->subject = $this->getMockBuilder(\UNAL\UnalSocialMedia\Controller\ResponsableController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Tests\Unit\Domain\Model;
+namespace UNAL\UnalSocialMedia\Tests\Unit\Domain\Model;
 
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
@@ -11,14 +11,14 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 class CuentaTest extends UnitTestCase
 {
     /**
-     * @var \Unal\UnalSocialMedia\Domain\Model\Cuenta
+     * @var \UNAL\UnalSocialMedia\Domain\Model\Cuenta
      */
     protected $subject;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = new \Unal\UnalSocialMedia\Domain\Model\Cuenta();
+        $this->subject = new \UNAL\UnalSocialMedia\Domain\Model\Cuenta();
     }
 
     protected function tearDown()
@@ -117,7 +117,7 @@ class CuentaTest extends UnitTestCase
      */
     public function setMediosForMedioSetsMedios()
     {
-        $mediosFixture = new \Unal\UnalSocialMedia\Domain\Model\Medio();
+        $mediosFixture = new \UNAL\UnalSocialMedia\Domain\Model\Medio();
         $this->subject->setMedios($mediosFixture);
 
         self::assertAttributeEquals(
@@ -143,7 +143,7 @@ class CuentaTest extends UnitTestCase
      */
     public function setResponsableForResponsableSetsResponsable()
     {
-        $responsableFixture = new \Unal\UnalSocialMedia\Domain\Model\Responsable();
+        $responsableFixture = new \UNAL\UnalSocialMedia\Domain\Model\Responsable();
         $this->subject->setResponsable($responsableFixture);
 
         self::assertAttributeEquals(

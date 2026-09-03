@@ -1,92 +1,104 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:unal_social_media/Resources/Private/Language/locallang_db" date="2021-09-09T13:11:13Z" product-name="unal_social_media">
-		<header/>
-		<body>
-			<trans-unit id="tx_unalsocialmedia_domain_model_sede" resname="tx_unalsocialmedia_domain_model_sede">
-				<source>Sede</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_sede.nombre" resname="tx_unalsocialmedia_domain_model_sede.nombre">
-				<source>Nombre</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_facultad" resname="tx_unalsocialmedia_domain_model_facultad">
-				<source>Facultad</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_facultad.nombre" resname="tx_unalsocialmedia_domain_model_facultad.nombre">
-				<source>Nombre</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_facultad.sede" resname="tx_unalsocialmedia_domain_model_facultad.sede">
-				<source>Sede</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_dependencia" resname="tx_unalsocialmedia_domain_model_dependencia">
-				<source>Dependencia</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_dependencia.nombre" resname="tx_unalsocialmedia_domain_model_dependencia.nombre">
-				<source>Nombre</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_dependencia.facultad" resname="tx_unalsocialmedia_domain_model_dependencia.facultad">
-				<source>Facultad</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_dependencia.cuentas" resname="tx_unalsocialmedia_domain_model_dependencia.cuentas">
-				<source>Cuentas</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_dependencia.sede" resname="tx_unalsocialmedia_domain_model_dependencia.sede">
-				<source>Sede</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_cuenta" resname="tx_unalsocialmedia_domain_model_cuenta">
-				<source>Cuenta</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_cuenta.nombre_cuenta" resname="tx_unalsocialmedia_domain_model_cuenta.nombre_cuenta">
-				<source>Nombre Cuenta</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_cuenta.tipo" resname="tx_unalsocialmedia_domain_model_cuenta.tipo">
-				<source>Tipo</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_cuenta.url" resname="tx_unalsocialmedia_domain_model_cuenta.url">
-				<source>Url</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_cuenta.medios" resname="tx_unalsocialmedia_domain_model_cuenta.medios">
-				<source>Medios</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_cuenta.responsable" resname="tx_unalsocialmedia_domain_model_cuenta.responsable">
-				<source>Responsable</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_medio" resname="tx_unalsocialmedia_domain_model_medio">
-				<source>Medio</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_medio.nombre" resname="tx_unalsocialmedia_domain_model_medio.nombre">
-				<source>Nombre</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_medio.icono" resname="tx_unalsocialmedia_domain_model_medio.icono">
-				<source>Icono</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_responsable" resname="tx_unalsocialmedia_domain_model_responsable">
-				<source>Responsable</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_responsable.nombre" resname="tx_unalsocialmedia_domain_model_responsable.nombre">
-				<source>Nombre</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_responsable.apellidos" resname="tx_unalsocialmedia_domain_model_responsable.apellidos">
-				<source>Apellidos</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_responsable.telefono" resname="tx_unalsocialmedia_domain_model_responsable.telefono">
-				<source>Telefono</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_responsable.extension" resname="tx_unalsocialmedia_domain_model_responsable.extension">
-				<source>Extension</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_responsable.email" resname="tx_unalsocialmedia_domain_model_responsable.email">
-				<source>Email</source>
-			</trans-unit>
-			<trans-unit id="tx_unalsocialmedia_domain_model_responsable.cargo" resname="tx_unalsocialmedia_domain_model_responsable.cargo">
-				<source>Cargo</source>
-			</trans-unit>
-			<trans-unit id="tx_unal_social_media_unsmd.name" resname="tx_unal_social_media_unsmd.name">
-				<source>UNAL Social Media Directory</source>
-			</trans-unit>
-			<trans-unit id="tx_unal_social_media_unsmd.description" resname="tx_unal_social_media_unsmd.description">
-				<source></source>
-			</trans-unit>
-		</body>
-	</file>
+    <file source-language="en" datatype="plaintext" original="EXT:unal_social_media/Resources/Private/Language/locallang_db" date="2021-09-09T13:11:13Z" product-name="unal_social_media">
+        <header/>
+        <body>
+            <trans-unit id="tx_unalsocialmedia_domain_model_sede" resname="tx_unalsocialmedia_domain_model_sede">
+                <source>Sede</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_sede.nombre" resname="tx_unalsocialmedia_domain_model_sede.nombre">
+                <source>Nombre</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_facultad" resname="tx_unalsocialmedia_domain_model_facultad">
+                <source>Facultad</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_facultad.nombre" resname="tx_unalsocialmedia_domain_model_facultad.nombre">
+                <source>Nombre</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_facultad.sede" resname="tx_unalsocialmedia_domain_model_facultad.sede">
+                <source>Sede</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_dependencia" resname="tx_unalsocialmedia_domain_model_dependencia">
+                <source>Dependencia</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_dependencia.nombre" resname="tx_unalsocialmedia_domain_model_dependencia.nombre">
+                <source>Nombre</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_dependencia.facultad" resname="tx_unalsocialmedia_domain_model_dependencia.facultad">
+                <source>Facultad</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_dependencia.cuentas" resname="tx_unalsocialmedia_domain_model_dependencia.cuentas">
+                <source>Cuentas</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_dependencia.sede" resname="tx_unalsocialmedia_domain_model_dependencia.sede">
+                <source>Sede</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_cuenta" resname="tx_unalsocialmedia_domain_model_cuenta">
+                <source>Cuenta</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_cuenta.nombre_cuenta" resname="tx_unalsocialmedia_domain_model_cuenta.nombre_cuenta">
+                <source>Nombre Cuenta</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_cuenta.tipo" resname="tx_unalsocialmedia_domain_model_cuenta.tipo">
+                <source>Tipo</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_cuenta.url" resname="tx_unalsocialmedia_domain_model_cuenta.url">
+                <source>Url</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_cuenta.medios" resname="tx_unalsocialmedia_domain_model_cuenta.medios">
+                <source>Medios</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_cuenta.responsable" resname="tx_unalsocialmedia_domain_model_cuenta.responsable">
+                <source>Responsable</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_medio" resname="tx_unalsocialmedia_domain_model_medio">
+                <source>Medio</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_medio.nombre" resname="tx_unalsocialmedia_domain_model_medio.nombre">
+                <source>Nombre</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_medio.icono" resname="tx_unalsocialmedia_domain_model_medio.icono">
+                <source>Icono</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_responsable" resname="tx_unalsocialmedia_domain_model_responsable">
+                <source>Responsable</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_responsable.nombre" resname="tx_unalsocialmedia_domain_model_responsable.nombre">
+                <source>Nombre</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_responsable.apellidos" resname="tx_unalsocialmedia_domain_model_responsable.apellidos">
+                <source>Apellidos</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_responsable.telefono" resname="tx_unalsocialmedia_domain_model_responsable.telefono">
+                <source>Telefono</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_responsable.extension" resname="tx_unalsocialmedia_domain_model_responsable.extension">
+                <source>Extension</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_responsable.email" resname="tx_unalsocialmedia_domain_model_responsable.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_unalsocialmedia_domain_model_responsable.cargo" resname="tx_unalsocialmedia_domain_model_responsable.cargo">
+                <source>Cargo</source>
+            </trans-unit>
+            <trans-unit id="tx_unal_social_media_unsmd.name" resname="tx_unal_social_media_unsmd.name">
+                <source>UNAL Social Media Directory</source>
+            </trans-unit>
+            <trans-unit id="tx_unal_social_media_unsmd.description" resname="tx_unal_social_media_unsmd.description">
+                <source></source>
+            </trans-unit>
+            <trans-unit id="tx_unal_social_media_filter.name" resname="tx_unal_social_media_filter.name">
+                <source>Filtro para búsqueda</source>
+            </trans-unit>
+            <trans-unit id="tx_unal_social_media_filter.description" resname="tx_unal_social_media_filter.description">
+                <source>Filtro para búsqueda de dependencias y redes sociales</source>
+            </trans-unit>
+            <trans-unit id="tx_unal_social_media_list.name" resname="tx_unal_social_media_list.name">
+                <source>Listado de dependencias y redes sociales</source>
+            </trans-unit>
+            <trans-unit id="tx_unal_social_media_list.description" resname="tx_unal_social_media_list.description">
+                <source>Listado de dependencias y redes sociales</source>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

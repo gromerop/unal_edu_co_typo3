@@ -1,5 +1,5 @@
 <?php
-namespace Unal\UnalSocialMedia\ViewHelpers;
+namespace UNAL\UnalSocialMedia\ViewHelpers;
 
 class TrimViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
     

@@ -2,7 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Controller;
+namespace UNAL\UnalSocialMedia\Controller;
+
+use Psr\Http\Message\ResponseInterface;
+use UNAL\UnalSocialMedia\Domain\Repository\DependenciaRepository;
+use UNAL\UnalSocialMedia\Domain\Repository\MedioRepository;
+use UNAL\UnalSocialMedia\Domain\Repository\SedeRepository;
 
 
 /**
@@ -19,77 +24,54 @@ namespace Unal\UnalSocialMedia\Controller;
  */
 class MedioController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
-     * medioRepository
+     * Repositorio de medios
      *
-     * @var \Unal\UnalSocialMedia\Domain\Repository\MedioRepository
      */
-    protected $medioRepository = null;
-
+    protected MedioRepository $medioRepository;
+    
     /**
-     * @param \Unal\UnalSocialMedia\Domain\Repository\MedioRepository $medioRepository
+     * Repositorio de Sedes
+     *
      */
-    public function injectMedioRepository(\Unal\UnalSocialMedia\Domain\Repository\MedioRepository $medioRepository)
-    {
+    protected SedeRepository $sedeRepository;
+    
+    /**
+     * Repositorio de dependencias
+     *
+     */
+    protected DependenciaRepository $dependenciaRepository;
+    
+    public function __construct(MedioRepository $medioRepository, SedeRepository $sedeRepository, DependenciaRepository $dependenciaRepository) {
         $this->medioRepository = $medioRepository;
-    }
-
-    /**
-     * sedeRepository
-     *
-     * @var \Unal\UnalSocialMedia\Domain\Repository\SedeRepository
-     */
-    protected $sedeRepository = null;
-
-    /**
-     * @param \Unal\UnalSocialMedia\Domain\Repository\SedeRepository $sedeRepository
-     */
-    public function injectSedeRepository(\Unal\UnalSocialMedia\Domain\Repository\SedeRepository $sedeRepository)
-    {
         $this->sedeRepository = $sedeRepository;
-    }
-
-    /**
-     * dependenciaRepository
-     *
-     * @var \Unal\UnalSocialMedia\Domain\Repository\DependenciaRepository
-     */
-    protected $dependenciaRepository = null;
-
-    /**
-     * @param \Unal\UnalSocialMedia\Domain\Repository\DependenciaRepository $dependenciaRepository
-     */
-    public function injectDependenciaRepository(\Unal\UnalSocialMedia\Domain\Repository\DependenciaRepository $dependenciaRepository)
-    {
         $this->dependenciaRepository = $dependenciaRepository;
     }
+    
     /**
-     * action list
+     * Listado de medios
      *
-     * @return string|object|null|void
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $medios = $this->medioRepository->findAll();
         $this->view->assign('medios', $medios);
+        return $this->htmlResponse();
     }
 
     /**
      * action search
      *
-     * @return string|object|null|void
      */
-    public function searchAction()
+    public function searchAction(): ResponseInterface
     {
-		$medios = $this->medioRepository->findAvaible();
-		$this->view->assign('medio', $medios);
-		$sede = $this->sedeRepository->findAll();
-		$this->view->assign('sede', $sede);
+        $medios = $this->medioRepository->findAvaible();
+        $this->view->assign('medio', $medios);
+        $sede = $this->sedeRepository->findAll();
+        $this->view->assign('sede', $sede);
 
-		$dependencia = $this->dependenciaRepository->findAvailable();
-		$this->view->assign('dependencia', $dependencia);
-		
-//		$this->view->assign('createPid', $this->settings['createPid']);
+        $dependencia = $this->dependenciaRepository->findAvailable();
+        $this->view->assign('dependencia', $dependencia);
+        return $this->htmlResponse();
     }
 }

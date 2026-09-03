@@ -14,7 +14,6 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-
       <div class="unsmd-item-list">
         <f:for each="{dependencias}" as="dependencia">
           <div class="unsmd-item sede-{dependencia.sede.uid} dependencia-{dependencia.uid}">
@@ -39,11 +38,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
     .tx-unal-social-media-directory .otherSocialItems .socialItem img{vertical-align: top}
     </style>
     <script>
-    jQuery(document).ready(function($){
-      $('.otherSocialItems-tgl').click(function(){
-        $(this).next().toggle()
-      })
-    })
+        jQuery(document).ready(function($){
+          $('.otherSocialItems-tgl').click(function(){
+            $(this).next().toggle();
+          });
+        });
     </script>
 </f:section>
 </html>
