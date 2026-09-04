@@ -13,8 +13,8 @@ class BasicTest extends FunctionalTestCase
     /**
      * @var array
      */
-    protected $testExtensionsToLoad = [
-        'typo3conf/ext/unal_social_media',
+    protected array $testExtensionsToLoad = [
+        'unal/unal-social-media',
     ];
 
     /**
