@@ -1,4 +1,8 @@
-base: docentes.unal-typo3-ddev.ddev.site
+base: docentes.unal.edu.co
+baseVariants:
+  -
+    base: 'https://unal-docentes.ddev.site/'
+    condition: 'applicationContext == "Development/DDEV"'
 errorHandling:
   -
     errorCode: 403

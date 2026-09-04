@@ -66,8 +66,8 @@ languages:
     title: Wayuunaiki
     enabled: true
     base: /guc
-    typo3Language: sl
-    locale: guc_CO.UTF-8
+    typo3Language: es
+    locale: es_CO.UTF-8
     iso-639-1: wa
     websiteTitle: 'Universidad Nacional de Colombia'
     navigationTitle: Wayuunaiki
@@ -81,8 +81,8 @@ languages:
     title: 'Nasa yuwe'
     enabled: true
     base: /pbb
-    typo3Language: default
-    locale: pbb_CO.UTF-8
+    typo3Language: es
+    locale: es_CO.UTF-8
     iso-639-1: na
     websiteTitle: ''
     navigationTitle: 'Nasa yuwe'

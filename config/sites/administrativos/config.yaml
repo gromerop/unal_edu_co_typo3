@@ -1,4 +1,8 @@
-base: administrativos.unal-typo3-ddev.ddev.site
+base: administrativos.unal.edu.co
+baseVariants:
+  -
+    base: 'https://unal-administrativos.ddev.site/'
+    condition: 'applicationContext == "Development/DDEV"'
 disableStaticFileCache: false
 errorHandling:
   -
