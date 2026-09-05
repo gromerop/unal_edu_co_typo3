@@ -1,6 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 namespace UNAL\UnalNews\Domain\Repository;
 
+use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 
@@ -64,18 +68,23 @@ class UnalNewsRepository extends \GeorgRinger\News\Domain\Repository\NewsReposit
      /**
      * @param $search
      */
-    public function getData($search)
+    public function getData(string $search): array
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_news_domain_model_news');
-        $statement = $queryBuilder
-        ->select('tx_news_domain_model_news.title')
-        ->from('tx_news_domain_model_news')
-        ->where($queryBuilder
-            ->expr()
-            ->like('tx_news_domain_model_news.title','"%'.$search.'%"'))
-            ->setMaxResults( 10 )
-        ->execute();
-        return $statement->fetchAll();
+        $searchPattern = '%' . $queryBuilder->escapeLikeWildcards($search) . '%';
+
+        return $queryBuilder
+            ->select('title')
+            ->from('tx_news_domain_model_news')
+            ->where(
+                $queryBuilder->expr()->like(
+                    'title',
+                    $queryBuilder->createNamedParameter($searchPattern)
+                )
+            )
+            ->setMaxResults(10)
+            ->executeQuery()
+            ->fetchAllAssociative();
     }
 
     /**
@@ -109,5 +118,73 @@ class UnalNewsRepository extends \GeorgRinger\News\Domain\Repository\NewsReposit
         $query = $this->createQuery();
         $result = $query->statement('SELECT * FROM tx_news_domain_model_news WHERE tstamp>=' . $timestamp . ' AND (deleted=0 AND hidden=0 )');
         return $query->execute();
+    }
+
+    /**
+     * @return int[]
+     */
+    public function findDeletedUidsSince(int $timestamp): array
+    {
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable('tx_news_domain_model_news');
+        $queryBuilder->getRestrictions()->removeAll();
+
+        $uids = $queryBuilder
+            ->select('uid')
+            ->from('tx_news_domain_model_news')
+            ->where(
+                $queryBuilder->expr()->gte(
+                    'tstamp',
+                    $queryBuilder->createNamedParameter($timestamp, Connection::PARAM_INT)
+                ),
+                $queryBuilder->expr()->or(
+                    $queryBuilder->expr()->eq(
+                        'deleted',
+                        $queryBuilder->createNamedParameter(1, Connection::PARAM_INT)
+                    ),
+                    $queryBuilder->expr()->eq(
+                        'hidden',
+                        $queryBuilder->createNamedParameter(1, Connection::PARAM_INT)
+                    )
+                )
+            )
+            ->orderBy('uid')
+            ->executeQuery()
+            ->fetchFirstColumn();
+
+        return array_map('intval', $uids);
+    }
+
+    /**
+     * @return int[]
+     */
+    public function findEditedUidsSince(int $timestamp): array
+    {
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable('tx_news_domain_model_news');
+        $queryBuilder->getRestrictions()->removeAll();
+
+        $uids = $queryBuilder
+            ->select('uid')
+            ->from('tx_news_domain_model_news')
+            ->where(
+                $queryBuilder->expr()->gte(
+                    'tstamp',
+                    $queryBuilder->createNamedParameter($timestamp, Connection::PARAM_INT)
+                ),
+                $queryBuilder->expr()->eq(
+                    'deleted',
+                    $queryBuilder->createNamedParameter(0, Connection::PARAM_INT)
+                ),
+                $queryBuilder->expr()->eq(
+                    'hidden',
+                    $queryBuilder->createNamedParameter(0, Connection::PARAM_INT)
+                )
+            )
+            ->orderBy('uid')
+            ->executeQuery()
+            ->fetchFirstColumn();
+
+        return array_map('intval', $uids);
     }
 }

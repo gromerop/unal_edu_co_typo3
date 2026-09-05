@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4bbb41e97682a2a41e39f40d0f8ae6e",
+    "content-hash": "76cd06f7def8f565168a57d28d06ddb8",
     "packages": [
         {
             "name": "b13/container",
@@ -181,87 +181,6 @@
                 "source": "https://github.com/ChristianRiesen/base32/tree/1.6.1"
             },
             "time": "2026-07-11T19:29:43+00:00"
-        },
-        {
-            "name": "cundd/rest",
-            "version": "6.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cundd/rest.git",
-                "reference": "620cdb50ed37fef5612e9c4cbfa97e153dba3640"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cundd/rest/zipball/620cdb50ed37fef5612e9c4cbfa97e153dba3640",
-                "reference": "620cdb50ed37fef5612e9c4cbfa97e153dba3640",
-                "shasum": ""
-            },
-            "require": {
-                "ext-ctype": "*",
-                "ext-json": "*",
-                "php": "^8.1",
-                "typo3/cms-core": "^12.4"
-            },
-            "replace": {
-                "typo3-ter/rest": "self.version"
-            },
-            "require-dev": {
-                "cundd/test-flight": "^0.1.5",
-                "ext-curl": "*",
-                "ext-simplexml": "*",
-                "laminas/laminas-diactoros": "^3.0.0",
-                "phpspec/prophecy": "*",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^9.5.21",
-                "psr/container": "^2.0",
-                "psr/http-message": "^2.0",
-                "psr/log": "^2.0",
-                "typo3/testing-framework": "^7 || ^8"
-            },
-            "type": "typo3-cms-extension",
-            "extra": {
-                "typo3/cms": {
-                    "app-dir": ".Build",
-                    "web-dir": ".Build/Web",
-                    "extension-key": "rest"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cundd\\Rest\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel Corn",
-                    "email": "info@cundd.net"
-                }
-            ],
-            "description": "REST API for TYPO3 CMS",
-            "homepage": "https://rest.corn.rest/",
-            "keywords": [
-                "api",
-                "rest",
-                "restful",
-                "service",
-                "typo3cms",
-                "webservice"
-            ],
-            "support": {
-                "issues": "https://github.com/cundd/rest/issues",
-                "source": "https://github.com/cundd/rest/tree/6.0.0"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/paypalme2/cundd",
-                    "type": "custom"
-                }
-            ],
-            "time": "2024-01-08T11:35:22+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -7982,9 +7901,10 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/unal_news",
-                "reference": "b29c42f46185ee9dd2fa65d513999b7d8269d828"
+                "reference": "8f75d6ceb940ebb240d16e3483194d4a50d3e2cf"
             },
             "require": {
+                "georgringer/news": "^12.3 || ^13.0",
                 "typo3/cms-core": "^12.4 || ^13.4"
             },
             "type": "typo3-cms-extension",

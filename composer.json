@@ -15,7 +15,6 @@
 	},
 	"require": {
 		"b13/container": "^3.1",
-		"cundd/rest": "^6.0",
 		"fluidtypo3/vhs": "^7.1",
 		"georgringer/news": "^12.3",
 		"georgringer/numbered-pagination": "^2.1",

@@ -99,5 +99,3 @@ module.tx_unalnews_web_unalnewsunalnewsreporter {
 }
 
     ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
-
-    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:unal_news/Configuration/TypoScript/Rest/rest.typoscript">
