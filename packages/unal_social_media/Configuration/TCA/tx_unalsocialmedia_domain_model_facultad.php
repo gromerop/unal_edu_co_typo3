@@ -1,6 +1,7 @@
 <?php
 return [
     'ctrl' => [
+        'security' => ['ignorePageTypeRestriction' => true],
         'title' => 'LLL:EXT:unal_social_media/Resources/Private/Language/locallang_db.xlf:tx_unalsocialmedia_domain_model_facultad',
         'label' => 'nombre',
         'tstamp' => 'tstamp',
