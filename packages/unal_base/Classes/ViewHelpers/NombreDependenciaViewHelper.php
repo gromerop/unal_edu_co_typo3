@@ -32,6 +32,12 @@ namespace UNAL\UnalBase\ViewHelpers;
  */
 class NombreDependenciaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 {
+	public function initializeArguments()
+	{
+		parent::initializeArguments();
+		$this->registerArgument('uid', 'integer', '', true);
+	}
+
 	/**
      * dependenciaRepository
      *
@@ -42,10 +48,10 @@ class NombreDependenciaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstr
 	 
 	/**
 	 * 
-	 * @param int $uid
 	 * @return string
 	 */
-	public function render($uid) {
+	public function render() {
+		$uid = $this->arguments['uid'];
 		$resultado = '';
 		$dependencia = $this->dependenciaRepository->findByUid($uid);
 		if ($dependencia != NULL) {

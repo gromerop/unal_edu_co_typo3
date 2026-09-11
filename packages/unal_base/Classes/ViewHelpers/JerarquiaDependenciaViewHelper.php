@@ -32,6 +32,13 @@ namespace UNAL\UnalBase\ViewHelpers;
  */
 class JerarquiaDependenciaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 {
+	public function initializeArguments()
+	{
+		parent::initializeArguments();
+		$this->registerArgument('uid', 'integer', '', true);
+		$this->registerArgument('descendente', 'integer', '', false, 0);
+	}
+
 	/**
      * dependenciaRepository
      *
@@ -42,11 +49,11 @@ class JerarquiaDependenciaViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Ab
 	 
 	/**
 	 * 
-	 * @param int $uid
-	 * @param int $descendente Indica 
 	 * @return string
 	 */
-	public function render($uid, $descendente = 0) {
+	public function render() {
+		$uid = $this->arguments['uid'];
+		$descendente = $this->arguments['descendente'];
 		$texto = '';
 		$dependencia = $this->dependenciaRepository->findByUid($uid);
 		if ($dependencia != NULL) {

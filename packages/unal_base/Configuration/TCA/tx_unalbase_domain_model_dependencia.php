@@ -1,6 +1,7 @@
 <?php
 return [
     'ctrl' => [
+        'security' => ['ignorePageTypeRestriction' => true],
         'title'	=> 'LLL:EXT:unal_base/Resources/Private/Language/locallang_db.xlf:tx_unalbase_domain_model_dependencia',
         'label' => 'nombre',
         'tstamp' => 'tstamp',

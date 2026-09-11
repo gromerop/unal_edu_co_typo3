@@ -32,12 +32,18 @@ namespace UNAL\UnalBase\ViewHelpers;
  */
 class TabulacionesViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 {
+	public function initializeArguments()
+	{
+		parent::initializeArguments();
+		$this->registerArgument('n', 'integer', '', true);
+	}
+
 	/**
      *
-	 * @param int $n
 	 * @return string
      */
-	public function render($n) {
+	public function render() {
+		$n = $this->arguments['n'];
 		$resultado = "";
 			for ($i = 1; $i <= $n; $i++) {
 				$resultado .= "_____";

@@ -32,6 +32,12 @@ namespace UNAL\UnalBase\ViewHelpers;
  */
 class UsernameViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 {
+	public function initializeArguments()
+	{
+		parent::initializeArguments();
+		$this->registerArgument('uid', 'integer', '', true);
+	}
+
 	/**
      * usuarioRepository
      *
@@ -42,10 +48,10 @@ class UsernameViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHe
 	 
 	/**
 	 * 
-	 * @param int $uid
 	 * @return string
 	 */
-	public function render($uid) {
+	public function render() {
+		$uid = $this->arguments['uid'];
 		return $this->usuarioRepository->fetch('fe_users', $uid)[0]['username'];
 	}
 }
