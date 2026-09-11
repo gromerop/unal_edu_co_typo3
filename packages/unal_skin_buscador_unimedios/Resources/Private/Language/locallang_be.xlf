@@ -3,9 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2021-04-05T10:12:52Z" product-name="unal_skin_buscador_unimedios">
 		<header/>
 		<body>
-			<trans-unit id="extmng.detailNewsPageUid" xml:space="preserve">
-				<source>Detail pageUid of news.:Default value is 1</source>
-			</trans-unit>
 			<trans-unit id="extmng.elasticDomain" xml:space="preserve">
 				<source>Elasticsearch Domain.:Without slash at the end of the domain. (e.g.: http://168.176.236.22)</source>
 			</trans-unit>

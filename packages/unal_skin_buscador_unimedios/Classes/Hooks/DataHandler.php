@@ -9,9 +9,9 @@ namespace UNAL\UnalSkinBuscadorUnimedios\Hooks;
  * LICENSE.txt file that was distributed with this source code.
  */
 use TYPO3\CMS\Backend\Utility\BackendUtility as BackendUtilityCore;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 use UNAL\UnalSkinBuscadorUnimedios\Utility\ConvergenciaUtility;
+use TYPO3\CMS\Core\DataHandling\DataHandler as CoreDataHandler;
 
 
 /**
@@ -21,14 +21,9 @@ use UNAL\UnalSkinBuscadorUnimedios\Utility\ConvergenciaUtility;
 class DataHandler
 {
 
-    protected ConvergenciaUtility $convergenciaUtility;
-
-    /**
-     * DataHandler constructor.
-     */
-    public function __construct()
-    {
-        $this->convergenciaUtility = GeneralUtility::makeInstance(ConvergenciaUtility::class);
+    public function __construct(
+        private readonly ConvergenciaUtility $convergenciaUtility,
+    ) {
     }
 
 
@@ -39,25 +34,32 @@ class DataHandler
      * @param string $table table name
      * @param int $recordUid id of the record
      * @param array $fields fieldArray
-     * @param \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject parent Object
+     * @param CoreDataHandler $parentObject parent Object
      */
     public function processDatamap_afterDatabaseOperations(
         string $status,
         string $table,
         string|int $recordUid,
         array $fields,
-        DataHandler $parentObject
+        CoreDataHandler $parentObject
     ): void {
         
         if ($table !== 'tx_news_domain_model_news') {
             return;
         }
 
-        if (GeneralUtility::isFirstPartOfStr($recordUid, 'NEW')) {
-            $recordUid = $parentObject->substNEWwithIDs[$recordUid] ?? $recordUid;
+        if (
+            is_string($recordUid)
+            && str_starts_with($recordUid, 'NEW')
+        ) {
+            $recordUid = $parentObject->substNEWwithIDs[$recordUid]
+                ?? $recordUid;
         }
 
-        $newsRecord = BackendUtilityCore::getRecord($table, $recordUid);
+        $newsRecord = BackendUtilityCore::getRecord(
+            $table,
+            (int)$recordUid
+        );
         if (!$newsRecord || $newsRecord['type'] !== 'Tx_UnalNews_UnalNews') {
             return;
         }
@@ -113,38 +115,34 @@ class DataHandler
     }
 
 
-    /**
-     * Prevent deleting/moving of a news record if the editor doesn't have access to all categories of the news record
-     *
-     * @param string $command
-     * @param string $table
-     * @param int $id
-     * @param string $value
-     * @param $parentObject \TYPO3\CMS\Core\DataHandling\DataHandler
-     */
-    public function processCmdmap_preProcess($command, &$table, $id, $value, $parentObject)
-    {
-
-        if ($table === 'tx_news_domain_model_news' && $command === 'delete') {
-
-            $newsRecord = BackendUtilityCore::getRecord($table, $id);
-            //Delete in elastic
-            $this->convergenciaUtility->deleteElasticElements($newsRecord);
+    public function processCmdmap_preProcess(
+        string $command,
+        string &$table,
+        string|int $id,
+        mixed $value,
+        CoreDataHandler $parentObject,
+        ?array $pasteUpdate = null,
+    ): void {
+        if (
+            $command !== 'delete'
+            || $table !== 'tx_news_domain_model_news'
+            || !is_numeric($id)
+        ) {
+            return;
         }
+
+        $newsRecord = BackendUtilityCore::getRecord(
+            $table,
+            (int)$id
+        );
+
+        if (
+            !$newsRecord
+            || ($newsRecord['type'] ?? '') !== 'Tx_UnalNews_UnalNews'
+        ) {
+            return;
+        }
+
+        $this->convergenciaUtility->deleteElasticElements($newsRecord);
     }
-
-
-
-    /**
-     * Returns the current BE user.
-     *
-     * @return \TYPO3\CMS\Core\Authentication\BackendUserAuthentication
-     */
-    protected function getBackendUser()
-    {
-        return $GLOBALS['BE_USER'];
-    }
-
-
-
 }

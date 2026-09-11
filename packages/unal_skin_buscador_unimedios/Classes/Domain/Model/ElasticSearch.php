@@ -1,256 +1,115 @@
 <?php
 
+declare(strict_types=1);
+
 namespace UNAL\UnalSkinBuscadorUnimedios\Domain\Model;
 
-
-/**
- * ElasticSearch model
- */
-class ElasticSearch extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+final class ElasticSearch
 {
+    private string $domain = '';
+    private string $port = '';
+    private string $user = '';
+    private string $password = '';
+    private string $newIndex = '';
+    private string $imageIndex = '';
+    private string $videoIndex = '';
+    private string $audioIndex = '';
 
-    
-    /**
-     * @var string
-     */
-    protected $domain;
-
-    /**
-     * @var string
-     */
-    protected $port;
-
-    /**
-     * @var string
-     */
-    protected $baseUrl;
-
-    /**
-     * @var string
-     */
-    protected $user;
-
-    /**
-     * @var string
-     */
-    protected $password;
-
-    /**
-     * @var string
-     */
-    protected $auth;
-
-    /**
-     * @var string
-     */
-    protected $newIndex;
-
-    /**
-     * @var string
-     */
-    protected $imageIndex;
-
-    /**
-     * @var string
-     */
-    protected $videoIndex;
-
-    /**
-     * @var string
-     */
-    protected $audioIndex;
-
-
-
-    /**
-     * Get domain
-     *
-     * @return string
-     */
-    public function getDomain()
+    public function getDomain(): string
     {
         return $this->domain;
     }
-    
-    /**
-     * Set domain
-     *
-     * @param string $domain domain
-     */
-    public function setDomain($domain)
+
+    public function setDomain(string $domain): void
     {
-        $this->domain = $domain;
+        $this->domain = rtrim($domain, '/');
     }
-    
-    
-    /**
-     * Get port
-     *
-     * @return string
-     */
-    public function getPort()
+
+    public function getPort(): string
     {
         return $this->port;
     }
-    
-    /**
-     * Set port
-     *
-     * @param string $port port
-     */
-    public function setPort($port)
+
+    public function setPort(string $port): void
     {
         $this->port = $port;
     }
 
-
-    /**
-     * Get baseUrl
-     *
-     * @return string
-     */
-    public function getBaseUrl()
+    public function getBaseUrl(): string
     {
-        return "{$this->getDomain()}:{$this->getPort()}/";
+        if ($this->domain === '' || $this->port === '') {
+            return '';
+        }
+
+        return $this->domain . ':' . $this->port . '/';
     }
 
-
-    /**
-     * Get user
-     *
-     * @return string
-     */
-    public function getUser()
+    public function getUser(): string
     {
         return $this->user;
     }
-    
-    /**
-     * Set user
-     *
-     * @param string $user user
-     */
-    public function setUser($user)
+
+    public function setUser(string $user): void
     {
         $this->user = $user;
     }
 
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->password;
     }
-    
-    /**
-     * Set password
-     *
-     * @param string $password password
-     */
-    public function setPassword($password)
+
+    public function setPassword(string $password): void
     {
         $this->password = $password;
     }
 
-
-
-    /**
-     * Get auth
-     *
-     * @return string
-     */
-    public function getAuth()
+    public function getAuth(): string
     {
-        return "{$this->getUser()}:{$this->getPassword()}";
+        if ($this->user === '' || $this->password === '') {
+            return '';
+        }
+
+        return $this->user . ':' . $this->password;
     }
 
-
-
-    /**
-     * Get newIndex
-     *
-     * @return string
-     */
-    public function getNewIndex()
+    public function getNewIndex(): string
     {
         return $this->newIndex;
     }
-    
-    /**
-     * Set newIndex
-     *
-     * @param string $newIndex newIndex
-     */
-    public function setNewIndex($newIndex)
+
+    public function setNewIndex(string $newIndex): void
     {
         $this->newIndex = $newIndex;
     }
 
-
-    /**
-     * Get imagenIndex
-     *
-     * @return string
-     */
-    public function getImageIndex()
+    public function getImageIndex(): string
     {
-        return $this->imagenIndex;
-    }
-    
-    /**
-     * Set imagenIndex
-     *
-     * @param string $imagenIndex imagenIndex
-     */
-    public function setImageIndex($imagenIndex)
-    {
-        $this->imagenIndex = $imagenIndex;
+        return $this->imageIndex;
     }
 
+    public function setImageIndex(string $imageIndex): void
+    {
+        $this->imageIndex = $imageIndex;
+    }
 
-    /**
-     * Get videoIndex
-     *
-     * @return string
-     */
-    public function getVideoIndex()
+    public function getVideoIndex(): string
     {
         return $this->videoIndex;
     }
-    
-    /**
-     * Set videoIndex
-     *
-     * @param string $videoIndex videoIndex
-     */
-    public function setVideoIndex($videoIndex)
+
+    public function setVideoIndex(string $videoIndex): void
     {
         $this->videoIndex = $videoIndex;
     }
 
-
-    /**
-     * Get audioIndex
-     *
-     * @return string
-     */
-    public function getAudioIndex()
+    public function getAudioIndex(): string
     {
         return $this->audioIndex;
     }
-    
-    /**
-     * Set audioIndex
-     *
-     * @param string $audioIndex audioIndex
-     */
-    public function setAudioIndex($audioIndex)
+
+    public function setAudioIndex(string $audioIndex): void
     {
         $this->audioIndex = $audioIndex;
     }
-
 }
