@@ -1,6 +1,6 @@
 <f:switch expression="{data.header}">
     <f:case value="Redes">
-        <div class="redes row row-cols-1 row-cols-md-5">
+        <div class="redes row {f:if(condition: children_205, then: 'row-cols-1 row-cols-md-5', else: 'row-cols-2 row-cols-md-4')}">
 			<f:for each="{children_201}" as="element">
 				<div class="col col01 youtube-col">
 					{element.renderedContent -> f:format.raw()}

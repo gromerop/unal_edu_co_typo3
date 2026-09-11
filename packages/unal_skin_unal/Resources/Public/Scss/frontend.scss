@@ -852,8 +852,16 @@ color: $blanco;}}
 h1{color: $verdeDetalle; font-weight: bold;}
 h2, a {color:$verdeDetalle; margin: 0px; line-height: 1.4em;} } 
 
-.detail_three_right, .detail_three_left {padding: 15px;
-    .frame {margin: 15px 0;}
+.detail_three_right, .detail_three_left {
+    padding: 15px;
+
+    .frame {
+        margin: 15px 0;
+
+        > header {
+            z-index: 0;
+        }
+    }
 h1{color: $verdeDetalle; font-weight: bold;}
 h2, a {color:$verdeDetalle; margin: 0px; line-height: 1.4em;} } 
 

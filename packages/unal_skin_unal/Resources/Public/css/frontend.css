@@ -2048,6 +2048,11 @@ main.detalle ul li ul li::before {
   top: 7px;
 }
 
+main.detalle .detail_three_right > .frame > header,
+main.detalle .detail_three_left > .frame > header {
+  z-index: 0;
+}
+
 .home li a{
   text-decoration: none;
   letter-spacing: 0.014em;
