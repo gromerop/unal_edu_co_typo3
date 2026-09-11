@@ -20,6 +20,7 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment:
     - TYPO3_CONTEXT=Development/DDEV
+    - UNAL_DISABLE_ELASTICSEARCH=1
 nodejs_version: "24"
 corepack_enable: false
 
