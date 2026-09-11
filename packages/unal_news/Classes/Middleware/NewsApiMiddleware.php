@@ -86,21 +86,36 @@ final class NewsApiMiddleware implements MiddlewareInterface
     ): ResponseInterface {
         if ($method === 'GET' && $suffix === '') {
             return $this->createResponse(
-                $this->newsApiService->list(1, $this->newsEndpointBaseUrl($request))
+                $this->newsApiService->list(
+                    1,
+                    $this->newsEndpointBaseUrl($request),
+                    $this->siteBaseUrl($request),
+                )
             );
         }
 
-        if ($method === 'GET' && preg_match('#^/page/(?P<page>\d+)$#', $suffix, $matches)) {
+        if (
+            $method === 'GET'
+            && preg_match(
+                '#^/page/(?P<page>\d+)$#',
+                $suffix,
+                $matches
+            )
+        ) {
             return $this->createResponse(
                 $this->newsApiService->list(
                     (int)$matches['page'],
-                    $this->newsEndpointBaseUrl($request)
+                    $this->newsEndpointBaseUrl($request),
+                    $this->siteBaseUrl($request),
                 )
             );
         }
 
         if ($method === 'GET' && preg_match('#^/show/(?P<uid>\d+)$#', $suffix, $matches)) {
-            $news = $this->newsApiService->show((int)$matches['uid']);
+            $news = $this->newsApiService->show(
+                (int)$matches['uid'],
+                $this->siteBaseUrl($request),
+            );
 
             return $news === null
                 ? $this->errorResponse(404, 'News record not found.')
@@ -111,7 +126,10 @@ final class NewsApiMiddleware implements MiddlewareInterface
             $payload = $this->requestPayload($request);
 
             return $this->createResponse(
-                $this->newsApiService->related((int)($payload['size'] ?? 3))
+                $this->newsApiService->related(
+                    (int)($payload['size'] ?? 3),
+                    $this->siteBaseUrl($request),
+                )
             );
         }
 
@@ -120,7 +138,11 @@ final class NewsApiMiddleware implements MiddlewareInterface
             && preg_match('#^/all/(?P<type>new|image|video|audio)/(?P<page>\d+)$#', $suffix, $matches)
         ) {
             return $this->createResponse(
-                $this->newsApiService->all($matches['type'], (int)$matches['page'])
+                $this->newsApiService->all(
+                    $matches['type'],
+                    (int)$matches['page'],
+                    $this->siteBaseUrl($request),
+                )
             );
         }
 
@@ -135,7 +157,11 @@ final class NewsApiMiddleware implements MiddlewareInterface
         }
 
         if ($method === 'GET' && $suffix === '/edited') {
-            return $this->createResponse($this->newsApiService->editedSinceYesterday());
+            return $this->createResponse(
+                $this->newsApiService->editedSinceYesterday(
+                    $this->siteBaseUrl($request),
+                )
+            );
         }
 
         return $this->errorResponse(404, 'API route not found.');
@@ -146,8 +172,12 @@ final class NewsApiMiddleware implements MiddlewareInterface
         string $method,
         string $suffix
     ): ResponseInterface {
-        if ($method !== 'POST' || $suffix !== '/update') {
+        if ($suffix !== '/update') {
             return $this->errorResponse(404, 'API route not found.');
+        }
+
+        if ($method !== 'POST') {
+            return $this->errorResponse(403, 'Forbidden');
         }
 
         $payload = $this->requestPayload($request);
@@ -198,6 +228,15 @@ final class NewsApiMiddleware implements MiddlewareInterface
 
         return (string)$request->getUri()
             ->withPath($prefix . '/rest/noticias')
+            ->withQuery('')
+            ->withFragment('');
+    }
+
+    private function siteBaseUrl(ServerRequestInterface $request): string
+    {
+        return (string)$request
+            ->getUri()
+            ->withPath('/')
             ->withQuery('')
             ->withFragment('');
     }

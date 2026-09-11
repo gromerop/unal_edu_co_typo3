@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace UNAL\UnalNews\Service;
 
-use GeorgRinger\News\Domain\Model\Dto\NewsDemand;
-use TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface;
-use UNAL\UnalNews\Domain\Model\UnalNews;
-use UNAL\UnalNews\Domain\Repository\UnalNewsRepository;
+use UNAL\UnalNews\Api\NewsApiCategoryResolver;
+use UNAL\UnalNews\Api\NewsApiFalResolver;
+use UNAL\UnalNews\Api\NewsApiReadRepository;
+use UNAL\UnalNews\Api\NewsApiSerializer;
+use UNAL\UnalNews\Api\NewsApiVisitRepository;
 
 final class NewsApiService
 {
@@ -15,130 +16,281 @@ final class NewsApiService
     private const CONVERGENCE_PAGE_SIZE = 100;
 
     public function __construct(
-        private readonly UnalNewsRepository $unalNewsRepository,
-        private readonly PersistenceManagerInterface $persistenceManager,
+        private readonly NewsApiReadRepository $newsApiReadRepository,
+        private readonly NewsApiFalResolver $newsApiFalResolver,
+        private readonly NewsApiCategoryResolver $newsApiCategoryResolver,
+        private readonly NewsApiSerializer $newsApiSerializer,
+        private readonly NewsApiVisitRepository $newsApiVisitRepository,
     ) {
     }
 
-    public function list(int $page, string $endpointBaseUrl): array
-    {
-        $totalElements = (int)$this->unalNewsRepository->total();
-        $totalPages = (int)ceil($totalElements / self::PAGE_SIZE);
+    public function list(
+        int $page,
+        string $endpointBaseUrl,
+        string $siteBaseUrl,
+    ): array {
         $page = max(1, $page);
+        $endpointBaseUrl = rtrim($endpointBaseUrl, '/');
 
-        $previousPage = $page > 1
-            ? $endpointBaseUrl . '/page/' . ($page - 1)
-            : '';
-        $nextPage = $page < $totalPages
-            ? $endpointBaseUrl . '/page/' . ($page + 1)
-            : '';
+        $totalElements = $this->newsApiReadRepository->countVisible();
+        $totalPages = (int)ceil($totalElements / self::PAGE_SIZE);
+
+        $rows = $this->newsApiReadRepository->findPage(
+            $page,
+            self::PAGE_SIZE
+        );
+
+        $results = $this->serializeDatabaseRows(
+            $rows,
+            $siteBaseUrl
+        );
 
         return [
             'info' => [
                 'count' => $totalElements,
                 'pages' => $totalPages,
-                'next' => $nextPage,
-                'prev' => $previousPage,
+                'next' => $page < $totalPages
+                    ? $endpointBaseUrl . '/page/' . ($page + 1)
+                    : '',
+                'prev' => $page > 1
+                    ? $endpointBaseUrl . '/page/' . ($page - 1)
+                    : '',
             ],
-            'results' => $this->serializeNewsCollection(
-                $this->unalNewsRepository->paginated($page, self::PAGE_SIZE)
-            ),
+            'results' => $results,
         ];
     }
 
-    public function show(int $uid): ?array
+    public function show(int $uid, string $siteBaseUrl): ?array
     {
-        $news = $this->unalNewsRepository->findByUid($uid);
+        $row = $this->newsApiReadRepository->findVisibleByUid($uid);
 
-        return $news instanceof UnalNews ? $news->parsedArray() : null;
+        if ($row === null) {
+            return null;
+        }
+
+        return $this->serializeDatabaseRows(
+            [$row],
+            $siteBaseUrl
+        )[0] ?? null;
     }
 
-    public function related(int $size): array
-    {
+    public function related(
+        int $size,
+        string $siteBaseUrl,
+    ): array {
         $size = max(1, min(100, $size));
 
-        return $this->serializeNewsCollection(
-            $this->unalNewsRepository->getRelated($size)
+        $rows = $this->newsApiReadRepository->findPage(1, $size);
+
+        return $this->serializeDatabaseRows(
+            $rows,
+            $siteBaseUrl
         );
     }
 
     public function autocomplete(string $search): array
     {
-        $search = trim($search);
-
-        return $search === '' ? [] : $this->unalNewsRepository->getData($search);
+        return $this->newsApiReadRepository
+            ->findAutocompleteTitles($search, 10);
     }
 
-    public function all(string $type, int $page): array
-    {
-        $demand = new NewsDemand();
-        $demand->setOffset((max(1, $page) - 1) * self::CONVERGENCE_PAGE_SIZE);
-        $demand->setLimit(self::CONVERGENCE_PAGE_SIZE);
-        $demand->setOrder('datetime desc');
-        $demand->setOrderByAllowed('datetime');
-        $demand->setStoragePage('');
+    public function all(
+        string $type,
+        int $page,
+        string $siteBaseUrl,
+    ): array {
+        $page = max(1, $page);
 
-        $results = [];
-        foreach ($this->unalNewsRepository->findDemanded($demand) as $news) {
-            if (!$news instanceof UnalNews) {
-                continue;
-            }
+        $rows = $this->newsApiReadRepository
+            ->findConvergencePage(
+                $page,
+                self::CONVERGENCE_PAGE_SIZE
+            );
 
-            $serializedNews = $news->parsedArrayElastic(false, $type);
-            if ($type === 'new') {
-                $results[] = $serializedNews;
-                continue;
-            }
-
-            foreach ($serializedNews ?? [] as $media) {
-                if (is_array($media)) {
-                    $results[] = $media;
-                }
-            }
+        if ($type === 'new') {
+            return $this->serializeConvergenceRows(
+                $rows,
+                $siteBaseUrl
+            );
         }
 
-        return $results;
+        return $this->serializeConvergenceMediaRows(
+            $rows,
+            $siteBaseUrl,
+            $type
+        );
     }
 
     public function deletedSinceYesterday(): array
     {
-        return $this->unalNewsRepository->findDeletedUidsSince(time() - 86400);
+        return $this->newsApiReadRepository
+            ->findDeletedUidsSince(time() - 86400);
     }
 
-    public function editedSinceYesterday(): array
+    public function editedSinceYesterday(
+        string $siteBaseUrl,
+    ): array {
+        $rows = $this->newsApiReadRepository
+            ->findEditedSince(time() - 86400);
+
+        return $this->serializeConvergenceRows(
+            $rows,
+            $siteBaseUrl
+        );
+    }
+
+    public function registerVisit(int $newsUid): bool
     {
+        return $this->newsApiVisitRepository
+            ->registerVisit($newsUid);
+    }
+
+    /**
+     * @param array<int, array<string, mixed>> $rows
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    private function serializeConvergenceMediaRows(
+        array $rows,
+        string $siteBaseUrl,
+        string $type,
+    ): array {
+        if ($rows === []) {
+            return [];
+        }
+
+        $newsUids = array_map(
+            static fn(array $row): int => (int)$row['uid'],
+            $rows
+        );
+
+        $mediaByNewsUid = $this->newsApiFalResolver
+            ->resolveConvergenceMedia($newsUids);
+
+        $categoriesByNewsUid = $this->newsApiCategoryResolver
+            ->resolveConvergenceCategories($newsUids);
+
         $results = [];
-        foreach ($this->unalNewsRepository->findEditedUidsSince(time() - 86400) as $uid) {
-            $news = $this->unalNewsRepository->findByUid($uid);
-            if ($news instanceof UnalNews) {
-                $results[] = $news->parsedArrayElastic(false, 'new');
+
+        foreach ($rows as $row) {
+            $newsUid = (int)$row['uid'];
+
+            $serializedMedia = $this->newsApiSerializer
+                ->convergenceMediaRecords(
+                    $row,
+                    $siteBaseUrl,
+                    $type,
+                    $mediaByNewsUid[$newsUid] ?? [
+                        'primaryImage' => '',
+                        'images' => [],
+                        'audio' => [],
+                        'video' => [],
+                    ],
+                    $categoriesByNewsUid[$newsUid] ?? [
+                        'categories' => [],
+                        'recordCategory' => [],
+                    ],
+                );
+
+            foreach ($serializedMedia as $mediaRecord) {
+                $results[] = $mediaRecord;
             }
         }
 
         return $results;
     }
 
-    public function registerVisit(int $newsUid): bool
-    {
-        $news = $this->unalNewsRepository->findByUid($newsUid);
-        if (!$news instanceof UnalNews) {
-            return false;
+    /**
+     * @param array<int, array<string, mixed>> $rows
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    private function serializeConvergenceRows(
+        array $rows,
+        string $siteBaseUrl,
+    ): array {
+        if ($rows === []) {
+            return [];
         }
 
-        $news->actualizarVisita();
-        $this->unalNewsRepository->update($news);
-        $this->persistenceManager->persistAll();
+        $newsUids = array_map(
+            static fn(array $row): int => (int)$row['uid'],
+            $rows
+        );
 
-        return true;
+        $mediaByNewsUid = $this->newsApiFalResolver
+            ->resolveConvergenceMedia($newsUids);
+
+        $categoriesByNewsUid = $this->newsApiCategoryResolver
+            ->resolveConvergenceCategories($newsUids);
+
+        $results = [];
+
+        foreach ($rows as $row) {
+            $newsUid = (int)$row['uid'];
+
+            $results[] = $this->newsApiSerializer->convergenceNews(
+                $row,
+                $siteBaseUrl,
+                $mediaByNewsUid[$newsUid] ?? [
+                    'primaryImage' => '',
+                    'images' => [],
+                    'audio' => [],
+                    'video' => [],
+                ],
+                $categoriesByNewsUid[$newsUid] ?? [
+                    'categories' => [],
+                    'recordCategory' => [],
+                ],
+            );
+        }
+
+        return $results;
     }
 
-    private function serializeNewsCollection(iterable $newsCollection): array
-    {
+    /**
+     * @param array<int, array<string, mixed>> $rows
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    private function serializeDatabaseRows(
+        array $rows,
+        string $siteBaseUrl,
+    ): array {
+        if ($rows === []) {
+            return [];
+        }
+
+        $newsUids = array_map(
+            static fn(array $row): int => (int)$row['uid'],
+            $rows
+        );
+
+        $assetsByNewsUid = $this->newsApiFalResolver
+            ->resolveSummaryAssets($newsUids);
+
+        $categoriesByNewsUid = $this->newsApiCategoryResolver
+            ->resolveSummaryCategories($newsUids);
+
         $results = [];
-        foreach ($newsCollection as $news) {
-            if ($news instanceof UnalNews) {
-                $results[] = $news->parsedArray();
-            }
+
+        foreach ($rows as $row) {
+            $newsUid = (int)$row['uid'];
+
+            $assets = $assetsByNewsUid[$newsUid] ?? [
+                'image' => '',
+                'video' => '',
+                'duration' => '',
+            ];
+
+            $results[] = $this->newsApiSerializer->summary(
+                $row,
+                $siteBaseUrl,
+                $assets['image'],
+                $assets['video'],
+                $assets['duration'],
+                $categoriesByNewsUid[$newsUid] ?? [],
+            );
         }
 
         return $results;

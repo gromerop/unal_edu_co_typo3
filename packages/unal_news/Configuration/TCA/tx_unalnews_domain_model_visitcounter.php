@@ -1,6 +1,7 @@
 <?php
 return [
     'ctrl' => [
+        'security' => ['ignorePageTypeRestriction' => true],
         'title' => 'LLL:EXT:unal_news/Resources/Private/Language/locallang_db.xlf:tx_unalnews_domain_model_visitcounter',
         'label' => 'quantity',
         'tstamp' => 'tstamp',

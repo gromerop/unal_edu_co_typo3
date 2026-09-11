@@ -24,18 +24,6 @@
 			<trans-unit id="tx_unalnews_domain_model_visitcounter.fecha_registro">
 				<source>Fecha Registro</source>
 			</trans-unit>
-			<trans-unit id="tx_unal_news_vistasrest.name">
-				<source>UNAL News vistas rest</source>
-			</trans-unit>
-			<trans-unit id="tx_unal_news_vistasrest.description">
-				<source>A través de este plugin se pueden generar las vistas a través de un API Rest de las noticias.</source>
-			</trans-unit>
-			<trans-unit id="tx_unal_news_visitorcounter.name">
-				<source>Adicionar visita</source>
-			</trans-unit>
-			<trans-unit id="tx_unal_news_visitorcounter.description">
-				<source>Agrega una visita al contador estadístico.</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>
