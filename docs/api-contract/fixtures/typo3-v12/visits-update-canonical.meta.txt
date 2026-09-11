@@ -1,0 +1,5 @@
+method: POST
+path: /rest/unal-unal_news-visitCounter/update
+status: 501
+content-type: application/json
+request-body: {"news":537}

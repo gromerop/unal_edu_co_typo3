@@ -1,0 +1,2 @@
+news-counter=0
+visit-rows=0, visit-total=0

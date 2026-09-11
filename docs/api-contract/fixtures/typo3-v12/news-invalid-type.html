@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>TYPO3 Exception</title>
+        <meta name="robots" content="noindex,nofollow" />
+        <style>            html {
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                -ms-overflow-style: scrollbar;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            .exception-page {
+                background-color: #eaeaea;
+                color: #212121;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+                font-weight: 400;
+                height: 100vh;
+                line-height: 1.5;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                text-align: left;
+                top: 0;
+            }
+
+            .panel-collapse .exception-page {
+                height: 100%;
+            }
+
+            .exception-page a {
+                color: #ff8700;
+                text-decoration: underline;
+            }
+
+            .exception-page a:hover {
+                text-decoration: none;
+            }
+
+            .exception-page abbr[title] {
+                border-bottom: none;
+                cursor: help;
+                text-decoration: none;
+            }
+
+            .exception-page code,
+            .exception-page kbd,
+            .exception-page pre,
+            .exception-page samp {
+                font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+                font-size: 1em;
+            }
+
+            .exception-page pre {
+                background-color: #ffffff;
+                overflow-x: auto;
+                border: 1px solid rgba(0,0,0,0.125);
+            }
+
+            .exception-page pre span {
+                display: block;
+                line-height: 1.3em;
+            }
+
+            .exception-page pre span:before {
+                display: inline-block;
+                content: attr(data-line);
+                border-right: 1px solid #b9b9b9;
+                margin-right: 0.5em;
+                padding-right: 0.5em;
+                background-color: #f4f4f4;
+                width: 4em;
+                text-align: right;
+                color: #515151;
+            }
+
+            .exception-page pre span.highlight {
+                background-color: #cce5ff;
+            }
+
+            .exception-page .break-long-words {
+                -ms-word-break: break-all;
+                word-break: break-all;
+                word-break: break-word;
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                hyphens: auto;
+            }
+
+            .exception-page .callout {
+                padding: 1.5rem;
+                background-color: #fff;
+                margin-bottom: 2em;
+                box-shadow: 0 2px 1px rgba(0,0,0,.15);
+                border-left: 3px solid #8c8c8c;
+            }
+
+            .exception-page .callout-title {
+                margin: 0;
+            }
+
+            .exception-page .callout-body p:last-child {
+                margin-bottom: 0;
+            }
+
+            .exception-page .container {
+                max-width: 1140px;
+                margin: 0 auto;
+                padding: 0 30px;
+            }
+
+            .panel-collapse .exception-page .container {
+                width: 100%;
+            }
+
+            .exception-page .exception-illustration {
+                width: 3em;
+                height: 3em;
+                float: left;
+                margin-right: 1rem;
+            }
+
+            .exception-page .exception-illustration svg {
+                width: 100%;
+            }
+
+            .exception-page .exception-illustration svg path {
+                fill: #ff8700;
+            }
+
+            .exception-page .exception-summary {
+                background: #000000;
+                color: #fff;
+                padding: 1.5rem 0;
+                margin-bottom: 2rem;
+            }
+
+            .exception-page .exception-summary h1 {
+                margin: 0;
+            }
+
+            .exception-page .text-body-secondary {
+                opacity: 0.5;
+            }
+
+            .exception-page .trace {
+                background-color: #fff;
+                margin-bottom: 2rem;
+                box-shadow: 0 2px 1px rgba(0,0,0,.15);
+            }
+
+            .exception-page .trace-arguments {
+                color: #8c8c8c;
+            }
+
+            .exception-page .trace-body {
+            }
+
+            .exception-page .trace-call {
+                margin-bottom: 1rem;
+            }
+
+            .exception-page .trace-class {
+                margin: 0;
+            }
+
+            .exception-page .trace-file pre {
+                margin-top: 1.5rem;
+                margin-bottom: 0;
+            }
+
+            .exception-page .trace-head {
+                color: #721c24;
+                background-color: #f8d7da;
+                padding: 1.5rem;
+            }
+
+            .exception-page .trace-file-path {
+                word-break: break-all;
+            }
+
+            .exception-page .trace-message {
+                margin-bottom: 0;
+            }
+
+            .exception-page .trace-step {
+                padding: 1.5rem;
+                border-bottom: 1px solid #b9b9b9;
+            }
+
+            .exception-page .trace-step > *:first-child {
+                margin-top: 0;
+            }
+
+            .exception-page .trace-step > *:last-child {
+                margin-bottom: 0;
+            }
+
+            .exception-page .trace-step:nth-child(even)
+            {
+                background-color: #fafafa;
+            }
+
+            .exception-page .trace-step:last-child {
+                border-bottom: none;
+            }</style>
+    </head>
+    <body>
+                    <div class="exception-page">
+                <div class="exception-summary">
+                    <div class="container">
+                        <div class="exception-message-wrapper">
+                            <div class="exception-illustration hidden-xs-down"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.1 10.3c-.2 0-.3.1-.5.1C9 10.4 6.8 5 6.8 3.2c0-.7.2-.9.4-1.1-2 .2-4.2.9-4.9 1.8-.2.2-.3.6-.3 1 0 2.8 3 9.2 5.1 9.2 1 0 2.6-1.6 4-3.8m-1-8.4c1.9 0 3.9.3 3.9 1.4 0 2.2-1.4 4.9-2.1 4.9C10.6 8.3 9 4.7 9 2.9c0-.8.3-1 1.1-1"></path></svg></div>
+                            <h1 class="exception-message break-long-words">Whoops, looks like something went wrong.</h1>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="container">
+                                <div class="trace">
+                <div class="trace-head">
+                    <h3 class="trace-class">
+                        <span class="text-body-secondary">(1/1)</span>
+                        <span class="exception-title">Error</span>
+                    </h3>
+                    <p class="trace-message break-long-words">Call to a member function get() on null</p>
+                </div>
+                <div class="trace-body">
+                    <div class="trace-step"><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/packages/unal_news/Classes/Controller/UnalNewsController.php</strong> line 180</span></div><div class="trace-file-content"><pre><span class="" data-line="176">     * @return NewsDemand
+</span><span class="" data-line="177">     */
+</span><span class="" data-line="178">    protected function createDemandObject($page = 1, $size = 22)
+</span><span class="" data-line="179">    {
+</span><span class="highlight" data-line="180">        $demand = $this-&gt;objectManager-&gt;get(NewsDemand::class);
+</span><span class="" data-line="181">        $begin = ($page - 1) * $size;
+</span><span class="" data-line="182">        $demand-&gt;setOffset($begin);
+</span><span class="" data-line="183">        $demand-&gt;setLimit($size);
+</span><span class="" data-line="184">        $demand-&gt;setOrder('datetime desc');
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">UNAL\UnalNews\Controller\UnalNewsController</span><span class="trace-type">-></span><span class="trace-method">createDemandObject</span>(<span class="trace-arguments">1, 100</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/packages/unal_news/Classes/Controller/UnalNewsController.php</strong> line 209</span></div><div class="trace-file-content"><pre><span class="" data-line="205">            $page_to_load = $arguments['page'];
+</span><span class="" data-line="206">        } else {
+</span><span class="" data-line="207">            $page_to_load = 1;
+</span><span class="" data-line="208">        }
+</span><span class="highlight" data-line="209">        $demand = $this-&gt;createDemandObject($page_to_load, 100);
+</span><span class="" data-line="210">        $result = $this-&gt;unalNewsRepository-&gt;findDemanded($demand);
+</span><span class="" data-line="211">
+</span><span class="" data-line="212">        //DebugUtility::debug($result,&quot;result&quot;);
+</span><span class="" data-line="213">        //exit();
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">UNAL\UnalNews\Controller\UnalNewsController</span><span class="trace-type">-></span><span class="trace-method">allRestAction</span>(<span class="trace-arguments"></span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-extbase/Classes/Mvc/Controller/ActionController.php</strong> line 477</span></div><div class="trace-file-content"><pre><span class="" data-line="473">        }
+</span><span class="" data-line="474">        $validationResult = $this-&gt;arguments-&gt;validate();
+</span><span class="" data-line="475">        if (!$validationResult-&gt;hasErrors()) {
+</span><span class="" data-line="476">            $this-&gt;eventDispatcher-&gt;dispatch(new BeforeActionCallEvent(static::class, $this-&gt;actionMethodName, $preparedArguments));
+</span><span class="highlight" data-line="477">            $actionResult = $this-&gt;{$this-&gt;actionMethodName}(...$preparedArguments);
+</span><span class="" data-line="478">        } else {
+</span><span class="" data-line="479">            $actionResult = $this-&gt;{$this-&gt;errorMethodName}();
+</span><span class="" data-line="480">        }
+</span><span class="" data-line="481">
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Extbase\Mvc\Controller\ActionController</span><span class="trace-type">-></span><span class="trace-method">callActionMethod</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Extbase\Mvc\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-extbase/Classes/Mvc/Controller/ActionController.php</strong> line 394</span></div><div class="trace-file-content"><pre><span class="" data-line="390">        $this-&gt;view = $this-&gt;resolveView();
+</span><span class="" data-line="391">        if ($this-&gt;view !== null &amp;&amp; method_exists($this, 'initializeView')) {
+</span><span class="" data-line="392">            $this-&gt;initializeView($this-&gt;view);
+</span><span class="" data-line="393">        }
+</span><span class="highlight" data-line="394">        $response = $this-&gt;callActionMethod($request);
+</span><span class="" data-line="395">        $this-&gt;renderAssetsForRequest($request);
+</span><span class="" data-line="396">
+</span><span class="" data-line="397">        return $response;
+</span><span class="" data-line="398">    }
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Extbase\Mvc\Controller\ActionController</span><span class="trace-type">-></span><span class="trace-method">processRequest</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Extbase\Mvc\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-extbase/Classes/Mvc/Dispatcher.php</strong> line 68</span></div><div class="trace-file-content"><pre><span class="" data-line="64">                    1217839467
+</span><span class="" data-line="65">                );
+</span><span class="" data-line="66">            }
+</span><span class="" data-line="67">            $controller = $this-&gt;resolveController($request);
+</span><span class="highlight" data-line="68">            $response = $controller-&gt;processRequest($request);
+</span><span class="" data-line="69">            if ($response instanceof ForwardResponse) {
+</span><span class="" data-line="70">                // The controller action returned an extbase internal Forward response:
+</span><span class="" data-line="71">                // Another action should be dispatched.
+</span><span class="" data-line="72">                $request = static::buildRequestFromCurrentRequestAndForwardResponse($request, $response);
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Extbase\Mvc\Dispatcher</span><span class="trace-type">-></span><span class="trace-method">dispatch</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Extbase\Mvc\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-extbase/Classes/Core/Bootstrap.php</strong> line 168</span></div><div class="trace-file-content"><pre><span class="" data-line="164">            }
+</span><span class="" data-line="165">        }
+</span><span class="" data-line="166">
+</span><span class="" data-line="167">        // Dispatch the extbase request
+</span><span class="highlight" data-line="168">        $response = $this-&gt;dispatcher-&gt;dispatch($extbaseRequest);
+</span><span class="" data-line="169">        if ($response-&gt;getStatusCode() &gt;= 300) {
+</span><span class="" data-line="170">            // Avoid caching the plugin when we issue a redirect or error response
+</span><span class="" data-line="171">            // This means that even when an action is configured as cachable
+</span><span class="" data-line="172">            // we avoid the plugin to be cached, but keep the page cache untouched
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Extbase\Core\Bootstrap</span><span class="trace-type">-></span><span class="trace-method">handleFrontendRequest</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-extbase/Classes/Core/Bootstrap.php</strong> line 147</span></div><div class="trace-file-content"><pre><span class="" data-line="143">     */
+</span><span class="" data-line="144">    public function run(string $content, array $configuration, ServerRequestInterface $request): string
+</span><span class="" data-line="145">    {
+</span><span class="" data-line="146">        $request = $this-&gt;initialize($configuration, $request);
+</span><span class="highlight" data-line="147">        return $this-&gt;handleFrontendRequest($request);
+</span><span class="" data-line="148">    }
+</span><span class="" data-line="149">
+</span><span class="" data-line="150">    /**
+</span><span class="" data-line="151">     * Used for any Extbase Plugin in the Frontend, be sure to run $this-&gt;initialize() before.
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Extbase\Core\Bootstrap</span><span class="trace-type">-></span><span class="trace-method">run</span>(<span class="trace-arguments">'', <em>array</em>('extensionName' => 'UnalNews', 'pluginName' => 'Vistasrest', 'vendorName' => 'UNAL'), <em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/packages/unal_news/Classes/Rest/Helper.php</strong> line 67</span></div><div class="trace-file-content"><pre><span class="" data-line="63">            $configuration['vendorName'] = $vendorName;
+</span><span class="" data-line="64">        }
+</span><span class="" data-line="65">        /** @var \TYPO3\CMS\Extbase\Core\Bootstrap $bootstrap */
+</span><span class="" data-line="66">        $bootstrap = $this-&gt;objectManager-&gt;get(\TYPO3\CMS\Extbase\Core\Bootstrap::class);
+</span><span class="highlight" data-line="67">        $extbaseResult = $bootstrap-&gt;run(
+</span><span class="" data-line="68">            '',
+</span><span class="" data-line="69">            $configuration,
+</span><span class="" data-line="70">            $GLOBALS['TYPO3_REQUEST']
+</span><span class="" data-line="71">        );
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">UNAL\UnalNews\Rest\Helper</span><span class="trace-type">-></span><span class="trace-method">callExtbasePlugin</span>(<span class="trace-arguments">'Vistasrest', 'UNAL', 'UnalNews', 'UnalNews', 'allRest', <em>array</em>('type' => 'document', 'page' => 1)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/packages/unal_news/Classes/Rest/NewsHandler.php</strong> line 147</span></div><div class="trace-file-content"><pre><span class="" data-line="143">                    $arguments = [
+</span><span class="" data-line="144">                        'type' =&gt; $string,
+</span><span class="" data-line="145">                        'page' =&gt; $int
+</span><span class="" data-line="146">                    ];
+</span><span class="highlight" data-line="147">                return $this-&gt;helper-&gt;callExtbasePlugin(
+</span><span class="" data-line="148">                    'Vistasrest',
+</span><span class="" data-line="149">                    'UNAL',
+</span><span class="" data-line="150">                    'UnalNews',
+</span><span class="" data-line="151">                    'UnalNews',
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">UNAL\UnalNews\Rest\NewsHandler</span><span class="trace-type">-></span><span class="trace-method">UNAL\UnalNews\Rest\{closure}</span>(<span class="trace-arguments"><em>object</em>(Cundd\Rest\Request), 'document', 1</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Router/Route.php</strong> line 131</span></div><div class="trace-file-content"><pre><span class="" data-line="127">    public function process(RestRequestInterface $request, ...$parameters)
+</span><span class="" data-line="128">    {
+</span><span class="" data-line="129">        $callback = $this-&gt;callback;
+</span><span class="" data-line="130">
+</span><span class="highlight" data-line="131">        return $callback($request, ...$parameters);
+</span><span class="" data-line="132">    }
+</span><span class="" data-line="133">
+</span><span class="" data-line="134">    /**
+</span><span class="" data-line="135">     * The __invoke method is called when a script tries to call an object as a function.
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Router\Route</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(Cundd\Rest\Request), 'document', 1</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Router/Router.php</strong> line 43</span></div><div class="trace-file-content"><pre><span class="" data-line="39">        }
+</span><span class="" data-line="40">
+</span><span class="" data-line="41">        $parameters = $this-&gt;getPreparedParametersForRoute($request, $route);
+</span><span class="" data-line="42">
+</span><span class="highlight" data-line="43">        return $route-&gt;process($request, ...$parameters);
+</span><span class="" data-line="44">    }
+</span><span class="" data-line="45">
+</span><span class="" data-line="46">    /**
+</span><span class="" data-line="47">     * Add the given Route
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Router\Router</span><span class="trace-type">-></span><span class="trace-method">dispatch</span>(<span class="trace-arguments"><em>object</em>(Cundd\Rest\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Router/ResultConverter.php</strong> line 61</span></div><div class="trace-file-content"><pre><span class="" data-line="57">     */
+</span><span class="" data-line="58">    public function dispatch(RestRequestInterface $request): ResponseInterface
+</span><span class="" data-line="59">    {
+</span><span class="" data-line="60">        try {
+</span><span class="highlight" data-line="61">            $result = $this-&gt;router-&gt;dispatch($request);
+</span><span class="" data-line="62">        } catch (Exception $exception) {
+</span><span class="" data-line="63">            $result = $exception;
+</span><span class="" data-line="64">        }
+</span><span class="" data-line="65">        if ($result instanceof ResponseInterface) {
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Router\ResultConverter</span><span class="trace-type">-></span><span class="trace-method">dispatch</span>(<span class="trace-arguments"><em>object</em>(Cundd\Rest\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Dispatcher.php</strong> line 148</span></div><div class="trace-file-content"><pre><span class="" data-line="144">        $this-&gt;objectManager-&gt;getHandler($request)-&gt;configureRoutes($resultConverter, $request);
+</span><span class="" data-line="145">
+</span><span class="" data-line="146">        ErrorHandler::registerHandler();
+</span><span class="" data-line="147">
+</span><span class="highlight" data-line="148">        return $resultConverter-&gt;dispatch($request);
+</span><span class="" data-line="149">    }
+</span><span class="" data-line="150">
+</span><span class="" data-line="151">    /**
+</span><span class="" data-line="152">     * Add additional custom response headers
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Dispatcher</span><span class="trace-type">-></span><span class="trace-method">callHandler</span>(<span class="trace-arguments"><em>object</em>(Cundd\Rest\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Dispatcher.php</strong> line 114</span></div><div class="trace-file-content"><pre><span class="" data-line="110">            return $cachedResponse;
+</span><span class="" data-line="111">        }
+</span><span class="" data-line="112">
+</span><span class="" data-line="113">        // If no cached response exists
+</span><span class="highlight" data-line="114">        $newResponse = $this-&gt;callHandler($request);
+</span><span class="" data-line="115">
+</span><span class="" data-line="116">        // Cache the response
+</span><span class="" data-line="117">        $resourceConfiguration = $this-&gt;objectManager-&gt;getConfigurationProvider()
+</span><span class="" data-line="118">            -&gt;getResourceConfiguration($request-&gt;getResourceType());
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Dispatcher</span><span class="trace-type">-></span><span class="trace-method">getCachedResponseOrCallHandler</span>(<span class="trace-arguments"><em>object</em>(Cundd\Rest\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Dispatcher.php</strong> line 203</span></div><div class="trace-file-content"><pre><span class="" data-line="199">        $access = $this-&gt;objectManager-&gt;getAccessController($request)-&gt;getAccess($request);
+</span><span class="" data-line="200">        switch (true) {
+</span><span class="" data-line="201">            case $access-&gt;isAllowed():
+</span><span class="" data-line="202">            case $access-&gt;isAuthorized():
+</span><span class="highlight" data-line="203">                $newResponse = $this-&gt;getCachedResponseOrCallHandler($request);
+</span><span class="" data-line="204">
+</span><span class="" data-line="205">                $this-&gt;logger-&gt;logResponse(
+</span><span class="" data-line="206">                    'response: ' . $newResponse-&gt;getStatusCode(),
+</span><span class="" data-line="207">                    ['response' =&gt; (string)$newResponse-&gt;getBody()]
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Dispatcher</span><span class="trace-type">-></span><span class="trace-method">dispatchInternal</span>(<span class="trace-arguments"><em>object</em>(Cundd\Rest\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Dispatcher.php</strong> line 80</span></div><div class="trace-file-content"><pre><span class="" data-line="76">     * @return ResponseInterface
+</span><span class="" data-line="77">     */
+</span><span class="" data-line="78">    public function dispatch(RestRequestInterface $request): ResponseInterface
+</span><span class="" data-line="79">    {
+</span><span class="highlight" data-line="80">        $response = $this-&gt;dispatchInternal($request);
+</span><span class="" data-line="81">
+</span><span class="" data-line="82">        $response = $this-&gt;addCorsHeaders(
+</span><span class="" data-line="83">            $request,
+</span><span class="" data-line="84">            $this-&gt;addAdditionalHeaders($this-&gt;addDebugHeaders($request, $response))
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Dispatcher</span><span class="trace-type">-></span><span class="trace-method">dispatch</span>(<span class="trace-arguments"><em>object</em>(Cundd\Rest\Request)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Dispatcher.php</strong> line 69</span></div><div class="trace-file-content"><pre><span class="" data-line="65">     * @throws \Exception
+</span><span class="" data-line="66">     */
+</span><span class="" data-line="67">    public function processRequest(ServerRequestInterface $request): ResponseInterface
+</span><span class="" data-line="68">    {
+</span><span class="highlight" data-line="69">        return $this-&gt;dispatch($this-&gt;requestFactory-&gt;buildRequest($request));
+</span><span class="" data-line="70">    }
+</span><span class="" data-line="71">
+</span><span class="" data-line="72">    /**
+</span><span class="" data-line="73">     * Dispatch the REST request
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Dispatcher</span><span class="trace-type">-></span><span class="trace-method">processRequest</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/cundd/rest/Classes/Http/RestMiddleware.php</strong> line 34</span></div><div class="trace-file-content"><pre><span class="" data-line="30">                $request-&gt;getAttribute('frontend.controller'),
+</span><span class="" data-line="31">                $request
+</span><span class="" data-line="32">            );
+</span><span class="" data-line="33">
+</span><span class="highlight" data-line="34">            return $middlewareBootstrap-&gt;buildDispatcher()-&gt;processRequest($languageEnhancedRequest);
+</span><span class="" data-line="35">        } else {
+</span><span class="" data-line="36">            return $handler-&gt;handle($request);
+</span><span class="" data-line="37">        }
+</span><span class="" data-line="38">    }
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Cundd\Rest\Http\RestMiddleware</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-frontend/Classes/Middleware/FrontendUserAuthenticator.php</strong> line 72</span></div><div class="trace-file-content"><pre><span class="" data-line="68">        if ($this-&gt;context-&gt;getAspect('frontend.user')-&gt;isLoggedIn() &amp;&amp; $rateLimiter) {
+</span><span class="" data-line="69">            $rateLimiter-&gt;reset();
+</span><span class="" data-line="70">        }
+</span><span class="" data-line="71">
+</span><span class="highlight" data-line="72">        $response = $handler-&gt;handle($request);
+</span><span class="" data-line="73">
+</span><span class="" data-line="74">        // Store session data for fe_users if it still exists
+</span><span class="" data-line="75">        if ($frontendUser instanceof FrontendUserAuthentication) {
+</span><span class="" data-line="76">            $frontendUser-&gt;storeSessionData();
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Frontend\Middleware\FrontendUserAuthenticator</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-frontend/Classes/Middleware/BackendUserAuthenticator.php</strong> line 79</span></div><div class="trace-file-content"><pre><span class="" data-line="75">                $request = $request-&gt;withAttribute('noCache', true);
+</span><span class="" data-line="76">            }
+</span><span class="" data-line="77">        }
+</span><span class="" data-line="78">
+</span><span class="highlight" data-line="79">        $response = $handler-&gt;handle($request);
+</span><span class="" data-line="80">
+</span><span class="" data-line="81">        // If, when building the response, the user is still available, then ensure that the headers are sent properly
+</span><span class="" data-line="82">        if ($this-&gt;context-&gt;getAspect('backend.user')-&gt;isLoggedIn()) {
+</span><span class="" data-line="83">            return $this-&gt;applyHeadersToResponse($response);
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Frontend\Middleware\BackendUserAuthenticator</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Middleware/RequestTokenMiddleware.php</strong> line 71</span></div><div class="trace-file-content"><pre><span class="" data-line="67">            $this-&gt;securityAspect-&gt;setReceivedRequestToken(false);
+</span><span class="" data-line="68">            $this-&gt;logger-&gt;debug('Could not resolve request token', ['exception' =&gt; $exception]);
+</span><span class="" data-line="69">        }
+</span><span class="" data-line="70">
+</span><span class="highlight" data-line="71">        $response = $handler-&gt;handle($request);
+</span><span class="" data-line="72">        return $this-&gt;enrichResponseWithCookie($request, $response);
+</span><span class="" data-line="73">    }
+</span><span class="" data-line="74">
+</span><span class="" data-line="75">    protected function resolveNoncePool(ServerRequestInterface $request): NoncePool
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Core\Middleware\RequestTokenMiddleware</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-frontend/Classes/Middleware/MaintenanceMode.php</strong> line 51</span></div><div class="trace-file-content"><pre><span class="" data-line="47">        ) {
+</span><span class="" data-line="48">            return GeneralUtility::makeInstance(ErrorController::class)-&gt;unavailableAction($request, 'This page is temporarily unavailable.');
+</span><span class="" data-line="49">        }
+</span><span class="" data-line="50">        // Continue the regular stack if no maintenance mode is active
+</span><span class="highlight" data-line="51">        return $handler-&gt;handle($request);
+</span><span class="" data-line="52">    }
+</span><span class="" data-line="53">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Frontend\Middleware\MaintenanceMode</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-frontend/Classes/Middleware/SiteResolver.php</strong> line 53</span></div><div class="trace-file-content"><pre><span class="" data-line="49">        $request = $request-&gt;withAttribute('routing', $routeResult);
+</span><span class="" data-line="50">        if ($routeResult-&gt;getLanguage() instanceof SiteLanguage) {
+</span><span class="" data-line="51">            Locales::setSystemLocaleFromSiteLanguage($routeResult-&gt;getLanguage());
+</span><span class="" data-line="52">        }
+</span><span class="highlight" data-line="53">        return $handler-&gt;handle($request);
+</span><span class="" data-line="54">    }
+</span><span class="" data-line="55">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Frontend\Middleware\SiteResolver</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-frontend/Classes/Middleware/EidHandler.php</strong> line 48</span></div><div class="trace-file-content"><pre><span class="" data-line="44">    {
+</span><span class="" data-line="45">        $eID = $request-&gt;getParsedBody()['eID'] ?? $request-&gt;getQueryParams()['eID'] ?? null;
+</span><span class="" data-line="46">
+</span><span class="" data-line="47">        if ($eID === null) {
+</span><span class="highlight" data-line="48">            return $handler-&gt;handle($request);
+</span><span class="" data-line="49">        }
+</span><span class="" data-line="50">
+</span><span class="" data-line="51">        // Remove any output produced until now
+</span><span class="" data-line="52">        ob_clean();
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Frontend\Middleware\EidHandler</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Middleware/NormalizedParamsAttribute.php</strong> line 41</span></div><div class="trace-file-content"><pre><span class="" data-line="37">     */
+</span><span class="" data-line="38">    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+</span><span class="" data-line="39">    {
+</span><span class="" data-line="40">        $request = $request-&gt;withAttribute('normalizedParams', NormalizedParams::createFromRequest($request));
+</span><span class="highlight" data-line="41">        return $handler-&gt;handle($request);
+</span><span class="" data-line="42">    }
+</span><span class="" data-line="43">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Core\Middleware\NormalizedParamsAttribute</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/fluidtypo3/vhs/Classes/Middleware/RequestAvailability.php</strong> line 14</span></div><div class="trace-file-content"><pre><span class="" data-line="10">{
+</span><span class="" data-line="11">    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+</span><span class="" data-line="12">    {
+</span><span class="" data-line="13">        $GLOBALS['TYPO3_REQUEST'] = $GLOBALS['TYPO3_REQUEST'] ?? $request;
+</span><span class="highlight" data-line="14">        return $handler-&gt;handle($request);
+</span><span class="" data-line="15">    }
+</span><span class="" data-line="16">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">FluidTYPO3\Vhs\Middleware\RequestAvailability</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Middleware/VerifyHostHeader.php</strong> line 55</span></div><div class="trace-file-content"><pre><span class="" data-line="51">                1396795884
+</span><span class="" data-line="52">            );
+</span><span class="" data-line="53">        }
+</span><span class="" data-line="54">
+</span><span class="highlight" data-line="55">        return $handler-&gt;handle($request);
+</span><span class="" data-line="56">    }
+</span><span class="" data-line="57">
+</span><span class="" data-line="58">    /**
+</span><span class="" data-line="59">     * Checks if the provided host header value matches the trusted hosts pattern.
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Core\Middleware\VerifyHostHeader</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-frontend/Classes/Middleware/TimeTrackerInitialization.php</strong> line 46</span></div><div class="trace-file-content"><pre><span class="" data-line="42">        $this-&gt;timeTracker-&gt;setEnabled($timeTrackingEnabled);
+</span><span class="" data-line="43">        $this-&gt;timeTracker-&gt;start(microtime(true));
+</span><span class="" data-line="44">        $this-&gt;timeTracker-&gt;push('');
+</span><span class="" data-line="45">
+</span><span class="highlight" data-line="46">        $response = $handler-&gt;handle($request);
+</span><span class="" data-line="47">
+</span><span class="" data-line="48">        // Finish time tracking
+</span><span class="" data-line="49">        $this-&gt;timeTracker-&gt;pull();
+</span><span class="" data-line="50">        $this-&gt;timeTracker-&gt;finish();
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Frontend\Middleware\TimeTrackerInitialization</span><span class="trace-type">-></span><span class="trace-method">process</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest), <em>object</em>(Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 162</span></div><div class="trace-file-content"><pre><span class="" data-line="158">
+</span><span class="" data-line="159">                if (!$middleware instanceof MiddlewareInterface) {
+</span><span class="" data-line="160">                    throw new \InvalidArgumentException(get_class($middleware) . ' does not implement ' . MiddlewareInterface::class, 1516821342);
+</span><span class="" data-line="161">                }
+</span><span class="highlight" data-line="162">                return $middleware-&gt;process($request, $this-&gt;next);
+</span><span class="" data-line="163">            }
+</span><span class="" data-line="164">        };
+</span><span class="" data-line="165">    }
+</span><span class="" data-line="166">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">Psr\Http\Server\RequestHandlerInterface@anonymous /var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php:128$68</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/MiddlewareDispatcher.php</strong> line 70</span></div><div class="trace-file-content"><pre><span class="" data-line="66">     * Invoke the middleware stack
+</span><span class="" data-line="67">     */
+</span><span class="" data-line="68">    public function handle(ServerRequestInterface $request): ResponseInterface
+</span><span class="" data-line="69">    {
+</span><span class="highlight" data-line="70">        return $this-&gt;tip-&gt;handle($request);
+</span><span class="" data-line="71">    }
+</span><span class="" data-line="72">
+</span><span class="" data-line="73">    /**
+</span><span class="" data-line="74">     * Seed the middleware stack with the inner request handler
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Core\Http\MiddlewareDispatcher</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/AbstractApplication.php</strong> line 87</span></div><div class="trace-file-content"><pre><span class="" data-line="83">
+</span><span class="" data-line="84">    public function handle(ServerRequestInterface $request): ResponseInterface
+</span><span class="" data-line="85">    {
+</span><span class="" data-line="86">        try {
+</span><span class="highlight" data-line="87">            $response = $this-&gt;requestHandler-&gt;handle($request);
+</span><span class="" data-line="88">        } catch (ImmediateResponseException $exception) {
+</span><span class="" data-line="89">            $response = $exception-&gt;getResponse();
+</span><span class="" data-line="90">        }
+</span><span class="" data-line="91">        return $response;
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Core\Http\AbstractApplication</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-frontend/Classes/Http/Application.php</strong> line 59</span></div><div class="trace-file-content"><pre><span class="" data-line="55">        // Create new request object having applicationType &quot;I am a frontend request&quot; attribute.
+</span><span class="" data-line="56">        $request = $request-&gt;withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_FE);
+</span><span class="" data-line="57">
+</span><span class="" data-line="58">        $this-&gt;initializeContext();
+</span><span class="highlight" data-line="59">        return parent::handle($request);
+</span><span class="" data-line="60">    }
+</span><span class="" data-line="61">
+</span><span class="" data-line="62">    /**
+</span><span class="" data-line="63">     * Create a PSR-7 Response that redirects to the install tool
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Frontend\Http\Application</span><span class="trace-type">-></span><span class="trace-method">handle</span>(<span class="trace-arguments"><em>object</em>(TYPO3\CMS\Core\Http\ServerRequest)</span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/vendor/typo3/cms-core/Classes/Http/AbstractApplication.php</strong> line 110</span></div><div class="trace-file-content"><pre><span class="" data-line="106">            $this-&gt;sendResponse(new Response(null, 400));
+</span><span class="" data-line="107">            return;
+</span><span class="" data-line="108">        }
+</span><span class="" data-line="109">
+</span><span class="highlight" data-line="110">        $response = $this-&gt;handle($request);
+</span><span class="" data-line="111">        $this-&gt;sendResponse($response);
+</span><span class="" data-line="112">    }
+</span><span class="" data-line="113">}
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class">TYPO3\CMS\Core\Http\AbstractApplication</span><span class="trace-type">-></span><span class="trace-method">run</span>(<span class="trace-arguments"></span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/public/index.php</strong> line 20</span></div><div class="trace-file-content"><pre><span class="" data-line="16">// Set up the application for the frontend
+</span><span class="" data-line="17">call_user_func(static function () {
+</span><span class="" data-line="18">    $classLoader = require dirname(__DIR__).'/vendor/autoload.php';
+</span><span class="" data-line="19">    \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::run(0, \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::REQUESTTYPE_FE);
+</span><span class="highlight" data-line="20">    \TYPO3\CMS\Core\Core\Bootstrap::init($classLoader)-&gt;get(\TYPO3\CMS\Frontend\Http\Application::class)-&gt;run();
+</span><span class="" data-line="21">});
+</span></pre></div></div></div><div class="trace-step"><div class="trace-call">at <span class="trace-class"></span><span class="trace-type"></span><span class="trace-method">{closure}</span>(<span class="trace-arguments"></span>)</div><div class="trace-file"><div class="trace-file-head"><span class="block trace-file-path">in <strong>/var/www/html/public/index.php</strong> line 21</span></div><div class="trace-file-content"><pre><span class="" data-line="17">call_user_func(static function () {
+</span><span class="" data-line="18">    $classLoader = require dirname(__DIR__).'/vendor/autoload.php';
+</span><span class="" data-line="19">    \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::run(0, \TYPO3\CMS\Core\Core\SystemEnvironmentBuilder::REQUESTTYPE_FE);
+</span><span class="" data-line="20">    \TYPO3\CMS\Core\Core\Bootstrap::init($classLoader)-&gt;get(\TYPO3\CMS\Frontend\Http\Application::class)-&gt;run();
+</span><span class="highlight" data-line="21">});
+</span></pre></div></div></div>
+                </div>
+            </div>
+                </div>
+            </div>
+    </body>
+</html>

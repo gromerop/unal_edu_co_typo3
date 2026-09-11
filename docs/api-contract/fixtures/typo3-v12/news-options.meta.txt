@@ -1,0 +1,4 @@
+method: OPTIONS
+path: /rest/noticias
+status: 404
+content-type: application/json

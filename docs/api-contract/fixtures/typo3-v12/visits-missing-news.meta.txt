@@ -1,0 +1,5 @@
+method: POST
+path: /rest/visitas/update
+status: 501
+content-type: application/json
+request-body: {}

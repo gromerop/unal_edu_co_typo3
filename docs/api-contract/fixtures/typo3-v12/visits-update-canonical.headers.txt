@@ -1,0 +1,6 @@
+HTTP/2 501 
+access-control-allow-credentials: true
+access-control-allow-headers: Content-Type
+access-control-allow-methods: GET, POST
+access-control-allow-origin: *
+content-type: application/json

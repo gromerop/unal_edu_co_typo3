@@ -1,0 +1,4 @@
+method: GET
+path: /rest/unal-unal_news-unalNews
+status: 200
+content-type: application/json

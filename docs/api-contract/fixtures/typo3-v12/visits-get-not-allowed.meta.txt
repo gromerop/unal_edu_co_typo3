@@ -1,0 +1,4 @@
+method: GET
+path: /rest/visitas/update
+status: 403
+content-type: application/json

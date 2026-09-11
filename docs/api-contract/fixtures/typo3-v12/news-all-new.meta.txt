@@ -1,0 +1,4 @@
+method: GET
+path: /rest/noticias/all/new/1
+status: 200
+content-type: application/json

@@ -1,0 +1,412 @@
+openapi: 3.1.0
+info:
+  title: API legada de noticias de la UNAL
+  version: 12.4-observed-2026-09-08
+  description: >-
+    Contrato observado en TYPO3 12 antes de retirar cundd/rest. Los estados 501
+    documentan fallos históricos y no son el comportamiento objetivo de la
+    implementación nativa. Consulte README.md para las decisiones de migración.
+servers:
+  - url: https://unal-typo3-ddev.ddev.site
+    description: Entorno local usado para la captura
+tags:
+  - name: Noticias
+  - name: Visitas
+paths:
+  /rest/noticias:
+    get:
+      tags: [Noticias]
+      operationId: listNews
+      summary: Obtiene la primera página de noticias
+      responses:
+        '200':
+          $ref: '#/components/responses/PaginatedNews'
+    options:
+      tags: [Noticias]
+      operationId: optionsNews
+      summary: Solicitud previa CORS
+      x-legacy-observed-status: 404
+      responses:
+        '404':
+          description: Comportamiento legado; la ruta OPTIONS no existía.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyError'
+  /rest/noticias/page/{page}:
+    get:
+      tags: [Noticias]
+      operationId: listNewsPage
+      summary: Obtiene una página de noticias
+      parameters:
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          $ref: '#/components/responses/PaginatedNews'
+  /rest/noticias/show/{uid}:
+    get:
+      tags: [Noticias]
+      operationId: showNews
+      summary: Obtiene una noticia por identificador
+      description: >-
+        La acción legada estaba vacía y respondió 501 incluso para un registro
+        existente. La implementación objetivo debe sustituir este resultado por
+        200 o 404, según corresponda.
+      parameters:
+        - $ref: '#/components/parameters/Uid'
+      responses:
+        '501':
+          description: Fallo histórico de la acción Extbase vacía.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyRuntimeError'
+  /rest/noticias/search:
+    post:
+      tags: [Noticias]
+      operationId: relatedNews
+      summary: Obtiene un número limitado de noticias relacionadas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [size]
+              properties:
+                size:
+                  type: integer
+                  minimum: 0
+                  example: 3
+      responses:
+        '200':
+          description: Arreglo de noticias.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/NewsSummary'
+  /rest/noticias/all/{type}/{page}:
+    get:
+      tags: [Noticias]
+      operationId: exportNews
+      summary: Exporta noticias o medios para el buscador de convergencia
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [new, image, video, audio]
+        - $ref: '#/components/parameters/Page'
+      responses:
+        '200':
+          description: >-
+            Arreglo cuya forma depende de type. La captura de video contenía
+            ceros por un defecto legado; no se define ese defecto como esquema
+            objetivo.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  oneOf:
+                    - $ref: '#/components/schemas/ExportedNews'
+                    - $ref: '#/components/schemas/ExportedImage'
+                    - type: number
+                      deprecated: true
+                      description: Valor defectuoso observado en all/video.
+  /rest/noticias/autocomplete/{search}:
+    get:
+      tags: [Noticias]
+      operationId: autocompleteNews
+      summary: Devuelve títulos que coinciden con el texto
+      parameters:
+        - name: search
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Títulos encontrados.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  required: [title]
+                  properties:
+                    title:
+                      type: string
+  /rest/noticias/deleted:
+    get:
+      tags: [Noticias]
+      operationId: deletedNews
+      summary: Devuelve identificadores eliminados desde el día anterior
+      responses:
+        '200':
+          description: Identificadores de noticias.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+  /rest/noticias/edited:
+    get:
+      tags: [Noticias]
+      operationId: editedNews
+      summary: Devuelve noticias editadas desde el día anterior
+      responses:
+        '200':
+          description: Noticias editadas.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExportedNews'
+  /rest/visitas/update:
+    get:
+      tags: [Visitas]
+      operationId: readVisitCounterForbidden
+      summary: Método de lectura no permitido
+      responses:
+        '403':
+          description: Operación prohibida en el contrato legado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyError'
+    post:
+      tags: [Visitas]
+      operationId: registerVisit
+      summary: Registra una visita a una noticia
+      description: >-
+        El plugin legado no estaba registrado y respondió 501 sin modificar la
+        base de datos. La implementación objetivo debe ofrecer esta operación.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [news]
+              properties:
+                news:
+                  type: integer
+                  minimum: 1
+      responses:
+        '501':
+          description: Fallo histórico por plugin Extbase no configurado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyRuntimeError'
+  /rest/unal-unal_news-unalNews:
+    get:
+      tags: [Noticias]
+      operationId: listNewsCanonicalAlias
+      deprecated: true
+      summary: Alias canónico legado del listado
+      responses:
+        '200':
+          $ref: '#/components/responses/PaginatedNews'
+  /rest/unal-unal_news-visitCounter/update:
+    post:
+      tags: [Visitas]
+      operationId: registerVisitCanonicalAlias
+      deprecated: true
+      summary: Alias canónico legado del registro de visitas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [news]
+              properties:
+                news:
+                  type: integer
+                  minimum: 1
+      responses:
+        '501':
+          description: Fallo histórico por plugin Extbase no configurado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyRuntimeError'
+components:
+  parameters:
+    Page:
+      name: page
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 0
+      description: >-
+        La versión legada aceptó 0 como equivalente práctico de la primera
+        página. La implementación objetivo debería exigir valores desde 1.
+    Uid:
+      name: uid
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+  responses:
+    PaginatedNews:
+      description: Página de noticias.
+      headers:
+        Access-Control-Allow-Origin:
+          schema:
+            type: string
+          description: En la captura fue `*`.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaginatedNews'
+  schemas:
+    PaginatedNews:
+      type: object
+      required: [info, results]
+      properties:
+        info:
+          type: object
+          required: [count, pages, next, prev]
+          properties:
+            count:
+              type: integer
+            pages:
+              type: integer
+            next:
+              type: string
+            prev:
+              type: string
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/NewsSummary'
+    NewsSummary:
+      type: object
+      required:
+        - id
+        - title
+        - alternativeTitle
+        - teaser
+        - date
+        - imagen
+        - video
+        - duration
+        - vistas
+        - url
+        - domain
+        - categories
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        alternativeTitle:
+          type: string
+        teaser:
+          type: string
+        date:
+          type: string
+          format: date-time
+        imagen:
+          type: string
+        video:
+          type: string
+        duration:
+          type: string
+        vistas:
+          type: integer
+        url:
+          type: string
+        domain:
+          type: string
+        categories:
+          type: array
+          items: {}
+    ExportedNews:
+      allOf:
+        - $ref: '#/components/schemas/NewsSummary'
+        - type: object
+          required: [recordDate, media, recordCategory]
+          properties:
+            recordDate:
+              type: string
+              format: date-time
+            media:
+              type: object
+              additionalProperties: true
+            recordCategory:
+              type: array
+              items: {}
+    ExportedImage:
+      type: object
+      required:
+        - id
+        - id_new
+        - title
+        - product
+        - recordCategory
+        - alternativeTitle
+        - teaser
+        - date
+        - recordDate
+        - vistas
+        - url
+        - baseUrl
+        - file
+      properties:
+        id:
+          type: string
+        id_new:
+          type: integer
+        title:
+          type: string
+        product:
+          type: string
+        recordCategory:
+          type: array
+          items: {}
+        alternativeTitle:
+          type: string
+        teaser:
+          type: string
+        date:
+          type: string
+          format: date-time
+        recordDate:
+          type: string
+          format: date-time
+        vistas:
+          type: integer
+        url:
+          type: string
+        baseUrl:
+          type: string
+        file:
+          type: string
+    LegacyError:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+    LegacyRuntimeError:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+        trace:
+          type: array
+          items:
+            type: string

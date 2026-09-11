@@ -1,0 +1,4 @@
+method: GET
+path: /rest/noticias/deleted
+status: 200
+content-type: application/json

@@ -1,0 +1,6 @@
+HTTP/2 500 
+content-type: text/html; charset=UTF-8
+HTTP/2 500 
+content-type: text/html; charset=UTF-8
+HTTP/2 500 
+content-type: text/html; charset=UTF-8
