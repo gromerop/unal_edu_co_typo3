@@ -1,0 +1,67 @@
+tt_content.unal160_year =< lib.contentElement
+tt_content.unal160_year {
+  partialRootPaths.160 = EXT:unal_160/Resources/Private/Partials/
+  templateName = Year
+  templateRootPaths.160 = EXT:unal_160/Resources/Private/Templates/
+  dataProcessing.160 = Unal\Unal160\DataProcessing\YearProcessor
+}
+tt_content.unal160_images =< lib.contentElement
+tt_content.unal160_images {
+  templateName = ImageCarousel
+  templateRootPaths.160 = EXT:unal_160/Resources/Private/Templates/
+  dataProcessing.160 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.160 {
+    references.fieldName = image
+    as = carouselImages
+  }
+}
+
+page.includeCSS {
+  unal160Splide = EXT:unal_160/Resources/Public/Vendor/splide/splide.min.css
+  unal160Images = EXT:unal_160/Resources/Public/Css/image-carousel.css
+  unal160Year = EXT:unal_160/Resources/Public/Css/year.css
+  unal160Arrows = EXT:unal_160/Resources/Public/Css/carousel-arrows.css
+}
+# Un único archivo: biblioteca y después los dos inicializadores.
+# No async: el orden del contenido del bundle es determinista.
+page.includeJSFooter.unal160Year >
+page.includeJSFooter.unal160Carousels = EXT:unal_160/Resources/Public/JavaScript/carousels.bundle.js
+
+# Compatibilidad con la galería existente: CType=image, layout=16001.
+# Mantiene la plantilla Image normal para los otros diseños.
+tt_content.image {
+  templateRootPaths.160 = EXT:unal_160/Resources/Private/Templates/
+  templateName >
+  templateName = Image
+  templateName.cObject = CASE
+  templateName.cObject {
+    key.field = layout
+    default = TEXT
+    default.value = Image
+    16001 = TEXT
+    16001.value = ImageCarousel
+  }
+  dataProcessing.160 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+  dataProcessing.160 {
+    references.fieldName = image
+    as = carouselImages
+  }
+}
+
+# El mismo renderizado tt_content del sitio, con las relaciones de EXT:news.
+lib.unal160.newsContent = RECORDS
+lib.unal160.newsContent {
+  tables = tt_content
+  source.current = 1
+  dontCheckPid = 1
+  conf.tt_content =< tt_content
+}
+
+tt_content.unal160_stories =< lib.contentElement
+tt_content.unal160_stories {
+  templateName = Stories
+  templateRootPaths.160 = EXT:unal_160/Resources/Private/Templates/
+  partialRootPaths.160 = EXT:unal_160/Resources/Private/Partials/
+  dataProcessing.160 = Unal\Unal160\DataProcessing\StoriesProcessor
+}
+page.includeCSS.unal160Stories = EXT:unal_160/Resources/Public/Css/stories.css

@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div class="unal-year-news-detail">
+  <h2>{news.title}</h2>
+  <div class="unal-year-news-detail__meta">
+    <f:if condition="{news.author}"><p class="author">{news.author}</p></f:if>
+    <f:if condition="{news.datetime}">
+      <p><time datetime="{f:format.date(date: news.datetime, format: 'c')}"><f:format.date date="{news.datetime}" format="d/m/Y" /></time></p>
+    </f:if>
+  </div>
+  <f:if condition="{news.teaser}"><div class="unal-year-news-detail__teaser"><f:format.html parseFuncTSPath="lib.parseFunc_RTE">{news.teaser}</f:format.html></div></f:if>
+  <div class="unal-year-news-detail__text"><f:format.html parseFuncTSPath="lib.parseFunc_RTE">{news.bodytext}</f:format.html></div>
+  <f:if condition="{news.contentElements}">
+    <div class="unal-year-news-detail__content"><f:cObject typoscriptObjectPath="lib.unal160.newsContent" data="{news.nonNestedContentElementIdList}" /></div>
+  </f:if>
+  <f:if condition="{news.mediaNonPreviews}">
+    <div class="unal-year-news-detail__media">
+      <f:for each="{news.mediaNonPreviews}" as="medium">
+        <figure>
+          <f:media file="{medium.originalResource}" width="960" additionalAttributes="{controls: 'controls'}" />
+          <f:if condition="{medium.originalResource.description}"><figcaption>{medium.originalResource.description}</figcaption></f:if>
+        </figure>
+      </f:for>
+    </div>
+  </f:if>
+  <f:if condition="{news.falRelatedFiles}">
+    <section class="unal-year-news-detail__files" aria-label="Archivos relacionados">
+      <h6>Archivos relacionados</h6>
+      <ul>
+        <f:for each="{news.falRelatedFiles}" as="file">
+          <li><a href="{file.originalResource.publicUrl}" target="_blank" rel="noopener">{f:if(condition: file.originalResource.title, then: file.originalResource.title, else: file.originalResource.name)}</a> <span>({f:format.bytes(value: file.originalResource.size)})</span></li>
+        </f:for>
+      </ul>
+    </section>
+  </f:if>
+  <f:if condition="{news.relatedLinks}">
+    <section class="unal-year-news-detail__links" aria-label="Enlaces relacionados">
+      <h6>Enlaces relacionados</h6>
+      <ul>
+        <f:for each="{news.relatedLinks}" as="link">
+          <li><f:link.typolink parameter="{link.uri}" title="{link.title}">{f:if(condition: link.title, then: link.title, else: link.uri)}</f:link.typolink><f:if condition="{link.description}"><p>{link.description}</p></f:if></li>
+        </f:for>
+      </ul>
+    </section>
+  </f:if>
+</div>
+</html>

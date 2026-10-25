@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+  <f:if condition="{featuredStory}">
+    <section class="unal-stories{f:if(condition: previousStories, then: ' unal-stories--with-carousel')}" aria-label="Historias que inspiran">
+      <div class="unal-stories__featured">
+        <f:render partial="StoryCard" arguments="{story: featuredStory}" />
+      </div>
+      <f:if condition="{previousStories}">
+        <div class="splide unal-stories__carousel" data-stories-carousel aria-label="Historias anteriores">
+          <div class="splide__track"><ul class="splide__list">
+            <f:for each="{previousStories}" as="story"><li class="splide__slide"><f:render partial="StoryCard" arguments="{story: story}" /></li></f:for>
+          </ul></div>
+        </div>
+      </f:if>
+    </section>
+  </f:if>
+</f:section>
+</html>

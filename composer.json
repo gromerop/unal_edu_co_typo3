@@ -46,6 +46,7 @@
 		"typo3/cms-t3editor": "^13.4",
 		"typo3/cms-tstemplate": "^13.4",
 		"typo3/cms-viewpage": "^13.4",
+		"unal/unal-160": "^1.0",
 		"unal/unal-base": "^1.0",
 		"unal/unal-news": "^1.0",
 		"unal/unal-skin-buscador-unimedios": "^1.0",

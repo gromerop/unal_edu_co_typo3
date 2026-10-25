@@ -1,0 +1,52 @@
+.unal-year{background:#1c1e4f;color:#fff;padding:0;font-family:'Ancizar Sans',Arial,sans-serif}
+.unal-year *{box-sizing:border-box}
+.unal-year [hidden]{display:none!important}
+.unal-year__months-wrapper{background: #0e1440; padding-left:235px; padding-right:235px;}
+.unal-year__months ul li {border-right: 2px solid #fd585d;}
+.unal-year__months ul li:last-child {border-right: 2px solid transparent;}
+.unal-year__month{width:100%;height:280px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:12px;padding:20px;border:2px solid transparent;background:transparent;color:#fff;text-align:center;cursor:pointer}
+.unal-year__month:last-child{border-right:2px solid transparent;}
+.unal-year__month[aria-pressed=true]{background:#8890b4;color:#0e1440}
+.unal-year__month-title{width: 100%;text-align: left;font-weight: 900;font-style: italic;font-size: 1.75em;}
+.unal-year__month img{height:130px;width:100%;object-fit:contain}
+.unal-year__month-theme{font-size:19px;line-height:1.15;width: 100%;text-align: left;font-weight: normal;}
+.unal-year__month:disabled{cursor:default;color:#8890b4;}
+.unal-year__month:disabled img {filter: sepia(100%) hue-rotate(190deg) saturate(120%);}
+.unal-year__month-panel{background: #22256a;}
+.unal-year__tabs{display:flex;flex-wrap:wrap;gap:12px;padding: 24px 235px 0 235px;}
+.unal-year__tabs button{background:transparent;color:#fff;border:1px solid #fd585d;border-radius:20px;padding:8px 24px;cursor:pointer}
+.unal-year__tabs button[aria-selected=true]{background:#fd585d;color:#1c1e4f;border-color:#fd585d}
+.unal-year__tabpanel {padding: 24px 235px 3em 235px;}
+.unal-year__tabpanel-66{background-image: url('../Images/Months/biblioteca-ggm-bogota.svg'); background-position: bottom left; background-size: 300px auto; background-repeat: no-repeat;}
+.unal-year__tabpanel-67{background-image: url('../Images/paraver.svg'); background-position: bottom left; background-size: 226px auto; background-repeat: no-repeat;}
+.unal-year__tabpanel-68{background-image: url('../Images/arpa.svg'); background-position: bottom left; background-size: 226px auto; background-repeat: no-repeat;}
+.unal-year__tabpanel-agenda{background-image: url('../Images/logocircular.svg'); background-position: bottom 5px left -5px; background-repeat: no-repeat; background-size: 220px auto;}
+.unal-year__tabpanel h5 {font-size: 3em;font-weight: 900;letter-spacing: 1px;}
+.unal-year__card{height:100%;background:#d1dcfe;color:#1c1e4f;display:flex;flex-direction:column;border-radius: 2em;}
+.unal-year__card img,.unal-year__placeholder{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:transparent;border-radius: 2em 2em 0 0;}
+.unal-year__card-text{padding:20px;display:flex;flex-direction:column;flex:1;justify-content:flex-end}
+.unal-year__card-text h6{font-size:18px;line-height:1.15;font-weight: 900;margin:0 0 20px}
+.unal-year__card-text a,.unal-year__card-text .unal-year__read-more{color:#fd585d;margin-top:auto;font-weight:700;line-height: 1.2;letter-spacing: 0.2em;border: 1px solid currentColor;border-radius: 10px;align-self: flex-start;font-size: 1.25em;padding: 0.25em 0.5em;}
+.unal-year__card-text a span,.unal-year__card-text .unal-year__read-more span {color: #fd585d; font-size: 22px; line-height: 1;}
+.unal-year button:focus-visible,.unal-year a:focus-visible{outline:3px solid #ffbc00;outline-offset:3px}
+.unal-year .splide__arrow--prev{left:-38px}.unal-year .splide__arrow--next{right:-38px}
+@media(max-width:575px){.unal-year{padding:24px 40px}.unal-year__tabs{gap:8px}.unal-year__tabs button{padding:8px 14px}}
+
+.unal-year__event-details{font-size:16px;line-height:1.4}
+.unal-year__event-details p{margin:0 0 10px}
+.unal-year__tabpanel-agenda .unal-year__placeholder{display:none;background:none}
+
+.unal-year__read-more{background:transparent;font-family:inherit;cursor:pointer;text-align:left}
+.unal-year-news-modal{font-family:'Ancizar Sans',Arial,sans-serif;color:#1c1e4f}
+.unal-year-news-modal .modal-body{font-size:18px;line-height:1.6;overflow-wrap:anywhere}
+.unal-year-news-modal .modal-body img{max-width:100%;height:auto}
+.unal-year-news-modal .modal-body table{display:block;max-width:100%;overflow-x:auto}
+.unal-year-news-modal .modal-body video,.unal-year-news-modal .modal-body iframe{max-width:100%}
+.unal-year-news-modal .modal-body audio{width:100%}
+.unal-year-news-detail__meta{font-size:16px;margin-bottom:1.5rem}
+.unal-year-news-detail__meta p{margin:0 0 .25rem}
+.unal-year-news-detail__meta p.author{font-style:italic;}
+.unal-year-news-detail__media figure{margin:1.5rem 0}
+.unal-year-news-detail__media figcaption{font-size:16px}
+.unal-year-news-detail__files,.unal-year-news-detail__links{margin-top:1.5rem}
+.unal-year-news-detail__content header {background: transparent;}

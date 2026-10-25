@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a8d72966c312708dfc8f17843db93ac",
+    "content-hash": "1756c62e3742e34bfd80bf48013f659d",
     "packages": [
         {
             "name": "b13/container",
@@ -8347,6 +8347,36 @@
                 "source": "https://github.com/TYPO3/Fluid"
             },
             "time": "2026-04-16T17:21:26+00:00"
+        },
+        {
+            "name": "unal/unal-160",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "./packages/unal_160",
+                "reference": "31ec764d7363f89fe0a56128693d618c61fc6765"
+            },
+            "require": {
+                "georgringer/news": "^13.0",
+                "php": "^8.2",
+                "typo3/cms-core": "^13.4",
+                "typo3/cms-fluid-styled-content": "^13.4"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "unal_160"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Unal\\Unal160\\": "Classes/"
+                }
+            },
+            "description": "Meses temáticos del aniversario UNAL",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "unal/unal-base",

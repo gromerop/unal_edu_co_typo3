@@ -1,0 +1,106 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+<section class="unal-year" data-unal-year data-news-modal="year-{data.uid}-news-modal" aria-label="Año 160 en doce temáticas">
+  <div class="unal-year__months-wrapper">
+    <div class="splide unal-year__months" data-month-carousel aria-label="Meses de celebración">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <f:for each="{months}" as="month">
+            <li class="splide__slide">
+              <f:if condition="{month.enabled}">
+                <f:then>
+                  <button type="button" class="unal-year__month" data-month="{month.id}" aria-controls="year-{data.uid}-month-{month.id}" aria-pressed="{f:if(condition: month.active, then: 'true', else: 'false')}">
+                    <div class="unal-year__month-title">{month.name}</div>
+                    <f:image src="EXT:unal_160/Resources/Public/{month.illustration}" alt="{month.name} {month.year} - {month.theme}" loading="lazy"/>
+                    <div class="unal-year__month-theme">{month.theme}</div>
+                  </button>
+                </f:then>
+                <f:else>
+                  <button type="button" disabled="disabled" class="unal-year__month" data-month="{month.id}" aria-controls="year-{data.uid}-month-{month.id}" aria-pressed="{f:if(condition: month.active, then: 'true', else: 'false')}">
+                    <div class="unal-year__month-title">{month.name}</div>
+                    <f:image src="EXT:unal_160/Resources/Public/{month.illustration}" alt="{month.name} {month.year} - {month.theme}" loading="lazy"/>
+                    <div class="unal-year__month-theme">{month.theme}</div>
+                  </button>
+                </f:else>
+              </f:if>
+            </li>
+          </f:for>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <f:if condition="{hasContent}"><f:else><p>Todavía no hay publicaciones para los meses de celebración.</p></f:else></f:if>
+  <f:for each="{months}" as="month">
+    <f:if condition="{month.enabled}">
+      <section id="year-{data.uid}-month-{month.id}" data-month-panel="{month.id}" class="unal-year__month-panel" aria-label="{month.name} {month.year}">
+        <div class="unal-year__tabs" role="tablist" aria-label="Contenidos de {month.name}">
+          <f:for each="{month.tabs}" as="tab">
+            <button type="button" role="tab" id="year-{data.uid}-tab-{month.id}-{tab.id}" data-content-tab="{tab.id}" aria-controls="year-{data.uid}-content-{month.id}-{tab.id}" aria-selected="{f:if(condition: tab.active, then: 'true', else: 'false')}" tabindex="{f:if(condition: tab.active, then: '0', else: '-1')}">{tab.description}</button>
+          </f:for>
+        </div>
+        <f:for each="{month.tabs}" as="tab">
+          <div role="tabpanel" tabindex="0" id="year-{data.uid}-content-{month.id}-{tab.id}" aria-labelledby="year-{data.uid}-tab-{month.id}-{tab.id}" data-content-panel="{tab.id}" class="unal-year__tabpanel unal-year__tabpanel-{tab.id}">
+            <div class="row align-items-center">
+              <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <h5>{tab.description}</h5>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <div class="splide" data-card-carousel aria-label="{tab.label} de {month.name}">
+                  <div class="splide__track"><ul class="splide__list">
+                    <f:for each="{tab.items}" as="card">
+                      <li class="splide__slide">
+                        <article class="unal-year__card">
+                          <div class="unal-year__placeholder" aria-hidden="true"></div>
+                          <div class="unal-year__card-text">
+                            <h6>{card.title}</h6>
+                            <f:if condition="{tab.isAgenda}">
+                              <div class="unal-year__event-details">
+                                <f:if condition="{card.dateLabel}"><p>{card.dateLabel}</p></f:if>
+                                <f:if condition="{card.place.nombre}"><p>{card.place.nombre}<f:if condition="{card.place.ciudad}"> · {card.place.ciudad}</f:if></p></f:if>
+                                <f:if condition="{card.room}"><p>{card.room}</p></f:if>
+                              </div>
+                            </f:if>
+                            <f:if condition="{card.opensTextModal}">
+                              <button type="button" class="unal-year__read-more" data-news-content="year-{data.uid}-news-{card.uid}" aria-haspopup="dialog" aria-controls="year-{data.uid}-news-modal">Ver más <span aria-hidden="true">→</span><span class="visually-hidden">: {card.title}</span></button>
+                            </f:if>
+                            <f:if condition="{card.url}">
+                              <a href="{card.url}" target="_blank" rel="external">Ver más <span aria-hidden="true">→</span><span class="visually-hidden">: {card.title}</span></a>
+                            </f:if>
+                          </div>
+                        </article>
+                      </li>
+                    </f:for>
+                  </ul></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </f:for>
+      </section>
+    </f:if>
+  </f:for>
+  <f:if condition="{modalNews}">
+    <f:for each="{modalNews}" as="news">
+      <template id="year-{data.uid}-news-{news.uid}" data-news-title="{news.title}">
+        <f:render partial="NewsModalDetail" arguments="{news: news.record}" />
+      </template>
+    </f:for>
+    <div class="modal fade unal-year-news-modal" id="year-{data.uid}-news-modal" tabindex="-1" aria-labelledby="year-{data.uid}-news-modal-title" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="year-{data.uid}-news-modal-title" data-news-modal-title></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body" data-news-modal-body></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </f:if>
+</section>
+</f:section>
+</html>

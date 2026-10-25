@@ -1,0 +1,11 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{story.url}"><f:then>
+  <a class="unal-stories__card" href="{story.url}" target="_blank" rel="noopener noreferrer" data-story-video data-video-title="{story.title}">
+    <f:render section="Image" arguments="{story: story}" />
+    <span class="unal-stories__caption">{story.title}<span class="unal-stories__action">Ver video <span class="unal-stories__action-arrow" aria-hidden="true">→</span></span></span>
+  </a>
+</f:then><f:else>
+  <div class="unal-stories__card"><f:render section="Image" arguments="{story: story}" /><span class="unal-stories__caption">{story.title}</span></div>
+</f:else></f:if>
+<f:section name="Image"><f:if condition="{story.image}"><f:image image="{story.image}" width="900c" height="900c" alt="" loading="lazy" /></f:if></f:section>
+</html>

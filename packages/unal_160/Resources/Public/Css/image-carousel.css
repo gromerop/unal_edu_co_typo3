@@ -1,0 +1,73 @@
+/* Sin separación entre imágenes. */
+.unal-image-carousel {
+    --carousel-gap: 0;
+}
+
+.unal-image-carousel .splide__slide {
+    padding: 0;
+    border: 0;
+}
+
+.unal-image-carousel__image {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+/* Corregir los anchos del respaldo sin JavaScript. */
+.unal-image-carousel:not(.is-initialized) .splide__slide {
+    flex-basis: 20%;
+}
+
+@media (max-width: 1199px) {
+    .unal-image-carousel:not(.is-initialized) .splide__slide {
+        flex-basis: 33.333333%;
+    }
+}
+
+@media (max-width: 767px) {
+    .unal-image-carousel:not(.is-initialized) .splide__slide {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 575px) {
+    .unal-image-carousel:not(.is-initialized) .splide__slide {
+        flex-basis: 85%;
+    }
+}
+
+/* Reforzar la visibilidad de los controles ya generados. */
+.unal-image-carousel.is-initialized .splide__arrows {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.unal-image-carousel.is-initialized .splide__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 5;
+    visibility: visible;
+}
+
+.unal-image-carousel.is-initialized .splide__arrow svg {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    fill: currentColor;
+}
+
+.unal-image-carousel .splide__slide {
+    min-width: 0;
+}
+
+.unal-image-carousel .unal-image-carousel__image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}

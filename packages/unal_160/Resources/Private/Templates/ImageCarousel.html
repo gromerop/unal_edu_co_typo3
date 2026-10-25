@@ -1,0 +1,33 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <f:if condition="{carouselImages}">
+        <section
+            id="image-carousel-{data.uid}"
+            class="splide unal-image-carousel"
+            aria-label="Galería de imágenes"
+            data-image-carousel
+        >
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <f:for each="{carouselImages}" as="image">
+                        <li class="splide__slide">
+                            <f:image
+                                image="{image}"
+                                width="285"
+                                class="unal-image-carousel__image"
+                                loading="lazy"
+                                additionalAttributes="{decoding: 'async'}"
+                            />
+                        </li>
+                    </f:for>
+                </ul>
+            </div>
+        </section>
+    </f:if>
+</f:section>
+</html>
