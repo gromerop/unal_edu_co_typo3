@@ -1,0 +1,25 @@
+/* Botones Splide con SVG del diseñador, conservando etiquetas y teclado. */
+.unal-image-carousel .splide__arrow,
+.unal-year .splide__arrow {
+  width:36px; height:36px; padding:0; border:0; border-radius:0;
+  background-color:transparent; background-repeat:no-repeat;
+  background-position:center; background-size:contain; opacity:1;
+  cursor:pointer;
+}
+.unal-image-carousel .splide__arrow--prev,
+.unal-year .splide__arrow--prev {
+  background-image:url('../Images/Arrows/izqsalmon.svg');
+}
+.unal-image-carousel .splide__arrow--next,
+.unal-year .splide__arrow--next {
+  background-image:url('../Images/Arrows/dersalmon.svg');
+}
+.unal-image-carousel .splide__arrow svg,
+.unal-image-carousel.is-initialized .splide__arrow svg,
+.unal-year .splide__arrow svg { display:none !important; }
+.unal-image-carousel .splide__arrow:disabled,
+.unal-year .splide__arrow:disabled { opacity:.35; cursor:default; }
+.unal-image-carousel .splide__arrow:focus-visible,
+.unal-year .splide__arrow:focus-visible {
+  outline:3px solid #ffbc00; outline-offset:3px;
+}

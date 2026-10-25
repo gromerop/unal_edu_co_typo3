@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<T3DataStructure><sheets><sDEF><ROOT><sheetTitle>Historias</sheetTitle><type>array</type><el>
+<category><label>UID de categoría</label><config><type>number</type><default>82</default><range><lower>1</lower></range></config></category>
+<storagePid><label>UID de carpeta de noticias (incluye subcarpetas)</label><config><type>number</type><default>531</default><range><lower>1</lower></range></config></storagePid>
+</el></ROOT></sDEF></sheets></T3DataStructure>

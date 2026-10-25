@@ -1,0 +1,25 @@
+mod.wizards.newContentElement.wizardItems.unal160 {
+  header = UNAL 160
+  elements {
+    year {
+      iconIdentifier = content-carousel
+      title = Año 160: meses temáticos
+      description = Doce meses de celebración con pestañas y carruseles de noticias.
+      tt_content_defValues.CType = unal160_year
+    }
+    images {
+      iconIdentifier = content-image
+      title = UNAL 160: carrusel de fotografías
+      description = Galería de fotografías con cinco imágenes en escritorio.
+      tt_content_defValues.CType = unal160_images
+    }
+  }
+  show = *
+}
+
+mod.wizards.newContentElement.wizardItems.unal160.elements.stories {
+  iconIdentifier = content-carousel
+  title = UNAL 160: Historias que inspiran
+  description = Historia reciente y carrusel de videos de la categoría 82.
+  tt_content_defValues.CType = unal160_stories
+}

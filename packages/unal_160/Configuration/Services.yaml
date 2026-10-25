@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  Unal\Unal160\DataProcessing\YearProcessor:
+    public: true
+  Unal\Unal160\DataProcessing\StoriesProcessor:
+    public: true
