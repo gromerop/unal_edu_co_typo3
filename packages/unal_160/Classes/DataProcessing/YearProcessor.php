@@ -28,9 +28,9 @@ final class YearProcessor implements DataProcessorInterface
             [81, "Septiembre", 2027, "Cierre 160", "Images/Months/biblioteca-ggm-bogota.svg"]
         ];
         $types = [
-            [66, 'Prensa', 'Para leer'], 
-            [67, 'Videos', 'Para ver'], 
-            [68, 'Radio', 'Para escuchar'], 
+            [66, 'Prensa', 'Para leer'],
+            [67, 'Videos', 'Para ver'],
+            [68, 'Radio', 'Para escuchar'],
             [69, 'Agencia', 'Agencia']
         ];
         $pool = GeneralUtility::makeInstance(ConnectionPool::class);
