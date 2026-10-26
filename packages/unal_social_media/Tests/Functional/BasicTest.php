@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Tests\Functional;
+namespace UNAL\UnalSocialMedia\Tests\Functional;
 
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
@@ -13,8 +13,8 @@ class BasicTest extends FunctionalTestCase
     /**
      * @var array
      */
-    protected $testExtensionsToLoad = [
-        'typo3conf/ext/unal_social_media',
+    protected array $testExtensionsToLoad = [
+        'unal/unal-social-media',
     ];
 
     /**

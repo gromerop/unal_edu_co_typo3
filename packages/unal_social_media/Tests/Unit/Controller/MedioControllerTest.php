@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Tests\Unit\Controller;
+namespace UNAL\UnalSocialMedia\Tests\Unit\Controller;
 
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
@@ -11,14 +11,14 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 class MedioControllerTest extends UnitTestCase
 {
     /**
-     * @var \Unal\UnalSocialMedia\Controller\MedioController
+     * @var \UNAL\UnalSocialMedia\Controller\MedioController
      */
     protected $subject;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\Unal\UnalSocialMedia\Controller\MedioController::class)
+        $this->subject = $this->getMockBuilder(\UNAL\UnalSocialMedia\Controller\MedioController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -38,7 +38,7 @@ class MedioControllerTest extends UnitTestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $medioRepository = $this->getMockBuilder(\Unal\UnalSocialMedia\Domain\Repository\MedioRepository::class)
+        $medioRepository = $this->getMockBuilder(\UNAL\UnalSocialMedia\Domain\Repository\MedioRepository::class)
             ->setMethods(['findAll'])
             ->disableOriginalConstructor()
             ->getMock();

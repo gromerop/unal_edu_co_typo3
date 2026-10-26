@@ -3,6 +3,7 @@ namespace UNAL\UnalNews\Domain\Model;
 
 use UNAL\UnalNews\Utility\VideoFile;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use UNAL\UnalNews\Utility\FirstMediaImage;
 use TYPO3\CMS\Core\Utility\DebugUtility;
 
@@ -82,9 +83,30 @@ class UnalNews extends \GeorgRinger\News\Domain\Model\News
      */
     public function __construct()
     {
-
-        //Do not remove the next line: It would break the functionality
+        parent::__construct();
         $this->initStorageObjects();
+    }
+
+    public function initializeObject(): void
+    {
+        if (!isset($this->categories)) {
+            $this->categories = new ObjectStorage();
+        }
+        if (!isset($this->contentElements)) {
+            $this->contentElements = new ObjectStorage();
+        }
+        if (!isset($this->falRelatedFiles)) {
+            $this->falRelatedFiles = new ObjectStorage();
+        }
+        if (!isset($this->relatedLinks)) {
+            $this->relatedLinks = new ObjectStorage();
+        }
+        if (!isset($this->tags)) {
+            $this->tags = new ObjectStorage();
+        }
+        if (!$this->visitorCounter instanceof ObjectStorage) {
+            $this->visitorCounter = new ObjectStorage();
+        }
     }
 
     /**
@@ -181,7 +203,7 @@ class UnalNews extends \GeorgRinger\News\Domain\Model\News
      * @param $detailed
      * @param $tipo
      */
-    public function parsedArrayElastic($detailed = false, $tipo)
+    public function parsedArrayElastic($detailed, $tipo)
     {
         if ($tipo == "new") {
             $summary_data = array();
@@ -515,14 +537,10 @@ class UnalNews extends \GeorgRinger\News\Domain\Model\News
      */
     public function createDetailedUrl($uid)
     {
-        $objectManager = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\ObjectManager::class);
-        $uriBuilder = $objectManager->get(\TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder::class);
-
-        // array of plugin arguments
-        // will become something like: &tx_extension_plugin['foo']=bar
-        $pluginArgs = ['news' => $uid];
-        $uri = $uriBuilder->reset()->setTargetPageUid(4)->uriFor('detail', $pluginArgs, 'News', 'news', 'pi1');
-        return $uri;
+        return sprintf(
+            '/index.php?id=4&tx_news_pi1[action]=detail&tx_news_pi1[controller]=News&tx_news_pi1[news]=%d',
+            (int)$uid
+        );
     }
     public function actualizarVisita()
     {

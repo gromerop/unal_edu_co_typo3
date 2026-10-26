@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Domain\Model;
+namespace UNAL\UnalSocialMedia\Domain\Model;
 
 
 /**

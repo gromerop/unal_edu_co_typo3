@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
-      xmlns:usu="http://typo3.org/ns/UNAL/UnalSkinunal/ViewHelpers"
+      xmlns:usu="http://typo3.org/ns/UNAL/UnalSkinUnal/ViewHelpers"
       xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
       data-namespace-typo3-fluid="true">
     <!--
@@ -30,7 +30,7 @@
                                             <source src="{mediaElement.originalResource.publicUrl}" type="video/mp4" />					  
                                         </video>
                                         <div class="background-text">
-                                            <h2><f:format.raw>{newsItem.title}</f:format.raw></h2>
+                                            <h2>{newsItem.title}</h2>
                                             <f:format.raw>{newsItem.bodytext}</f:format.raw>
                                         </div>
                                         <script>
@@ -57,7 +57,7 @@
                                                     <f:then>
                                                         <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
                                                         <div class="background-text">
-                                                            <h2><f:format.raw>{newsItem.title}</f:format.raw></h2>
+                                                            <h2>{newsItem.title}</h2>
                                                             <f:format.raw>{newsItem.bodytext}</f:format.raw>
                                                         </div>
                                                     </f:then>
@@ -72,7 +72,7 @@
                                                 <f:then>
                                                     <f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
                                                     <div class="background-text">
-                                                        <h2><f:format.raw>{newsItem.title}</f:format.raw></h2>
+                                                        <h2>{newsItem.title}</h2>
                                                         <f:format.raw>{newsItem.bodytext}</f:format.raw>
                                                     </div>
                                                 </f:then>

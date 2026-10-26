@@ -1,8 +1,8 @@
 {
     "name": "unal/unal-skin-transparencia",
+    "version": "1.0",
     "type": "typo3-cms-extension",
     "description": "Plantilla institucional predeterminada para el micrositio 'Transparencia y acceso a la información pública', en la Universidad Nacional de Colombia.",
-    "version": "1.0.0",
     "keywords": [
         "TYPO3",
         "extension",
@@ -40,8 +40,7 @@
         "GPL-2.0-or-later"
     ],
     "require": {
-        "typo3/cms-core": "^7.6 || ^8.5 || ^9.5 || ^10.4 || ^11.5",
-        "php": ">= 5.6 < 8.3"
+        "typo3/cms-core": "^12.4 || ^13.4"
     },
     "conflict": {
     },

@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Controller;
+namespace UNAL\UnalSocialMedia\Controller;
+
+use Psr\Http\Message\ResponseInterface;
 
 
 /**
@@ -23,11 +25,11 @@ class ResponsableController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     /**
      * action list
      *
-     * @return string|object|null|void
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $responsables = $this->responsableRepository->findAll();
         $this->view->assign('responsables', $responsables);
+        return $this->htmlResponse();
     }
 }

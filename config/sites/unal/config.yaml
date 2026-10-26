@@ -1,0 +1,96 @@
+base: 'https://unal.edu.co'
+baseVariants:
+  -
+    base: 'https://unal-typo3-ddev.ddev.site/'
+    condition: 'applicationContext == "Development/DDEV"'
+disableStaticFileCache: false
+errorHandling:
+  -
+    errorCode: 403
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/403.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 404
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/404.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 500
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/500.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 503
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/503.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+languages:
+  -
+    title: Español
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: es
+    locale: es_ES.UTF-8
+    iso-639-1: es
+    navigationTitle: Spanish
+    hreflang: es
+    direction: ltr
+    flag: co
+    websiteTitle: ''
+  -
+    title: English
+    enabled: true
+    base: /en
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    websiteTitle: 'Universidad Nacional de Colombia'
+    navigationTitle: English
+    hreflang: en-US
+    direction: ltr
+    fallbackType: strict
+    fallbacks: ''
+    flag: us
+    languageId: 1
+  -
+    title: Wayuunaiki
+    enabled: true
+    base: /guc
+    typo3Language: es
+    locale: es_CO.UTF-8
+    iso-639-1: wa
+    websiteTitle: 'Universidad Nacional de Colombia'
+    navigationTitle: Wayuunaiki
+    hreflang: guc-CO
+    direction: ltr
+    fallbackType: strict
+    fallbacks: ''
+    flag: global
+    languageId: 2
+  -
+    title: 'Nasa yuwe'
+    enabled: true
+    base: /pbb
+    typo3Language: es
+    locale: es_CO.UTF-8
+    iso-639-1: na
+    websiteTitle: ''
+    navigationTitle: 'Nasa yuwe'
+    hreflang: pbb-CO
+    direction: ltr
+    fallbackType: strict
+    fallbacks: ''
+    flag: global
+    languageId: 3
+rootPageId: 1
+websiteTitle: 'Universidad Nacional de Colombia'

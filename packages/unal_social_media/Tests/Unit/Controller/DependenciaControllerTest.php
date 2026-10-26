@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Tests\Unit\Controller;
+namespace UNAL\UnalSocialMedia\Tests\Unit\Controller;
 
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
@@ -11,14 +11,14 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 class DependenciaControllerTest extends UnitTestCase
 {
     /**
-     * @var \Unal\UnalSocialMedia\Controller\DependenciaController
+     * @var \UNAL\UnalSocialMedia\Controller\DependenciaController
      */
     protected $subject;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\Unal\UnalSocialMedia\Controller\DependenciaController::class)
+        $this->subject = $this->getMockBuilder(\UNAL\UnalSocialMedia\Controller\DependenciaController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -38,7 +38,7 @@ class DependenciaControllerTest extends UnitTestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $dependenciaRepository = $this->getMockBuilder(\Unal\UnalSocialMedia\Domain\Repository\DependenciaRepository::class)
+        $dependenciaRepository = $this->getMockBuilder(\UNAL\UnalSocialMedia\Domain\Repository\DependenciaRepository::class)
             ->setMethods(['findAll'])
             ->disableOriginalConstructor()
             ->getMock();

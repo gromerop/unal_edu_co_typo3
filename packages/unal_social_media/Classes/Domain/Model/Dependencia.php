@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Domain\Model;
+namespace UNAL\UnalSocialMedia\Domain\Model;
 
 
 /**
@@ -30,14 +30,14 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * facultad
      *
-     * @var \Unal\UnalSocialMedia\Domain\Model\Facultad
+     * @var \UNAL\UnalSocialMedia\Domain\Model\Facultad
      */
     protected $facultad = null;
 
     /**
      * cuentas
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Unal\UnalSocialMedia\Domain\Model\Cuenta>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\UNAL\UnalSocialMedia\Domain\Model\Cuenta>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $cuentas = null;
@@ -45,7 +45,7 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * sede
      *
-     * @var \Unal\UnalSocialMedia\Domain\Model\Sede
+     * @var \UNAL\UnalSocialMedia\Domain\Model\Sede
      */
     protected $sede = null;
 
@@ -96,7 +96,7 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the facultad
      *
-     * @return \Unal\UnalSocialMedia\Domain\Model\Facultad facultad
+     * @return \UNAL\UnalSocialMedia\Domain\Model\Facultad facultad
      */
     public function getFacultad()
     {
@@ -106,10 +106,10 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the facultad
      *
-     * @param \Unal\UnalSocialMedia\Domain\Model\Facultad $facultad
+     * @param \UNAL\UnalSocialMedia\Domain\Model\Facultad $facultad
      * @return void
      */
-    public function setFacultad(\Unal\UnalSocialMedia\Domain\Model\Facultad $facultad)
+    public function setFacultad(\UNAL\UnalSocialMedia\Domain\Model\Facultad $facultad)
     {
         $this->facultad = $facultad;
     }
@@ -117,10 +117,10 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Adds a Cuenta
      *
-     * @param \Unal\UnalSocialMedia\Domain\Model\Cuenta $cuenta
+     * @param \UNAL\UnalSocialMedia\Domain\Model\Cuenta $cuenta
      * @return void
      */
-    public function addCuenta(\Unal\UnalSocialMedia\Domain\Model\Cuenta $cuenta)
+    public function addCuenta(\UNAL\UnalSocialMedia\Domain\Model\Cuenta $cuenta)
     {
         $this->cuentas->attach($cuenta);
     }
@@ -128,10 +128,10 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Removes a Cuenta
      *
-     * @param \Unal\UnalSocialMedia\Domain\Model\Cuenta $cuentaToRemove The Cuenta to be removed
+     * @param \UNAL\UnalSocialMedia\Domain\Model\Cuenta $cuentaToRemove The Cuenta to be removed
      * @return void
      */
-    public function removeCuenta(\Unal\UnalSocialMedia\Domain\Model\Cuenta $cuentaToRemove)
+    public function removeCuenta(\UNAL\UnalSocialMedia\Domain\Model\Cuenta $cuentaToRemove)
     {
         $this->cuentas->detach($cuentaToRemove);
     }
@@ -139,7 +139,7 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the cuentas
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Unal\UnalSocialMedia\Domain\Model\Cuenta> cuentas
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\UNAL\UnalSocialMedia\Domain\Model\Cuenta> cuentas
      */
     public function getCuentas()
     {
@@ -149,7 +149,7 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the cuentas
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Unal\UnalSocialMedia\Domain\Model\Cuenta> $cuentas
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\UNAL\UnalSocialMedia\Domain\Model\Cuenta> $cuentas
      * @return void
      */
     public function setCuentas(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $cuentas)
@@ -160,7 +160,7 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the sede
      *
-     * @return \Unal\UnalSocialMedia\Domain\Model\Sede sede
+     * @return \UNAL\UnalSocialMedia\Domain\Model\Sede sede
      */
     public function getSede()
     {
@@ -170,10 +170,10 @@ class Dependencia extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the sede
      *
-     * @param \Unal\UnalSocialMedia\Domain\Model\Sede $sede
+     * @param \UNAL\UnalSocialMedia\Domain\Model\Sede $sede
      * @return void
      */
-    public function setSede(\Unal\UnalSocialMedia\Domain\Model\Sede $sede)
+    public function setSede(\UNAL\UnalSocialMedia\Domain\Model\Sede $sede)
     {
         $this->sede = $sede;
     }

@@ -2171,7 +2171,7 @@ main.detalle ul li ul li::before {
 }
 
 .convergencia .article .mt-auto .unal-media-link-img{
-  height: 2vh;
+  height: 1em;
   width: auto;
 }
 @media (max-width: 576px) {

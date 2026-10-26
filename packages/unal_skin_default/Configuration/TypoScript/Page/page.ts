@@ -13,18 +13,16 @@ page {
 		// usd_phone = {$tx_unalskindefault.filepaths.css}/phone.css
 		// usd_small = {$tx_unalskindefault.filepaths.css}/small.css
 		// usd_printer = {$tx_unalskindefault.filepaths.css}/printer.css
-		node_bootstrap2   = {$tx_unalskindefault.filepaths.pub}/bootstrap/dist/css/bootstrap.min.css
-		usd_accesibilidad = {$tx_unalskindefault.filepaths.css}/accesibilidad.css
-		usd_frontend      = {$tx_unalskindefault.filepaths.css}/frontend.css
-		buscador          = {$tx_unalskindefault.filepaths.css}/buscador.css
 		// serviciosUnimedios = {$tx_unalskindefault.filepaths.css}/servicesUnimedios.css
 		// usd_frontend = {$tx_unalskindefault.filepaths.css}/frontend.css
-		node_bootstrap    = {$tx_unalskindefault.filepaths.pub}/open-iconic/font/css/open-iconic-bootstrap.min.css
+		node_bootstrap2 = EXT:unal_skin_default/Resources/Public/Build/bootstrap.css
+		usd_accesibilidad = {$tx_unalskindefault.filepaths.css}/accesibilidad.css
+		usd_frontend = EXT:unal_skin_default/Resources/Public/Build/frontend.css
+		buscador = {$tx_unalskindefault.filepaths.css}/buscador.css
+		node_bootstrap = {$tx_unalskindefault.filepaths.pub}/open-iconic/font/css/open-iconic-bootstrap.min.css
 	}
 	includeJS {
-		jquery = https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
-		// bootstrap = {$tx_unalskindefault.filepaths.js}/bootstrap.bundle.min.js
-		node_modulesjs = {$tx_unalskindefault.filepaths.pub}/bootstrap/dist/js/bootstrap.bundle.min.js
+		vendor = EXT:unal_skin_default/Resources/Public/Build/vendor.js
 		unal = {$tx_unalskindefault.filepaths.js}/unal.js
 		buscador = {$tx_unalskindefault.filepaths.js}/buscador.js
 		accesibilidad = {$tx_unalskindefault.filepaths.js}/accesibilidad.js

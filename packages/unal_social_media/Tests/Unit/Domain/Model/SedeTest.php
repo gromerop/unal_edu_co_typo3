@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Tests\Unit\Domain\Model;
+namespace UNAL\UnalSocialMedia\Tests\Unit\Domain\Model;
 
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
@@ -11,14 +11,14 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 class SedeTest extends UnitTestCase
 {
     /**
-     * @var \Unal\UnalSocialMedia\Domain\Model\Sede
+     * @var \UNAL\UnalSocialMedia\Domain\Model\Sede
      */
     protected $subject;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = new \Unal\UnalSocialMedia\Domain\Model\Sede();
+        $this->subject = new \UNAL\UnalSocialMedia\Domain\Model\Sede();
     }
 
     protected function tearDown()

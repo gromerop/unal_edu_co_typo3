@@ -3,14 +3,13 @@
 namespace UNAL\UnalSkinBuscadorUnimedios\Hooks;
 
 /**
- * This file is part of the "news" Extension for TYPO3 CMS.
+ * This file is part of the "unal_skin_buscador_unimedios" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  */
 use TYPO3\CMS\Backend\Utility\BackendUtility as BackendUtilityCore;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 use UNAL\UnalSkinBuscadorUnimedios\Utility\ConvergenciaUtility;
 
@@ -22,14 +21,14 @@ use UNAL\UnalSkinBuscadorUnimedios\Utility\ConvergenciaUtility;
 class DataHandler
 {
 
-    private $convergenciaUtility = NULL;
+    protected ConvergenciaUtility $convergenciaUtility;
 
     /**
      * DataHandler constructor.
      */
     public function __construct()
     {
-        $this->convergenciaUtility = new ConvergenciaUtility();
+        $this->convergenciaUtility = GeneralUtility::makeInstance(ConvergenciaUtility::class);
     }
 
 
@@ -43,69 +42,73 @@ class DataHandler
      * @param \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject parent Object
      */
     public function processDatamap_afterDatabaseOperations(
-        $status,
-        $table,
-        $recordUid,
+        string $status,
+        string $table,
+        string|int $recordUid,
         array $fields,
-        \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject
-    ) {
+        DataHandler $parentObject
+    ): void {
+        
+        if ($table !== 'tx_news_domain_model_news') {
+            return;
+        }
 
-        if ($table === 'tx_news_domain_model_news') {
-            
-            if (GeneralUtility::isFirstPartOfStr($recordUid, 'NEW')) {
-                $recordUid = $parentObject->substNEWwithIDs[$recordUid];
+        if (GeneralUtility::isFirstPartOfStr($recordUid, 'NEW')) {
+            $recordUid = $parentObject->substNEWwithIDs[$recordUid] ?? $recordUid;
+        }
+
+        $newsRecord = BackendUtilityCore::getRecord($table, $recordUid);
+        if (!$newsRecord || $newsRecord['type'] !== 'Tx_UnalNews_UnalNews') {
+            return;
+        }
+        
+        
+        if ($newsRecord["type"] == "Tx_UnalNews_UnalNews") {
+            $datetime   = $newsRecord['datetime'];
+            $starttime  = $newsRecord['starttime'];
+            $endtime    = $newsRecord['endtime'];
+            $actualTime = time();
+
+            $isValidDatetime = $isValidStarttime = $isValidEndtime = false;
+
+            // If $datetime is lower or equal than $actualTime
+            if($datetime>0 && $actualTime>=$datetime ){
+                $isValidDatetime = true;
             }
-            
-            $newsRecord = BackendUtilityCore::getRecord($table, $recordUid);
-            if ($newsRecord["type"] == "Tx_UnalNews_UnalNews") {
-                
-                $datetime   = $newsRecord['datetime'];
-                $starttime  = $newsRecord['starttime'];
-                $endtime    = $newsRecord['endtime'];
-                $actualTime = time();
+            // If $actualTime is greater or equal than $starttime
+            if($starttime>0 && $starttime <= $actualTime){
+                $isValidStarttime = true;
+            }elseif($starttime==0){
+                $isValidStarttime = true;
+            }
+            // If $actualTime is lower or equal than $endtime
+            if($endtime>0 && $endtime >= $actualTime){
+                $isValidEndtime = true;
+            }elseif($endtime==0){
+                $isValidEndtime = true;
+            }
 
-                $isValidDatetime = $isValidStarttime = $isValidEndtime = false;
+            if($isValidDatetime && $isValidStarttime && $isValidEndtime){
 
-                // If $datetime is lower or equal than $actualTime
-                if($datetime>0 && $actualTime>=$datetime ){
-                    $isValidDatetime = true;
-                }
-                // If $actualTime is greater or equal than $starttime
-                if($starttime>0 && $starttime <= $actualTime){
-                    $isValidStarttime = true;
-                }elseif($starttime==0){
-                    $isValidStarttime = true;
-                }
-                // If $actualTime is lower or equal than $endtime
-                if($endtime>0 && $endtime >= $actualTime){
-                    $isValidEndtime = true;
-                }elseif($endtime==0){
-                    $isValidEndtime = true;
-                }
-                
-                if($isValidDatetime && $isValidStarttime && $isValidEndtime){
-                    
-                    if($status === 'new' && $newsRecord['pid'] !== -1){
-                        //Insert in elastic
+                if($status === 'new' && $newsRecord['pid'] !== -1){
+                    //Insert in elastic
+                    $this->convergenciaUtility->insertElasticElements($newsRecord);
+                }elseif($status === 'update'){
+
+                    $isHidden =  $newsRecord['hidden'];
+
+                    if($isHidden){
+                        //Delete in elastic
+                        $this->convergenciaUtility->deleteElasticElements($newsRecord);
+                    }elseif($newsRecord['pid'] !== -1){
+                        //Update in elastic
                         $this->convergenciaUtility->insertElasticElements($newsRecord);
-                    }elseif($status === 'update'){
-
-                        $isHidden =  $newsRecord['hidden'];
-
-                        if($isHidden){
-                            //Delete in elastic
-                            $this->convergenciaUtility->deleteElasticElements($newsRecord);
-                        }elseif($newsRecord['pid'] !== -1){
-                            //Update in elastic
-                            $this->convergenciaUtility->insertElasticElements($newsRecord);
-                        }
                     }
-                }else{
-                    //Delete in elastic
-                    $this->convergenciaUtility->deleteElasticElements($newsRecord);
                 }
+            }else{
+                //Delete in elastic
+                $this->convergenciaUtility->deleteElasticElements($newsRecord);
             }
-
         }
     }
 

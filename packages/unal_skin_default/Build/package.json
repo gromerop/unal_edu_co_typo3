@@ -1,0 +1,24 @@
+{
+  "name": "@unal/unal-skin-default-build",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run build:vendor && npm run build:bootstrap && npm run build:frontend",
+    "watch": "vite build --watch",
+    "build:vendor": "vite build",
+    "build:bootstrap": "sass --load-path=node_modules node_modules/bootstrap/scss/bootstrap.scss ../Resources/Public/Build/bootstrap.css --style=compressed --no-source-map",
+    "build:frontend": "sass --load-path=node_modules ../Resources/Public/sass/frontend.scss ../Resources/Public/Build/frontend.css --style=compressed --source-map"
+  },
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@popperjs/core": "2.9.2",
+    "bootstrap": "5.0.1",
+    "jquery": "1.11.0",
+    "open-iconic": "1.1.1"
+  },
+  "devDependencies": {
+    "sass": "1.102.0",
+    "vite": "8.2.0"
+  }
+}

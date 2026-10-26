@@ -1,5 +1,5 @@
 <?php
-namespace UNAL\UnalSkinunal\ViewHelpers;
+namespace UNAL\UnalSkinUnal\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;

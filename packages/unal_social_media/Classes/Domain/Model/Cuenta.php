@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Domain\Model;
+namespace UNAL\UnalSocialMedia\Domain\Model;
 
 
 /**
@@ -44,14 +44,14 @@ class Cuenta extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * medios
      *
-     * @var \Unal\UnalSocialMedia\Domain\Model\Medio
+     * @var \UNAL\UnalSocialMedia\Domain\Model\Medio
      */
     protected $medios = null;
 
     /**
      * responsable
      *
-     * @var \Unal\UnalSocialMedia\Domain\Model\Responsable
+     * @var \UNAL\UnalSocialMedia\Domain\Model\Responsable
      */
     protected $responsable = null;
 
@@ -121,7 +121,7 @@ class Cuenta extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the medios
      *
-     * @return \Unal\UnalSocialMedia\Domain\Model\Medio medios
+     * @return \UNAL\UnalSocialMedia\Domain\Model\Medio medios
      */
     public function getMedios()
     {
@@ -131,10 +131,10 @@ class Cuenta extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the medios
      *
-     * @param \Unal\UnalSocialMedia\Domain\Model\Medio $medios
+     * @param \UNAL\UnalSocialMedia\Domain\Model\Medio $medios
      * @return void
      */
-    public function setMedios(\Unal\UnalSocialMedia\Domain\Model\Medio $medios)
+    public function setMedios(\UNAL\UnalSocialMedia\Domain\Model\Medio $medios)
     {
         $this->medios = $medios;
     }
@@ -142,7 +142,7 @@ class Cuenta extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the responsable
      *
-     * @return \Unal\UnalSocialMedia\Domain\Model\Responsable responsable
+     * @return \UNAL\UnalSocialMedia\Domain\Model\Responsable responsable
      */
     public function getResponsable()
     {
@@ -152,10 +152,10 @@ class Cuenta extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the responsable
      *
-     * @param \Unal\UnalSocialMedia\Domain\Model\Responsable $responsable
+     * @param \UNAL\UnalSocialMedia\Domain\Model\Responsable $responsable
      * @return void
      */
-    public function setResponsable(\Unal\UnalSocialMedia\Domain\Model\Responsable $responsable)
+    public function setResponsable(\UNAL\UnalSocialMedia\Domain\Model\Responsable $responsable)
     {
         $this->responsable = $responsable;
     }

@@ -127,85 +127,85 @@ tx_unalskindefault {
 		servicios {
 			correo {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServEmail.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServEmail.png
 				title = Correo institucional
 				url   = https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login
 			}
 			dninfoa {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServSia.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServSia.png
 				title = DINARA - SIA
 				url   = https://dninfoa.unal.edu.co/
 			}
 			serviciosInvestigacion {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServInvestigacion.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServInvestigacion.png
 				title = Servicios para la investigación
 				url   = https://investigacion.unal.edu.co/laboratorios/servicios
 			}
 			convocatorias {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServCall.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServCall.png
 				title = Convocatorias
 				url   = https://personal.unal.edu.co/
 			}
 			identidad {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServIdentidad.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServIdentidad.png
 				title = Identidad UNAL
 				url   = https://identidad.unal.edu.co/guia-de-identidad-visual/
 			}
 			portalContratacion {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServEngagement.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServEngagement.png
 				title = Portal de contratación
 				url   = https://portaladquisiciones.unal.edu.co/
 			}
 			bibliotecas {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServLibrary.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServLibrary.png
 				title = Bibliotecas
 				url   = https://bibliotecas.unal.edu.co/
 			}
 			registro {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServRegistry.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServRegistry.png
 				title = Registro y matrícula
 				url   = https://registro.bogota.unal.edu.co
 			}
 			bienestar {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServBienestar.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServBienestar.png
 				title = Bienestar
 				url   = https://bienestar.unal.edu.co/
 			}
 			patrimonio {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServRegistry.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServRegistry.png
 				title = Patrimonio Cultural
 				url   = https://patrimoniocultural.bogota.unal.edu.co
 			}
 			museos {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServMuseums.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServMuseums.png
 				title = Museos
 				url   = https://circular.unal.edu.co/museos-lista
 			}
 			editorial {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServPress.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServPress.png
 				title = Editorial
 				url   = https://editorial.unal.edu.co/editorial-unal
 			}
 			regimen {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServLegalRules.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServLegalRules.png
 				title = Régimen Legal
 				url   = https://legal.unal.edu.co/
 			}
 			portalNinos {
 				islocal = 1
-				image = /typo3conf/ext/unal_skin_default/Resources/Public/images/icnServicesKidsPortal.png
+				image = EXT:unal_skin_default/Resources/Public/images/icnServicesKidsPortal.png
 				title = Portal para niños
 				url   = https://unal.edu.co/portal-para-ninos
 			}

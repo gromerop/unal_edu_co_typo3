@@ -23,8 +23,8 @@ page {
   		flickity.external  = 1
         leaflet            = https://unpkg.com/leaflet@1.7.1/dist/leaflet.css
         map                = {$tx_unalskinunal.filepaths.css}/map.css
-        #plyr               = https://cdn.plyr.io/3.6.8/plyr.css
-        plyr               = {$tx_unalskinunal.filepaths.css}/plyr.css
+        plyr               = https://cdn.plyr.io/3.6.8/plyr.css
+        #plyr               = {$tx_unalskinunal.filepaths.css}/plyr.css
         slick              = https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css
         convergenciaedu     = {$tx_unalskinunal.filepaths.css}/convergenciaedu.css
 

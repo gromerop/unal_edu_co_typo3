@@ -1,8 +1,8 @@
 {
     "name": "unal/unal-news",
+    "version": "1.0",
     "type": "typo3-cms-extension",
     "description": "Esta extensi\u00f3n agrega algunos par\u00e1metros a la propia extensi\u00f3n de news para las parametrizaciones adicional de la Universidad Nacional de Colombia.",
-    "version": "1.0.0",
     "keywords": [
         "TYPO3",
         "extension",
@@ -39,8 +39,8 @@
         "GPL-2.0-or-later"
     ],
     "require": {
-        "typo3/cms-core": "^9.5 || ^10.4 || ^11.5",
-        "php": ">= 7.4 < 8.3"
+        "georgringer/news": "^12.3 || ^13.0",
+        "typo3/cms-core": "^12.4 || ^13.4"
     },
     "conflict": {
     },

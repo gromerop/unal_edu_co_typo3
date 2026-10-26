@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Controller;
+namespace UNAL\UnalSocialMedia\Controller;
 
+use Psr\Http\Message\ResponseInterface;
+use UNAL\UnalSocialMedia\Domain\Repository\DependenciaRepository;
 
 /**
  * This file is part of the "UNAL Social Media" Extension for TYPO3 CMS.
@@ -19,30 +21,24 @@ namespace Unal\UnalSocialMedia\Controller;
  */
 class DependenciaController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
-     * dependenciaRepository
+     * Repositorio de dependencias
      *
-     * @var \Unal\UnalSocialMedia\Domain\Repository\DependenciaRepository
      */
-    protected $dependenciaRepository = null;
-
-    /**
-     * @param \Unal\UnalSocialMedia\Domain\Repository\DependenciaRepository $dependenciaRepository
-     */
-    public function injectDependenciaRepository(\Unal\UnalSocialMedia\Domain\Repository\DependenciaRepository $dependenciaRepository)
-    {
+    protected DependenciaRepository $dependenciaRepository;
+    
+    public function __construct(DependenciaRepository $dependenciaRepository) {
         $this->dependenciaRepository = $dependenciaRepository;
     }
 
     /**
-     * action list
+     * Listado de dependencias
      *
-     * @return string|object|null|void
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
 	$dependencias = $this->dependenciaRepository->findAll();
         $this->view->assign('dependencias', $dependencias);
+        return $this->htmlResponse();
     }
 }

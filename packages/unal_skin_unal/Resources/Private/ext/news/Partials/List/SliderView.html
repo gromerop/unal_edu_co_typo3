@@ -10,7 +10,7 @@
     </div>
 
     <f:for each="{news}" as="newsItem" iteration="iterator">
-        <f:alias map="{mediaElement: newsItem.falMedia.0}">
+        <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
             <f:if condition="{mediaElement.originalResource.type} == 4">
                 <div id="modal-video-{newsItem.uid}" class="modal modal-slider fade">
                     <div class="modal-dialog modal-xl modal-dialog-centered">

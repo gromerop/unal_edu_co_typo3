@@ -1,0 +1,51 @@
+base: docentes.unal.edu.co
+baseVariants:
+  -
+    base: 'https://unal-docentes.ddev.site/'
+    condition: 'applicationContext == "Development/DDEV"'
+errorHandling:
+  -
+    errorCode: 403
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/403.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 404
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/404.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 500
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/500.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+  -
+    errorCode: 503
+    errorHandler: Fluid
+    errorFluidTemplate: 'EXT:unal_skin_default/Resources/Private/Templates/ErrorPages/503.html'
+    errorFluidTemplatesRootPath: ''
+    errorFluidLayoutsRootPath: ''
+    errorFluidPartialsRootPath: ''
+disableStaticFileCache: false
+languages:
+  -
+    title: Español
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: es
+    locale: es_CO.UTF-8
+    iso-639-1: es
+    navigationTitle: Spanish
+    hreflang: es-co
+    direction: ltr
+    flag: co
+    websiteTitle: Docentes
+rootPageId: 69
+websiteTitle: Docentes

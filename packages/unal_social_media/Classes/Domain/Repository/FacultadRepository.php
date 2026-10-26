@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Unal\UnalSocialMedia\Domain\Repository;
-
+namespace UNAL\UnalSocialMedia\Domain\Repository;
 
 /**
  * This file is part of the "UNAL Social Media" Extension for TYPO3 CMS.
@@ -17,6 +16,10 @@ namespace Unal\UnalSocialMedia\Domain\Repository;
 /**
  * The repository for Facultads
  */
-class FacultadRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
-{
+class FacultadRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+    public function createQuery() {
+        $query = parent::createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(FALSE);
+        return $query;
+    }
 }
